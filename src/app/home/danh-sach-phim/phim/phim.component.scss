@@ -1,7 +1,78 @@
 .phim {
-    margin: 20px;
-    img {
-        width: 300px;
-        height: 400px;
+    .warpper {
+        margin-top: 10px;
+        position: relative;
+        .tenPhim {
+            opacity: 1;
+        }
+        .muave {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            border: none;
+            border-radius: 0;
+            .btn-muave {
+                border: none;
+                border-radius: 0;
+                width: 100%;
+                font-size: 20px;
+            }
+        }
+    }
+    .danhgia {
+        opacity: 1;
+    }
+    .hinhAnh {
+        position: relative;
+        img {
+            width: 300px;
+            height: 400px;
+        }
+        .play-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            .btn_play-video {
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+                background-color: transparent;
+                border: none;
+            }
+        }
+        // .dark-bg {
+        //     background-color: black;
+        //     position: absolute;
+        //     width: 100%;
+        //     height: 100%;
+        //     z-index: 3;
+        //     opacity: 1;
+        // }
+    }
+    border-radius: 5%;
+    overflow: hidden;
+}
+
+.phim:hover {
+    .warpper {
+        .tenPhim {
+            opacity: 0;
+        }
+        .muave {
+            opacity: 1;
+        }
+    }
+    .danhgia {
+        opacity: 0;
+    }
+    .hinhAnh {
+        .play-video {
+            opacity: 1
+        }
     }
 }

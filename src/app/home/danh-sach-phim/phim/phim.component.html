@@ -1,4 +1,29 @@
 <div class="phim ">
-    <img src={{phim.hinhAnh}} alt="">
-    <button class="btn btn-success text-center">Dat ve</button>
+    <div class="hinhAnh">
+        <div> <img src={{phim.hinhAnh}} alt=""></div>
+        <div class="play-video">
+            <button class="btn_play-video">
+                    <img src="./assets/img/icons/play-video.png" alt="">
+                </button>
+        </div>
+        <div class="dark-bg"></div>
+
+
+    </div>
+
+    <div class="warpper">
+        <div class="tenPhim">
+            <!-- <p>{{phim.tenPhim}}</p> -->
+            <h5>{{phim.tenPhim}}</h5>
+        </div>
+
+        <div class="muave">
+            <button class="btn-muave" mat-raised-button color="primary">Mua vé</button>
+        </div>
+
+
+    </div>
+    <div class="danhgia">
+        <p>{{phim.danhGia}} IMDb</p>
+    </div>
 </div>

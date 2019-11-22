@@ -33,7 +33,7 @@
 
 
 
-<div class="wrapper container ">
+<div class="wrapper container " id="homeTools">
 
 
     <mat-form-field>
@@ -64,7 +64,7 @@
     </mat-form-field>
 
     <mat-form-field>
-        <mat-label>Ngày xem</mat-label>
+        <mat-label>Xuất chiếu</mat-label>
         <mat-select>
             <mat-option [value]="item" *ngFor="let item of GioChieu">
                 {{item}}
@@ -72,5 +72,5 @@
         </mat-select>
     </mat-form-field>
 
-    <button class="btn-datve" mat-raised-button color="primary" (click)="datVe($event.value)">Đặt vé</button>
+    <button class="btn-datve" mat-raised-button color="primary" (click)="datVe($event.value)">Mua vé ngay</button>
 </div>

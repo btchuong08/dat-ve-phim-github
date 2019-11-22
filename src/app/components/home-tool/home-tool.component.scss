@@ -1,18 +1,37 @@
-.wrapper {
-    display: inline-block;
-    background-color: red($color: #000000);
-    z-index: 7;
-    overflow: hidden;
-    transform: translateY(-50%);
-    display: grid;
-    transition: all 0.5;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-    grid-column-gap: 40px;
-    .btn-datve {
-        // height: 40px;
-        // line-height: 40px;
-        margin: auto;
-        width: 80%;
+    .wrapper {
+        display: inline-block;
+        background-color: red($color: #000000);
+        overflow: hidden;
+        // transform: translateY(-50%);
+        display: grid;
+        transition: all 0.5;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-content: space-between;
+        grid-column-gap: 30px;
+        .btn-datve {
+            // height: 40px;
+            // line-height: 40px;
+            margin: auto;
+            width: 80%;
+        }
     }
-}
+    
+    #homeTools {
+        box-sizing: border-box;
+        margin: auto;
+        height: 80px;
+        line-height: 80px;
+        position: relative;
+        // position: absolute;
+        // bottom: 0;
+        width: 100%;
+        // left: 50%;
+        // // top: 50%;
+        transform: translateY(-50%);
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        -moz-box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        z-index: 2;
+    }
