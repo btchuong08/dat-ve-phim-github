@@ -1,0 +1,57 @@
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.carousel {
+    position: relative;
+    margin-top: 60px;
+    .carousel-indicators li {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+    .carousel-indicators .active {
+        background-color: red;
+        opacity: 80%;
+    }
+    .play-video {
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 8;
+            box-sizing: border-box;
+            //    visibility: hidden;
+            opacity: 0;
+            background-color: transparent;
+            border: none;
+            transition: all 1s;
+        }
+    }
+}
+
+.carousel:hover .play-video {
+    button {
+        // visibility: visible;
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 650px;
+    height: 450px;
+    text-align: center;
+}

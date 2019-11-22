@@ -1,0 +1,76 @@
+<!-- <div class="wrapper ">
+
+
+    <select class="browser-default custom-select home-tool" (change)="getPhim($event.target.value)">
+    <option selected>Phim</option>
+    <option [value]="item.maPhim" *ngFor="let item of DanhSachPhim">{{item.tenPhim}}</option>
+
+  </select>
+
+
+    <select class="browser-default custom-select home-tool" (change)="getCumRap($event.target.value)">
+    <option selected>Rạp</option>
+    <option [value]="item" *ngFor="let item of cumRap">{{item}}
+    </option>
+
+  </select>
+
+    <select class="browser-default custom-select home-tool" (change)="getGioChieu($event.target.value)">
+    <option selected>Ngày xem</option>
+    <option [value]="item" *ngFor="let item of ngayChieu">{{item}}
+    </option>
+
+  </select>
+
+    <select class="browser-default custom-select home-tool" (change)="datVe($event.target.value)">
+    <option selected>Xuất chiếu</option>
+    <option [value]="item" *ngFor="let item of GioChieu">{{item}}
+    </option>
+
+  </select>
+</div> -->
+
+
+
+
+<div class="wrapper container ">
+
+
+    <mat-form-field>
+        <mat-label>Phim</mat-label>
+        <mat-select (selectionChange)="getPhim($event.value)">
+            <mat-option *ngFor="let item of DanhSachPhim" [value]="item.maPhim">
+                {{item.tenPhim}}
+            </mat-option>
+
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Rạp</mat-label>
+        <mat-select (selectionChange)="getCumRap($event.value)">
+            <mat-option [value]="item" *ngFor="let item of cumRap">
+                {{item}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Ngày xem</mat-label>
+        <mat-select (selectionChange)="getGioChieu($event.value)">
+            <mat-option [value]="item" *ngFor="let item of ngayChieu">{{item}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Ngày xem</mat-label>
+        <mat-select>
+            <mat-option [value]="item" *ngFor="let item of GioChieu">
+                {{item}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="btn-datve" mat-raised-button color="primary" (click)="datVe($event.value)">Đặt vé</button>
+</div>

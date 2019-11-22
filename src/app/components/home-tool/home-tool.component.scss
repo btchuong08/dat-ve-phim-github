@@ -1,0 +1,18 @@
+.wrapper {
+    display: inline-block;
+    background-color: red($color: #000000);
+    z-index: 7;
+    overflow: hidden;
+    transform: translateY(-50%);
+    display: grid;
+    transition: all 0.5;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    grid-column-gap: 40px;
+    .btn-datve {
+        // height: 40px;
+        // line-height: 40px;
+        margin: auto;
+        width: 80%;
+    }
+}
