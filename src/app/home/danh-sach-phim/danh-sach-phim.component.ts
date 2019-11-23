@@ -1,8 +1,11 @@
+import { PhimComponent } from './phim/phim.component';
 import { PhimService } from './../../service/phim.service';
 
 import { Component, ViewChild, OnInit, AfterViewInit, ElementRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { DomSanitizer } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-danh-sach-phim',
@@ -11,16 +14,23 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class DanhSachPhimComponent implements OnInit {
 
-
   private subDanhSachPhim = new Subscription();
+  public safeTrailerURL: any = "";
   public DanhSachPhim: Array<any> = [];
-  constructor(private PhimService: PhimService) { }
+
+  trailer(phim: any) {
+    this.safeTrailerURL = phim.trailer;
+
+  }
+  constructor(private PhimService: PhimService,
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.subDanhSachPhim = this.PhimService.LayDanhSachPhim().subscribe((result) => {
 
       this.DanhSachPhim = result;
-     
+
+
     }),
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {

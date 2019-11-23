@@ -42,17 +42,27 @@
 }
 
 .modal-content {
+    
+    width: 636px;
+    height:386px ;
+    position: relative;
     background-color: transparent;
     border: none;
     text-decoration: none;
+    .btn-close{
+        position: absolute;
+        top: -15px;
+        right: -10px;
+    }
 }
+
 
 .modal {
     position: fixed;
     top: 50%;
     left: 45%;
     transform: translate(-50%, -50%);
-    width: 650px;
-    height: 450px;
+    // width: 650px;
+    // height: 450px;
     text-align: center;
 }

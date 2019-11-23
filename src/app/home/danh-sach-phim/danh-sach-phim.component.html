@@ -1,9 +1,27 @@
 <div class="">
-    <div class="row text-center wrapper">
+    <div class="wrapper">
 
         <div *ngFor="let item of DanhSachPhim">
-            <app-phim [phim]="item"></app-phim>
+            <app-phim (valueChange)='trailer($event)' [phim]="item"></app-phim>
         </div>
 
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="trailerPhimModal" tabindex="-1" role="dialog" aria-labelledby="trailerPhimModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <iframe width="636" height="386" [src]="safeTrailerURL | safe: 'resourceUrl'" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+            <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
     </div>
 </div>

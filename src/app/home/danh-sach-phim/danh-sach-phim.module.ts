@@ -5,14 +5,14 @@ import { CommonModule } from '@angular/common';
 import { DanhSachPhimRoutingModule } from './danh-sach-phim-routing.module';
 import { DanhSachPhimComponent } from './danh-sach-phim.component';
 
-
+import { SafePipeModule } from 'safe-pipe';
 @NgModule({
   declarations: [DanhSachPhimComponent],
   imports: [
     CommonModule,
     DanhSachPhimRoutingModule,
-    PhimModule
+    PhimModule, SafePipeModule
   ],
-  exports :[DanhSachPhimComponent]
+  exports: [DanhSachPhimComponent]
 })
 export class DanhSachPhimModule { }

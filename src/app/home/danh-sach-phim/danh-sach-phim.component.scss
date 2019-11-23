@@ -1,9 +1,42 @@
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-content: space-between;
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-    width: 70%;
-    margin: auto;
-}
+
+
+   
+    .wrapper {
+       
+        display: grid;
+        margin: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content: space-between;
+        grid-column-gap: 15px;
+        grid-row-gap: 5px;
+        width: 75%;
+        
+        text-align: center;
+    }
+    
+
+
+    #trailerPhimModal {
+        position: fixed;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        // width: 650px;
+        // height: 480px;
+        text-align: center;
+    }
+    .modal-content {
+    
+        width: 636px;
+        height:386px ;
+        position: relative;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+        .btn-close{
+            position: absolute;
+            top: 0;
+            right: -25px;
+        }
+    }
+    

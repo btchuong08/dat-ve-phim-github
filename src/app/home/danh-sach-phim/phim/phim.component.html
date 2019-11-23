@@ -2,9 +2,9 @@
     <div class="hinhAnh">
         <div> <img src={{phim.hinhAnh}} alt=""></div>
         <div class="play-video">
-            <button class="btn_play-video">
-                    <img src="./assets/img/icons/play-video.png" alt="">
-                </button>
+            <button class="btn_play-video" data-toggle="modal" data-target="#trailerPhimModal" (click)="valueChanged()">
+                <img src="./assets/img/icons/play-video.png" alt="">
+            </button>
         </div>
         <div class="dark-bg"></div>
 
@@ -24,6 +24,7 @@
 
     </div>
     <div class="danhgia">
-        <p>{{phim.danhGia}} IMDb</p>
+        <span>{{phim.danhGia}} IMDb</span>
+
     </div>
 </div>

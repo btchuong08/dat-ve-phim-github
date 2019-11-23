@@ -1,4 +1,4 @@
-import { Component, OnInit , Input, Output} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-phim',
@@ -6,7 +6,15 @@ import { Component, OnInit , Input, Output} from '@angular/core';
   styleUrls: ['./phim.component.scss']
 })
 export class PhimComponent implements OnInit {
-@Input() phim;
+  @Input() phim: any;
+  @Output() valueChange = new EventEmitter();
+
+  valueChanged() {
+
+    this.valueChange.emit(this.phim);
+
+  }
+
   constructor() { }
 
   ngOnInit() {
