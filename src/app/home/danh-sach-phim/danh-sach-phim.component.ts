@@ -17,7 +17,9 @@ export class DanhSachPhimComponent implements OnInit {
   private subDanhSachPhim = new Subscription();
   public safeTrailerURL: any = "";
   public DanhSachPhim: Array<any> = [];
+  public DanhSachPhimChunk: Array<any> = [];
 
+  slideConfig = { "slidesToShow": 1, "slidesToScroll": 1 };
   trailer(phim: any) {
     this.safeTrailerURL = phim.trailer;
 
@@ -25,11 +27,23 @@ export class DanhSachPhimComponent implements OnInit {
   constructor(private PhimService: PhimService,
     private sanitizer: DomSanitizer) { }
 
+  functionchunkArray(myArray, chunk_size) {
+    var results = [];
+
+    while (myArray.length) {
+      results.push(myArray.splice(0, chunk_size));
+    }
+
+    return results;
+  }
+
   ngOnInit() {
     this.subDanhSachPhim = this.PhimService.LayDanhSachPhim().subscribe((result) => {
 
       this.DanhSachPhim = result;
 
+      this.DanhSachPhimChunk = this.functionchunkArray(this.DanhSachPhim, 8)
+      console.log(this.DanhSachPhimChunk)
 
     }),
       (err: HttpErrorResponse) => {

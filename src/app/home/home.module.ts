@@ -8,6 +8,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 
 import { SafePipeModule } from 'safe-pipe';
+import { SlickModule } from 'ngx-slick';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SafePipeModule } from 'safe-pipe';
     CommonModule,
     HomeRoutingModule,
     DanhSachPhimModule,
-    ComponentsModule, SafePipeModule
+    ComponentsModule, SafePipeModule,
+    SlickModule.forRoot()
 
 
   ],

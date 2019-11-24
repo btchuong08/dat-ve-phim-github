@@ -1,5 +1,32 @@
+@import '../../../sass/variables';
 
 
+#phim-dang-chieu {
+    transform: translateX(-20px);
+    box-sizing: border-box;
+    margin: auto;
+    height: 30px;
+    line-height: 30px;
+        text-align: center;
+        color:$color-primary;
+        font-size: 24px;
+       margin-bottom: 20px;
+       margin-top: -20px;
+       a {
+        color:$color-primary;
+        text-decoration: none;
+      margin-left: 20px;
+       }
+
+       a:hover {
+      font-size: 25px;
+      transition: all .2s;
+      font-weight: bold;
+        //    margin-left: 30px;
+       }
+  
+  
+}
    
     .wrapper {
        

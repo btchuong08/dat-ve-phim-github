@@ -1,9 +1,15 @@
+
+@import '../../../sass/variables';
+// $primary-color: #3f51b5;
+ 
  .navbar_nav {
      margin: auto;
+     
  }
  
  .wrapper {
      height: 60px;
+        
      background-color: rgba(255, 255, 255, .95);
      box-shadow: 0 0 15px rgba(0, 0, 0, .3);
      z-index: 9;
@@ -18,7 +24,8 @@
      grid-template-columns: 1fr 2fr 1fr;
      grid-template-rows: 50px;
      a:hover {
-         color: red;
+         color: $color-primary;
+         font-weight: bold;
      }
      a {
          text-decoration: none;

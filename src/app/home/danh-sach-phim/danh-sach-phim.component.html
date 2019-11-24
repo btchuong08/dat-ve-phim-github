@@ -1,12 +1,41 @@
-<div class="">
-    <div class="wrapper">
+<!-- <div class="">
+    <div class="wrapper slick">
 
         <div *ngFor="let item of DanhSachPhim">
             <app-phim (valueChange)='trailer($event)' [phim]="item"></app-phim>
         </div>
+DanhSachPhimChunk
+
+    </div>
+</div> -->
+
+<div id="phim-dang-chieu">
+    <a>Đang Chiếu</a>
+    <a>Sắp Chiếu</a>
+</div>
+
+
+<div class=" container">
+    <div class=" ">
+
+        <ngx-slick class="carousel  " #slickModal="slick-modal" [config]="slideConfig">
+
+            <div ngxSlickItem class="slide wrapper" *ngFor="let item of DanhSachPhimChunk ;let  index = index">
+
+                <div *ngFor="let item of DanhSachPhimChunk[index]" class="">
+                    <app-phim (valueChange)='trailer($event)' [phim]="item"></app-phim>
+                </div>
+
+
+
+            </div>
+
+        </ngx-slick>
 
     </div>
 </div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="trailerPhimModal" tabindex="-1" role="dialog" aria-labelledby="trailerPhimModal"
