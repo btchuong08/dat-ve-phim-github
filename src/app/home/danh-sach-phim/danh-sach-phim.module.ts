@@ -7,13 +7,15 @@ import { DanhSachPhimComponent } from './danh-sach-phim.component';
 
 import { SafePipeModule } from 'safe-pipe';
 import { SlickModule } from 'ngx-slick';
+
 @NgModule({
   declarations: [DanhSachPhimComponent],
   imports: [
     CommonModule,
     DanhSachPhimRoutingModule,
     PhimModule, SafePipeModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+
   ],
   exports: [DanhSachPhimComponent]
 })

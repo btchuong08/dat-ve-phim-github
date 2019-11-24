@@ -1,3 +1,5 @@
+import { LichChieuModule } from './lich-chieu/lich-chieu.module';
+
 import { ComponentsModule } from './../components/components.module';
 
 import { DanhSachPhimModule } from './danh-sach-phim/danh-sach-phim.module';
@@ -18,7 +20,8 @@ import { SlickModule } from 'ngx-slick';
     HomeRoutingModule,
     DanhSachPhimModule,
     ComponentsModule, SafePipeModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    LichChieuModule
 
 
   ],

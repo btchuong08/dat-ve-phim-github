@@ -41,9 +41,13 @@ export class DanhSachPhimComponent implements OnInit {
     this.subDanhSachPhim = this.PhimService.LayDanhSachPhim().subscribe((result) => {
 
       this.DanhSachPhim = result;
+      this.PhimService.DanhSachPhim = this.DanhSachPhim
 
       this.DanhSachPhimChunk = this.functionchunkArray(this.DanhSachPhim, 8)
-      console.log(this.DanhSachPhimChunk)
+      this.DanhSachPhimChunk[0].active = "active"
+      for (var i = 1; i < this.DanhSachPhimChunk.length; i++) {
+        this.DanhSachPhimChunk[i].active = ""
+      }
 
     }),
       (err: HttpErrorResponse) => {
