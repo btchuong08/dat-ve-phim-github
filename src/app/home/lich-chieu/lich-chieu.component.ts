@@ -25,7 +25,8 @@ export class LichChieuComponent implements OnInit {
       this.PhimService.LayThongTinLichChieuHeThongRap(item.maHeThongRap).subscribe((result) => {
         this.ListCumRap.push(result)
         
-       
+        this.CumRap=this.ListCumRap[0][0].lstCumRap;
+        this.ListPhimOfRap=this.CumRap[0].danhSachPhim
 
       }),
         (err: HttpErrorResponse) => {
@@ -40,7 +41,7 @@ export class LichChieuComponent implements OnInit {
         };
     })
 
-
+   
     
   }
 
@@ -61,6 +62,8 @@ export class LichChieuComponent implements OnInit {
   ngOnInit() {
 
     this.LayThongTinLichChieuHeThongRap(this.heThongRap);
-    console.log(this.ListCumRap)
+  
+    // this.ListPhimOfRap=this.CumRap[0].danhSachPhim;
+    
   }
 }
