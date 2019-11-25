@@ -30,11 +30,12 @@ export class PhimService {
   }
   public heThongRap: Array<any> = [
     {
-      "maHeThongRap": "CGV",
-      "tenHeThongRap": "cgv",
-      "biDanh": "cgv",
-      "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/cgv.png"
+      "maHeThongRap": "CineStar",
+      "tenHeThongRap": "CineStar",
+      "biDanh": "cinestar",
+      "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/cinestar.png"
     },
+   
     {
       "maHeThongRap": "Galaxy",
       "tenHeThongRap": "Galaxy Cinema",
@@ -47,17 +48,18 @@ export class PhimService {
       "biDanh": "bhd-star-cineplex",
       "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/bhd-star-cineplex.png"
     },
-    {
-      "maHeThongRap": "CineStar",
-      "tenHeThongRap": "CineStar",
-      "biDanh": "cinestar",
-      "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/cinestar.png"
-    },
+    
     {
       "maHeThongRap": "LotteCinima",
       "tenHeThongRap": "Lotte Cinema",
       "biDanh": "lotte-cinema",
       "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/lotte-cinema.png"
+    },
+    {
+      "maHeThongRap": "CGV",
+      "tenHeThongRap": "cgv",
+      "biDanh": "cgv",
+      "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/cgv.png"
     }
   ];
 

@@ -1,15 +1,50 @@
-<p>lich-chieu works!</p>
-
-
-<div *ngFor="let item of ListCumRap">
-    <button (click)=getCumRap(item)>
-        {{item[0].tenHeThongRap}}
-    </button>
+<div class="back-ground">
 
 </div>
+<div class="wrapper container">
 
-<div *ngFor="let item1 of CumRap">
-    {{item1.tenCumRap}}
+    <div class="he-thong-rap">
+        <div *ngFor="let item of heThongRap, let index = index ">
+            <button (click)=getCumRap(ListCumRap[index])>
+     
+                 <img src={{item.logo}} alt="">
+      
+            </button>
 
 
+        </div>
+    </div>
+
+
+    <div class="cum-rap">
+        <div class="cum-rap_hover" *ngFor="let item of CumRap">
+
+            <button id="btn" (click)="getRap(item)">
+                {{item.tenCumRap}}
+                
+             </button>
+
+            <div>
+                <span>{{item.diaChi}}</span>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="list-phim">
+        <div *ngFor="let item of ListPhimOfRap" class="ten-phim list-phim_hover">
+
+            <div>
+                <span id="ten-phim_span">  {{item.tenPhim}}</span>
+            </div>
+
+            <ng-container *ngFor="let item of item.lstLichChieuTheoPhim">
+                <a *ngIf="item.ngayChieuGioChieu.slice(0, 10) === today" href="">
+                            {{item.ngayChieuGioChieu.slice(11,16)}}
+                    </a>
+            </ng-container>
+
+        </div>
+    </div>
 </div>

@@ -13,15 +13,19 @@ export class LichChieuComponent implements OnInit {
   public ListCumRap: Array<any> = [];
   public heThongRap = this.PhimService.heThongRap
   public CumRap: Array<any> = [];
-
+  public ListPhimOfRap: Array<any> = [];
   public DanhSachPhim: Array<any> = [];
+  public today : string = "2019-01-01"
   constructor(private PhimService: PhimService) { };
+  
   LayThongTinLichChieuHeThongRap = (heThongRap) => {
 
     heThongRap.map((item) => {
 
       this.PhimService.LayThongTinLichChieuHeThongRap(item.maHeThongRap).subscribe((result) => {
         this.ListCumRap.push(result)
+        
+       
 
       }),
         (err: HttpErrorResponse) => {
@@ -36,12 +40,22 @@ export class LichChieuComponent implements OnInit {
         };
     })
 
+
+    
   }
 
   getCumRap = (item) => {
     this.CumRap = item[0].lstCumRap;
-    console.log(this.CumRap)
+   
 
+  }
+  getRap=(item) =>{
+    var ListPhimOfRap: Array<any> = [];
+    item.danhSachPhim.map((item1) =>{
+      ListPhimOfRap.push(item1)
+    })
+    this.ListPhimOfRap=ListPhimOfRap;
+    
   }
 
   ngOnInit() {

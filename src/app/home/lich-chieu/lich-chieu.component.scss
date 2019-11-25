@@ -1,0 +1,82 @@
+@import '../../../sass/variables';
+.back-ground {
+    height: 50px;
+    background-color: brown;
+    display: inline-block;
+}
+
+.wrapper {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-content: space-between;
+    grid-column-gap: 15px;
+    // grid-row-gap: 5px;
+    // width: 75%;
+    text-align: center;
+    .he-thong-rap {
+        button {
+            background-color: transparent;
+            border: none;
+            img {
+                width: 50px;
+                height: 50px;
+                border: none;
+            }
+        }
+    }
+    .cum-rap {
+        text-align: start;
+        // display: inline-block;
+        button {
+            border: none;
+            background-color: transparent;
+            font-size: 16px;
+            margin: 0;
+            padding-left: 0;
+        }
+        span {
+            font-size: 13px;
+            color: gray;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    }
+    .list-phim {
+        margin-left: 60px;
+        text-align: start;
+        .ten-phim {
+            margin-bottom: 20px;
+            span {
+                font-size: 16px;
+                font-weight: bold;
+                color: $color-primary;
+            }
+            #ten-phim_span {
+                margin-top: 40px;
+            }
+            a {
+                text-decoration: none;
+                color: #417505;
+                margin-top: 20px;
+                font-size: 22px;
+                margin-right: 20px;
+                transition: all 0.5s;
+                display: inline-block;
+                height: 30px;
+                line-height: 30px;
+                ;
+            }
+            a:hover {
+                color: red;
+            }
+        }
+    }
+}
+
+.cum-rap_hover:hover {
+    button {
+        color: $color-primary;
+        font-weight: bold;
+    }
+}
