@@ -1,4 +1,6 @@
 @import '../../../sass/variables';
+
+
 .back-ground {
     height: 50px;
     background-color: brown;
@@ -6,14 +8,15 @@
 }
 
 .wrapper {
+  
     display: grid;
     margin: auto;
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 0.5fr 1.5fr 2fr;
     justify-content: space-between;
     grid-column-gap: 15px;
     // grid-row-gap: 5px;
-    // width: 75%;
-    text-align: center;
+    // // width: 75%;
+    // text-align: center;
     .he-thong-rap {
         button {
             background-color: transparent;
@@ -27,6 +30,16 @@
     }
     .cum-rap {
         text-align: start;
+        
+        .cum-rap_item {
+            display: flex;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            
+        }
         // display: inline-block;
         button {
             border: none;
@@ -34,6 +47,7 @@
             font-size: 16px;
             margin: 0;
             padding-left: 0;
+            // transition: all 1s;
         }
         span {
             font-size: 13px;
@@ -45,12 +59,42 @@
     .list-phim {
         margin-left: 60px;
         text-align: start;
+        .lich-chieu{
+            display: grid;
+           
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-column-gap: 15px;
+            justify-content: start;
+            img{
+                line-height: 40px;
+                width: 30px;
+                height: 30px;
+                border: none;
+                background-color: transparent;
+                 grid-row: 1/3;
+               margin-top: 20px;
+               
+            }
+        }
         .ten-phim {
             margin-bottom: 20px;
             span {
-                font-size: 16px;
+                
+                font-size: 18px;
                 font-weight: bold;
                 color: $color-primary;
+               
+            }
+            #item-p {
+                background-color: #00ac4d;
+                color: white;
+                width: 20px;
+                height: 20px;
+                line-height: 10px;
+                border-radius: 10%;
+                padding: 0 10px 0 10px;
+                box-sizing: border-box;
+             margin-right: 10px;
             }
             #ten-phim_span {
                 margin-top: 40px;
@@ -63,12 +107,15 @@
                 margin-right: 20px;
                 transition: all 0.5s;
                 display: inline-block;
-                height: 30px;
+                height: 40px;
                 line-height: 30px;
+                width: 50px;
                 ;
             }
             a:hover {
                 color: red;
+                // font-weight: bold;
+                font-size: 25px;
             }
         }
     }
@@ -78,5 +125,6 @@
     button {
         color: $color-primary;
         font-weight: bold;
+        font-size: 20px;
     }
 }

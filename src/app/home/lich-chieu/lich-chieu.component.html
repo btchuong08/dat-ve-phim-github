@@ -6,9 +6,9 @@
     <div class="he-thong-rap">
         <div *ngFor="let item of heThongRap, let index = index ">
             <button (click)=getCumRap(ListCumRap[index])>
-     
-                 <img src={{item.logo}} alt="">
-      
+
+                <img src={{item.logo}} alt="">
+
             </button>
 
 
@@ -17,16 +17,19 @@
 
 
     <div class="cum-rap">
-        <div class="cum-rap_hover" *ngFor="let item of CumRap">
+        <div class="" *ngFor="let item of CumRap" class="cum-rap_item">
+            <img src="../../../assets/img/icons/cinestar-quoc-thanh-15379636956745.jpg" alt="">
+            <div class="cum-rap_hover">
+                <button id="btn" (click)="getRap(item)">
+                    {{item.tenCumRap}}
 
-            <button id="btn" (click)="getRap(item)">
-                {{item.tenCumRap}}
-                
-             </button>
+                </button>
 
-            <div>
-                <span>{{item.diaChi}}</span>
+                <div>
+                    <span>{{item.diaChi}}</span>
+                </div>
             </div>
+
 
 
         </div>
@@ -36,14 +39,18 @@
         <div *ngFor="let item of ListPhimOfRap" class="ten-phim list-phim_hover">
 
             <div>
-                <span id="ten-phim_span">  {{item.tenPhim}}</span>
+                <span id="item-p">P</span>
+                <span id="ten-phim_span"> {{item.tenPhim}}</span>
+            </div>
+            <div class="lich-chieu">
+                <img src="../../../assets/img/icons/2_0.png" alt="">
+                <ng-container *ngFor="let item of item.lstLichChieuTheoPhim">
+                    <a *ngIf="item.ngayChieuGioChieu.slice(0, 10) === today" href="">
+                        {{item.ngayChieuGioChieu.slice(11,16)}}
+                    </a>
+                </ng-container>
             </div>
 
-            <ng-container *ngFor="let item of item.lstLichChieuTheoPhim">
-                <a *ngIf="item.ngayChieuGioChieu.slice(0, 10) === today" href="">
-                            {{item.ngayChieuGioChieu.slice(11,16)}}
-                    </a>
-            </ng-container>
 
         </div>
     </div>
