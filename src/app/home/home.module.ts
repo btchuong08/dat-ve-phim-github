@@ -1,3 +1,4 @@
+import { TinTucModule } from './tin-tuc/tin-tuc.module';
 import { LichChieuModule } from './lich-chieu/lich-chieu.module';
 
 import { ComponentsModule } from './../components/components.module';
@@ -21,7 +22,8 @@ import { SlickModule } from 'ngx-slick';
     DanhSachPhimModule,
     ComponentsModule, SafePipeModule,
     SlickModule.forRoot(),
-    LichChieuModule
+    LichChieuModule,
+    TinTucModule
 
 
   ],
