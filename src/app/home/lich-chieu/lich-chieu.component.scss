@@ -1,16 +1,16 @@
 @import '../../../sass/variables';
-
-
-.back-ground {
-    height: 50px;
-    background-color: brown;
-    display: inline-block;
+.border {
+    border: 1px solid black;
 }
 
 .wrapper {
-  
+    width: 1110px;
+    height: 350px;
+    overflow: scroll;
+    padding: 20px;
     display: grid;
     margin: auto;
+    margin-top: 20px;
     grid-template-columns: 0.5fr 1.5fr 2fr;
     justify-content: space-between;
     grid-column-gap: 15px;
@@ -18,7 +18,16 @@
     // // width: 75%;
     // text-align: center;
     .he-thong-rap {
+        padding-right: 20px;
+        border-right: 1px solid $color-grey;
+        .he-thong-rap_item {
+            border-bottom: 1px solid $color-grey;
+        }
         button {
+            //  :active {
+            //     opacity: 0.5;
+            // }
+            padding: 5px 0 5px 0;
             background-color: transparent;
             border: none;
             img {
@@ -29,16 +38,25 @@
         }
     }
     .cum-rap {
+        border-right: 1px solid $color-grey;
         text-align: start;
-        
         .cum-rap_item {
+            position: relative;
             display: flex;
+             ::before {
+                content: "";
+                width: 80%;
+                height: 1px;
+                background-color: $color-grey;
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+            }
         }
         img {
             width: 50px;
             height: 50px;
             margin-right: 10px;
-            
         }
         // display: inline-block;
         button {
@@ -59,31 +77,27 @@
     .list-phim {
         margin-left: 60px;
         text-align: start;
-        .lich-chieu{
+        .lich-chieu {
             display: grid;
-           
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-column-gap: 15px;
             justify-content: start;
-            img{
+            img {
                 line-height: 40px;
                 width: 30px;
                 height: 30px;
                 border: none;
                 background-color: transparent;
-                 grid-row: 1/3;
-               margin-top: 20px;
-               
+                grid-row: 1/3;
+                margin-top: 20px;
             }
         }
         .ten-phim {
             margin-bottom: 20px;
             span {
-                
                 font-size: 18px;
                 font-weight: bold;
                 color: $color-primary;
-               
             }
             #item-p {
                 background-color: #00ac4d;
@@ -94,7 +108,7 @@
                 border-radius: 10%;
                 padding: 0 10px 0 10px;
                 box-sizing: border-box;
-             margin-right: 10px;
+                margin-right: 10px;
             }
             #ten-phim_span {
                 margin-top: 40px;

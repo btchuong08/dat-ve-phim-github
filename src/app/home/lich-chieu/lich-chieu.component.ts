@@ -17,7 +17,7 @@ export class LichChieuComponent implements OnInit {
   public DanhSachPhim: Array<any> = [];
   public today : string = "2019-01-01"
   constructor(private PhimService: PhimService) { };
-  
+   active :boolean =false;
   LayThongTinLichChieuHeThongRap = (heThongRap) => {
 
     heThongRap.map((item) => {
@@ -47,6 +47,7 @@ export class LichChieuComponent implements OnInit {
 
   getCumRap = (item) => {
     this.CumRap = item[0].lstCumRap;
+    this.active=!this.active
    
 
   }
