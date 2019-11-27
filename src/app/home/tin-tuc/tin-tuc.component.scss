@@ -1,3 +1,69 @@
-.title {
-    display: flex;
+
+@import '../../../sass/variables';
+  
+
+.wrapper {
+    width: 70%;
+    margin: auto;
+    
+    text-align: center;
+
+    .title-wrapper {                     
+           margin: 30px 0 30px 0;
+          
+         
+            // padding-right: 20px
+         
+           span{
+               margin-right: 40px;
+               font-size: $font-header;
+           
+               color: $color-primary; 
+              transition: all .5s;
+            
+                
+        }
+      
+            span:hover {
+                font-weight: bold;
+              
+               }   
+        
+    }
+    
+
+
+    .content-1{
+        text-align: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px; 
+    }
+    .content-2 {
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            color: $color-primary; 
+        }
+        text-align: start;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px; 
+        .content-2_1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr ;
+            grid-row-gap: 15px;
+        }
+        .content-2_2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr ;
+            grid-row-gap: 15px;
+        }
+    }
+
+
 }

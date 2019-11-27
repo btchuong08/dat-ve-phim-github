@@ -16,7 +16,7 @@ export class HomeToolComponent implements OnInit {
   public DanhSachPhim: Array<any> = [];
   public phim: any = "";
   public ngayChieuGioChieu: any = [];
-  public ngayChieu: any = ["Vui lòng chọn ngày chiếu"];
+  public ngayChieu: any = ["Vui lòng chọn rạp"];
   public GioChieu: any = ["Vui lòng chọn ngày chiếu"];
 
   public cumRap: any = ["Vui lòng chọn Phim"];
