@@ -3,10 +3,13 @@
   
 
 .wrapper {
-   
+    
     margin: auto;
     width: 100%;
     text-align: center;
+    img {
+        border-radius: 5px;
+    }
 
     .title-wrapper {                     
            margin: 30px 0 30px 0;
@@ -41,14 +44,15 @@
             font-weight: bold;
         }
         a {
+           
             text-decoration: none;
             color: black;
-            span {
+            p {
+                margin-top: 10px;
+                margin-bottom: 10px;
                 font-size: 18px;
                 font-weight: bold;
-                height: 50px;
-                line-height: 50px;
-                display: inline-block;
+            
             
             }
         }
@@ -61,28 +65,50 @@
         grid-column-gap: 15px; 
     }
     .content-2 {
+        margin-top: 10px;
+        img {
+            width: 100%;
+            height: 150px;
+        }
         a {
             text-decoration: none;
             color: black;
+            font-size: 18px;
+            font-weight: bold;
+            p {
+                margin-top: 5px;
+                margin-bottom: 5px ;
+            }
         }
         a:hover {
             color: $color-primary; 
+            font-weight: bold;
         }
         text-align: start;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 160px ;
         grid-column-gap: 15px; 
-        .content-2_1 {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr ;
-            grid-row-gap: 15px;
-        }
+       
         .content-2_2 {
+            img {
+                width: 50px;
+                height: 50px;
+            }
             display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr ;
-            grid-row-gap: 15px;
+            // grid-template-columns: 1fr;
+            // grid-template-rows: 1fr 1fr 1fr 1fr ;
+            // grid-row-gap: 15px;
+
+            .content-2_2_item{
+                display: grid;
+                grid-template-columns: 50px 1fr;
+                grid-column-gap: 10px;
+                p {
+                    font-weight: normal;
+
+                }
+            }
         }
     }
 
