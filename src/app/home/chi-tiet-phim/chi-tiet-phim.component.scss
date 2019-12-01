@@ -1,0 +1,205 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+
+.bg{
+//   background-image: image("src\assets\img\icons\bg.jpg");
+background-image: url("../../../../src/assets/img/icons/BeFunky-photo.jpg");
+/* Add the blur effect */
+//   filter: blur(8px);
+background-position: center;
+background-repeat: repeat;
+background-size: cover;
+
+/* Full height */
+height: 100%;
+width: 100%;
+
+}
+.warpper {
+        
+
+    height: 1000px;
+    margin: 60px;
+    .gioi-thieu {      
+
+        .play-video-warpper {
+            position: relative;
+            .play-video {
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                transition: all 0.5s;
+                .btn_play-video {
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                    background-color: transparent;
+                    border: none;
+
+                }
+            }
+        }
+
+       
+        
+   transform: translateX(130px);
+
+        margin-top: 60px;
+        width: 70%;
+       padding-top: 60px;
+      display: grid;
+    grid-template-columns: 1fr 3fr ;
+    grid-column-gap: 15px;
+    color: white; 
+
+
+    
+         .intro{
+             transform: translateY(80px);
+         }
+    img{
+        padding: 0;
+        width: 220px;
+        height: 320px;
+    }
+
+    .ten-phim {
+        font-size:25px;
+         font-weight: bold;
+         color: $color-primary;
+    }
+    }
+
+    .title {
+        margin-top: 30px;
+        text-align: center;
+        a {
+            margin-left: 30px;
+            font-size: 22px;
+            color: white
+          
+
+            // :hover{
+            //     font-size: 24px;
+            //     color: $color-primary;
+            // }
+        }
+        }
+        
+    .lich-chieu {
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        display: grid;
+        margin-top: 60px;
+        width: 70%;
+        padding-bottom: 50px;
+        height: 400px;
+        overflow: auto;
+        border-radius: 5px;;
+       
+         grid-template-columns: 1.5fr 3fr ;
+   
+         grid-column-gap: 30px;
+       
+         background-color: white;
+
+         .logo { 
+             margin-top: 20px;
+             margin-left: 20px;
+            border-right: solid 1px $color-grey;
+            .logo-item {
+                line-height: 50px;
+               text-align: start;
+                margin-bottom: 10px;
+                @include underLine;
+                .logo-item-content {
+                    display: grid;
+                 text-align: start;
+                    grid-template-columns: 50px 1fr ;
+                    grid-column-gap: 10px;
+                justify-content: start;
+   
+                }
+
+            }
+             button {
+                 background-color: transparent;
+                 border: none;
+               
+                     img {
+
+               
+                    width: 50px;
+                    height: 50px;
+                    margin-right: 10px;
+                }
+                
+                span {
+                    font-size: 18px;
+                  
+                }
+             }
+           
+            }
+    
+
+    .ngay-chieu {
+
+        margin-top: 15px;
+        margin-right: 20px;
+        display: grid;
+         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+            height: 50px;
+         grid-column-gap: 20px;
+        
+      @include underLine;
+        button{
+          background-color: transparent;
+          border: none;
+          padding: 0;
+          text-align: start;
+          font-size: 18px;
+          font-weight: bold;
+        }
+    }
+
+    .lich-chieu_item {
+
+        .lich-chieu_item1{
+            .cum-rap{
+                margin: 20px 0 20px 0;
+                img {
+                    @include icon;
+                    widows: 50px;
+                    height: 50px;
+                }
+                span {
+                    font-size: 20px;
+                    color: $color-primary;
+                    font-weight: bold;
+                    margin-left: 20px;
+                }
+            }
+
+            .xuat-chieu {
+                display: grid;
+         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+   
+         grid-column-gap: 15px;
+        justify-content: center;
+        @include xuat-chieu;
+        img {
+            margin-top: 10px;
+            @include icon;
+        }
+            }
+        }
+       
+    } }
+}

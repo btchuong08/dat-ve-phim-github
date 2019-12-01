@@ -25,7 +25,7 @@ export class HomeToolComponent implements OnInit {
 
   getPhim = (id) => {
 
-  
+
     this.subChiTietPhim = this.PhimService.LayChiTietPhim(id).subscribe((result) => {
 
       this.phim = result;
@@ -42,11 +42,6 @@ export class HomeToolComponent implements OnInit {
 
         }
       }
-
-      console.log(this.phim)
-
-
-
 
 
     }),

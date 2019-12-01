@@ -1,0 +1,133 @@
+<div class="bg">
+
+
+
+    <div class="warpper">
+
+        <div class="gioi-thieu-warpper">
+            <div class="gioi-thieu">
+                <div class="play-video-warpper">
+                    <div>
+                        <img src={{phim.hinhAnh}} alt="">
+                    </div>
+
+                    <div class="play-video">
+                        <button class="btn_play-video" data-toggle="modal" data-target="#trailerPhimModal"
+                            (click)="showtrailer()">
+                            <img src="./assets/img/icons/play-video.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="intro">
+                    <!-- <p>Ngày công chiếu: {{phim.ngayKhoiChieu.slice(0,10)}}</p> -->
+                    <p class="ten-phim">{{phim.tenPhim}}</p>
+                    <p>Đánh giá: {{phim.danhGia}} IMDb - 2D/Digital/3D/IMAX/4DX</p>
+                    <!-- <a href="/phim/{{phim.maPhim}}#mua-ve">Mua vé</a> -->
+
+                    <button mat-raised-button color="primary">Mua vé</button>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="title">
+
+            <a href="">Lịch Chiếu</a>
+            <a href="">Thông Tin</a>
+            <a href="">Đánh giá</a>
+
+
+
+        </div>
+
+
+
+        <div class="lich-chieu" id="lich-chieu">
+
+
+
+            <div class="logo">
+                <div *ngFor="let item of cumRap; let index = index" class="logo-item">
+                    <button (click)="getListTenRap(item)">
+                        <div class="logo-item-content">
+                            <div>
+                                <img class="logo-img" src={{cumRapLogo[index]}} alt="">
+                            </div>
+
+                            <div>
+                                <span>{{item}}</span>
+                            </div>
+
+                        </div>
+
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+            <div class="lich-chieu_item">
+                <div class="ngay-chieu">
+
+                    <button *ngFor="let item of ngayChieu" (click)=changeNgay(item)>
+                        {{item}}
+                    </button>
+
+
+
+
+                </div>
+                <div>
+
+
+                    <div class="lich-chieu_item1" *ngFor="let item of lichChieu ; let index = index">
+                        <div class="cum-rap">
+                            <img src="assets\img\icons\cinestar-quoc-thanh-15379636956745.jpg" alt="">
+                            <span>{{tenCumRap[index]}}</span>
+
+
+                        </div>
+
+                        <div class="xuat-chieu">
+                            <img src="assets\img\icons\2_0.png" alt="">
+
+                            <a routerLink="/checkout/{{maPhim}}" *ngFor="let item of lichChieu[index]"
+                                (click)="muaVe(item,tenCumRap[index])">
+                                {{item.slice(11, 16)}}</a>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade " id="trailerPhimModal" tabindex="-1" role="dialog" aria-labelledby="trailerPhimModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+
+            <!-- <iframe width="640" height="390" [src]="safeTrailerURL | safe: 'resourceUrl'"></iframe> -->
+            <iframe width="636" height="386" [src]="safeTrailerURL | safe: 'resourceUrl'" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <!-- <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button> -->
+        </div>
+    </div>
+</div>

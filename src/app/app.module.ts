@@ -1,3 +1,5 @@
+import { HomeTemplatesModule } from './home-templates/home-templates.module';
+
 import { ComponentsModule } from './components/components.module';
 import { CommonModule } from '@angular/common';
 
@@ -13,6 +15,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SafePipeModule } from 'safe-pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickModule } from 'ngx-slick';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +33,9 @@ import { SlickModule } from 'ngx-slick';
     ComponentsModule,
     SlickCarouselModule,
     BrowserAnimationsModule,
-    SlickModule.forRoot()
+    SlickModule.forRoot(),
+    HomeTemplatesModule
+
 
 
   ],

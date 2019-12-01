@@ -1,6 +1,6 @@
 @import '../../../sass/variables';
 .wrapper {
-    height: 800px;
+    height: 900px;
     margin: auto;
     width: 100%;
     text-align: center;
@@ -21,6 +21,22 @@
         }
     }
     .content-1 {
+        .content-1_logo {
+            margin: 20px 0 20px 0;
+            a {
+              
+                margin-right: 20px;
+                line-height: 20px;
+                span {
+                    margin-left: 10px;
+                    color: gray;
+                }
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
         img {
             width: 100%;
             height: 300px;
@@ -45,6 +61,23 @@
         grid-column-gap: 15px;
     }
     .content-2 {
+        .content-2_logo {
+         
+            margin: 20px 0 20px 0;
+            a {
+                font-weight: normal;
+                margin-right: 20px;
+                line-height: 20px;
+                span {
+                    margin-left: 10px;
+                    color: gray;
+                }
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
         margin-top: 10px;
         img {
             width: 100%;
@@ -70,20 +103,28 @@
         grid-template-rows: 160px;
         grid-column-gap: 15px;
         .content-2_2 {
+           
             img {
                 width: 50px;
                 height: 50px;
             }
-            display: grid;
+            // display: grid;
             // grid-template-columns: 1fr;
             // grid-template-rows: 1fr 1fr 1fr 1fr ;
             // grid-row-gap: 15px;
             .content-2_2_item {
+                
                 display: grid;
                 grid-template-columns: 50px 1fr;
                 grid-column-gap: 10px;
+             
+
                 p {
                     font-weight: normal;
+                    color: gray;
+                }
+                p:hover {
+                    color: $color-primary;
                 }
             }
         }
