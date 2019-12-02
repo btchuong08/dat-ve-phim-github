@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators'
 })
 export class PhimService {
   public DanhSachPhim: Array<any> = [];
-
+  public phim: any = {};
+  public datVe: any = {};
   readonly api: any = {
     LayDanhSachKhoaHoc: "http://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01",
     getToken: "https://nvs-cpaas-oauth.kandy.io/auth/realms/att/protocol/openid-connect/token",
@@ -35,7 +36,7 @@ export class PhimService {
       "biDanh": "cinestar",
       "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/cinestar.png"
     },
-   
+
     {
       "maHeThongRap": "Galaxy",
       "tenHeThongRap": "Galaxy Cinema",
@@ -48,7 +49,7 @@ export class PhimService {
       "biDanh": "bhd-star-cineplex",
       "logo": "http://movie0706.cybersoft.edu.vn/hinhanh/bhd-star-cineplex.png"
     },
-    
+
     {
       "maHeThongRap": "LotteCinima",
       "tenHeThongRap": "Lotte Cinema",

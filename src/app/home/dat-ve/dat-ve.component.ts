@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DatVeComponent implements OnInit {
 
 
-  public maPhim;
+  public datVe;
   public phim;
   private subParam: Subscription;
   constructor(
@@ -21,15 +21,10 @@ export class DatVeComponent implements OnInit {
 
   ngOnInit() {
 
-    this.subParam = this.ActivatedRoute.params.subscribe((params) => {
-      this.maPhim = params.maPhim;
-    })
+    this.phim = this.PhimService.phim;
+    this.datVe = this.PhimService.datVe;
 
-    this.PhimService.LayChiTietPhim(this.maPhim).subscribe((phim: any) => {
-      this.phim = phim
-
-
-    })
-
+    console.log(this.phim)
+    console.log(this.datVe)
   }
 }

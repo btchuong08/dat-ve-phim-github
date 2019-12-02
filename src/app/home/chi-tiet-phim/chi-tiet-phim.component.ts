@@ -83,6 +83,8 @@ export class ChiTietPhimComponent implements OnInit {
     this.phim.lichChieu.map((item) => {
       if (item.ngayChieuGioChieu === ngayChieuGioChieu && item.thongTinRap.tenCumRap === tenCumRap) {
         this.maVe = item;
+        this.PhimService.phim = this.phim;
+        this.PhimService.datVe = this.maVe
 
       }
     })
@@ -102,6 +104,7 @@ export class ChiTietPhimComponent implements OnInit {
 
     this.PhimService.LayChiTietPhim(this.maPhim).subscribe((phim: any) => {
       this.phim = phim;
+      this.PhimService.phim = phim
 
       this.cumRap = this.deduplicate(this.phim.lichChieu.map((item) => {
         return item.thongTinRap.tenHeThongRap
@@ -125,6 +128,8 @@ export class ChiTietPhimComponent implements OnInit {
 
 
     })
+
+
 
   }
 

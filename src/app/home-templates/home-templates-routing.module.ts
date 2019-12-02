@@ -19,12 +19,13 @@ const routes: Routes = [
           path: "phim/:id", loadChildren: () => ChiTietPhimModule
 
         },
-        {
-          path: "checkout/:maPhim", loadChildren: () => DatVeModule
 
-        },
 
       ]
+
+  },
+  {
+    path: "checkout/:maPhim", loadChildren: () => DatVeModule
 
   }
 
