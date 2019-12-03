@@ -11,20 +11,28 @@ import { ActivatedRoute } from '@angular/router';
 export class DatVeComponent implements OnInit {
 
 
-  public datVe;
+  public maLichChieu;
   public phim;
   private subParam: Subscription;
+  DanhSachPhongVe: any;
+  vip = "Vip";
   constructor(
     private ActivatedRoute: ActivatedRoute,
     private PhimService: PhimService
+
   ) { }
 
   ngOnInit() {
+    this.subParam = this.ActivatedRoute.params.subscribe((params) => {
+      this.maLichChieu = params.maLichChieu;
 
-    this.phim = this.PhimService.phim;
-    this.datVe = this.PhimService.datVe;
+    })
 
-    console.log(this.phim)
-    console.log(this.datVe)
+
+    this.PhimService.LayDanhSachPhongVe(this.maLichChieu).subscribe((DanhSachPhongVe: any) => {
+
+      console.log(DanhSachPhongVe);
+      this.DanhSachPhongVe = DanhSachPhongVe;
+    })
   }
 }

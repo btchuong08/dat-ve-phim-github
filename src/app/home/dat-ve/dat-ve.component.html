@@ -1,14 +1,10 @@
 <div>
-
-
-
-
     <div>
 
         <div>
-            <span>01 CHỌN LOẠI VÉ</span>
+            <span>01 CHỌN GHẾ</span>
             <span>
-                02 CHỌN GHẾ & THANH TOÁN
+                02 THANH TOÁN
             </span>
             <span>
                 03 KẾT QUẢ ĐẶT VÉ
@@ -18,21 +14,43 @@
             <span>Login</span>
         </div>
 
-
     </div>
 
-
     <div>
-        <div>
-            <img src={{phim.hinhAnh}} alt="">
-        </div>
+
+
         <div>
             <div>
-                <p>{{datVe.thongTinRap.tenCumRap}}</p>
+                <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+            </div>
+            <div>
+                <p>
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                </p>
+                <div>
+                    <img src="assets\img\icons\screen.png" alt="">
+                </div>
+
+                <div class="danh-sach-ghe">
+
+                    <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
+                        <button [ngClass]="{vip: item.loaiGhe === vip}"> {{item.tenGhe}}</button>
+                    </ng-container>
+
+
+
+
+
+                </div>
             </div>
 
 
 
+        </div>
+
+        <div>
+            <img [src]="DanhSachPhongVe.thongTinPhim.hinhAnh" alt="">
         </div>
     </div>
 </div>

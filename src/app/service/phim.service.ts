@@ -16,7 +16,8 @@ export class PhimService {
     getToken: "https://nvs-cpaas-oauth.kandy.io/auth/realms/att/protocol/openid-connect/token",
     LayDanhSachPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
     LayChiTietPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
-    LayThongTinLichChieuHeThongRap: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap="
+    LayThongTinLichChieuHeThongRap: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=",
+    LayDanhSachPhongVe: "http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu="
   }
 
 
@@ -91,5 +92,10 @@ export class PhimService {
   LayThongTinLichChieuHeThongRap = (maHeThongRap) => {
     let observable = this.http.get(this.api.LayThongTinLichChieuHeThongRap + maHeThongRap + "&maNhom=GP01").pipe(map((res: Response) => res.json()));
     return observable;
+  }
+  LayDanhSachPhongVe = (maLichChieu) => {
+    let observable = this.http.get(this.api.LayDanhSachPhongVe + maLichChieu).pipe(map((res: Response) => res.json()));
+    return observable;
+
   }
 }

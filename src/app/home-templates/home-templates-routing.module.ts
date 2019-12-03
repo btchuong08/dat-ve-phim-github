@@ -25,7 +25,7 @@ const routes: Routes = [
 
   },
   {
-    path: "checkout/:maPhim", loadChildren: () => DatVeModule
+    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule
 
   }
 
