@@ -1,1 +1,62 @@
+<<<<<<< HEAD
 <p>dat-ve works!</p>
+
+<img src={{phim.hinhAnh}} alt="">
+=======
+<div>
+    <div>
+
+        <div>
+            <span>01 CHỌN GHẾ</span>
+            <span>
+                02 THANH TOÁN
+            </span>
+            <span>
+                03 KẾT QUẢ ĐẶT VÉ
+            </span>
+        </div>
+        <div>
+            <span>Login</span>
+        </div>
+
+    </div>
+
+    <div>
+
+
+        <div>
+            <div>
+                <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+            </div>
+            <div>
+                <p>
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                </p>
+                <div>
+                    <img src="assets\img\icons\screen.png" alt="">
+                </div>
+
+                <div class="danh-sach-ghe">
+
+                    <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
+                        <button [ngClass]="{vip: item.loaiGhe === vip}"> {{item.tenGhe}}</button>
+                    </ng-container>
+
+
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div>
+            <img [src]="DanhSachPhongVe.thongTinPhim.hinhAnh" alt="">
+        </div>
+    </div>
+</div>
+>>>>>>> 7c1d5b7626b93eab418712990519e6fae3e64216

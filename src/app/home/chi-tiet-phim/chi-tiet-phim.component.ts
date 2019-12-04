@@ -29,7 +29,7 @@ export class ChiTietPhimComponent implements OnInit {
   private subParam: Subscription;
   today = "";
   lichChieu: any = [];
-  maVe = "";
+  maLichChieu = "";
 
   deduplicate(arr) {
     let set = new Set(arr);
@@ -82,7 +82,8 @@ export class ChiTietPhimComponent implements OnInit {
   muaVe = (ngayChieuGioChieu, tenCumRap) => {
     this.phim.lichChieu.map((item) => {
       if (item.ngayChieuGioChieu === ngayChieuGioChieu && item.thongTinRap.tenCumRap === tenCumRap) {
-        this.maVe = item;
+        this.maLichChieu = item.maLichChieu;
+
 
       }
     })
@@ -102,6 +103,7 @@ export class ChiTietPhimComponent implements OnInit {
 
     this.PhimService.LayChiTietPhim(this.maPhim).subscribe((phim: any) => {
       this.phim = phim;
+      this.PhimService.phim = phim
 
       this.cumRap = this.deduplicate(this.phim.lichChieu.map((item) => {
         return item.thongTinRap.tenHeThongRap
@@ -125,6 +127,8 @@ export class ChiTietPhimComponent implements OnInit {
 
 
     })
+
+
 
   }
 
