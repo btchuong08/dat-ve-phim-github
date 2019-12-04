@@ -16,20 +16,20 @@ export class DatVeComponent implements OnInit {
   private subParam: Subscription;
   DanhSachPhongVe: any;
   vip = "Vip";
-    private anphabet:any;
-    private indexGhe :any;
-
-   
+  anphabet: any;
+  indexGhe: any;
 
 
-  getDayGhe =() =>{
+
+
+  getDayGhe = () => {
     let str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let str2 = '1234567891234567';
-    let a= this.DanhSachPhongVe.danhSachGhe.length/16;
-    this.anphabet=str.split('').slice(0,this.DanhSachPhongVe.danhSachGhe.length/16);
-    this.indexGhe= str2.split('')
+    let a = this.DanhSachPhongVe.danhSachGhe.length / 16;
+    this.anphabet = str.split('').slice(0, this.DanhSachPhongVe.danhSachGhe.length / 16);
+    this.indexGhe = str2.split('')
   }
- 
+
   constructor(
     private ActivatedRoute: ActivatedRoute,
     private PhimService: PhimService
@@ -46,10 +46,10 @@ export class DatVeComponent implements OnInit {
     this.PhimService.LayDanhSachPhongVe(this.maLichChieu).subscribe((DanhSachPhongVe: any) => {
 
       console.log(DanhSachPhongVe);
-     
+
       this.DanhSachPhongVe = DanhSachPhongVe;
       this.getDayGhe();
-      
+
     })
   }
 }

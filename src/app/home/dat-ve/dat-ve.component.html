@@ -6,11 +6,11 @@
             <div class="step">
                 <span>01 CHỌN GHẾ</span>
                 <span>
-                        02 THANH TOÁN
-                    </span>
+                    02 THANH TOÁN
+                </span>
                 <span>
-                        03 KẾT QUẢ ĐẶT VÉ
-                    </span>
+                    03 KẾT QUẢ ĐẶT VÉ
+                </span>
 
 
                 <span>Login</span>
@@ -27,7 +27,8 @@
                 <div class="dat-ve_item1_content2">
                     <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                     <p>
-                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                     </p>
                     <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
                 </div>
@@ -71,6 +72,62 @@
         </div>
     </div>
     <div class="wrapper2">
-        <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
+
+        <div class="tong-tien">
+            <p> 320000</p>
+        </div>
+        <div class="thong-tin-phim">
+            <p> <span>P</span>
+                {{DanhSachPhongVe.thongTinPhim.tenPhim}}
+            </p>
+
+            <p>
+                Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+            </p>
+            <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
+        </div>
+        <div class="ghe">
+            <div>
+                <p>Ghế</p>
+            </div>
+            <div></div>
+
+        </div>
+        <div class="email">
+            <input type="Email" placeholder="Email">
+        </div>
+
+        <div class="phone">
+            <input type="Phone" placeholder="Phone">
+        </div>
+
+        <div class="thanh-toan">
+            <p>Hình thức thanh toán</p>
+            <p>
+                <mat-checkbox>Thanh toán qua ZaloPay</mat-checkbox>
+            </p>
+            <p>
+                <mat-checkbox>Visa, Master, JCB</mat-checkbox>
+            </p>
+            <p>
+                <mat-checkbox>Thẻ ATM nội địa</mat-checkbox>
+            </p>
+            <p>
+                <mat-checkbox>Thanh toán tại cửa hàng tiện ích</mat-checkbox>
+            </p>
+
+
+        </div>
+        <div class="ghi-chu">
+            <p>
+                <span class="!">!</span>
+                Vé đã mua không thể hoàn tiền</p>
+            <p>Mã vé sẽ được gửi qua tin nhắn SMS và email </p>
+        </div>
+
+        <div class="dat-ve">
+            <button>Đặt vé</button>
+        </div>
     </div>
 </div>
