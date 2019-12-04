@@ -1,69 +1,76 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<p>dat-ve works!</p>
+<div class="wrapper">
 
-<img src={{phim.hinhAnh}} alt="">
-=======
-=======
->>>>>>> 7c1d5b7626b93eab418712990519e6fae3e64216
-<div>
-    <div>
+    <div class="wrapper1  ">
+        <div class="footer">
 
-        <div>
-            <span>01 CHỌN GHẾ</span>
-            <span>
-                02 THANH TOÁN
-            </span>
-            <span>
-                03 KẾT QUẢ ĐẶT VÉ
-            </span>
-        </div>
-        <div>
-            <span>Login</span>
-        </div>
-
-    </div>
-
-    <div>
+            <div class="step">
+                <span>01 CHỌN GHẾ</span>
+                <span>
+                        02 THANH TOÁN
+                    </span>
+                <span>
+                        03 KẾT QUẢ ĐẶT VÉ
+                    </span>
 
 
-        <div>
-            <div>
-                <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+                <span>Login</span>
+
+
             </div>
-            <div>
-                <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
-                </p>
+        </div>
+
+
+        <div class="dat-ve">
+
+            <div class="dat-ve_item1">
+
+                <div class="dat-ve_item1_content2">
+                    <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+                    <p>
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    </p>
+                    <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
+                </div>
+
+            </div>
+            <div class="dat-ve_item2">
+
                 <div>
                     <img src="assets\img\icons\screen.png" alt="">
                 </div>
-
-                <div class="danh-sach-ghe">
-
-                    <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                        <button [ngClass]="{vip: item.loaiGhe === vip}"> {{item.tenGhe}}</button>
-                    </ng-container>
+                <div class="dat-ve_item2_content">
 
 
 
+                    <div class="ten-day-ghe">
+                        <div *ngFor="let item of anphabet">
+                            <p>{{item}}</p>
+
+                        </div>
+                    </div>
+
+                    <div class="danh-sach-ghe">
+
+                        <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
+                            <button> </button>
+                        </ng-container>
+                        <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
+
+                    </div>
 
 
                 </div>
+
             </div>
 
 
 
-        </div>
 
-        <div>
-            <img [src]="DanhSachPhongVe.thongTinPhim.hinhAnh" alt="">
+
+
         </div>
     </div>
-<<<<<<< HEAD
+    <div class="wrapper2">
+        <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
+    </div>
 </div>
->>>>>>> 7c1d5b7626b93eab418712990519e6fae3e64216
-=======
-</div>
->>>>>>> 7c1d5b7626b93eab418712990519e6fae3e64216

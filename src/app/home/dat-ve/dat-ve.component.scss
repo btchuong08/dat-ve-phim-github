@@ -1,27 +1,75 @@
-.danh-sach-ghe {
-    margin: auto;
-    width: 60%;
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.wrapper {
     display: grid;
-    grid-template-columns: repeat(16,1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-
-
-    button{
-        padding: auto;
-        margin: auto;
-        height: 35px;
-        width: 35px;
-        background-color: #3e515d;
-        border-radius: 5px ;
-        border: none;
-        .vip {
-   
-            background-color: red;
-       
-       
+    grid-template-columns: 1fr 200px;
+    .wrapper1 {
+        position: relative;
+        .footer {
+            box-shadow: 0px 3px 8px 8px #e9ecef;
+            height: 100px;
+            line-height: 100px;
+            width: 100%;
+            .step {
+                span {
+                    font-size: 18px;
+                    margin-right: 80px;
+                }
+            }
+        }
+        .dat-ve {
+            width: 80%;
+            margin: auto;
+            .dat-ve_item1 {
+                .dat-ve_item1_content2 {
+                    p {
+                        font-size: 20px;
+                        margin-bottom: 5px;
+                        color: gray;
+                    }
+                     :nth-child(1) {
+                        color: $color-primary;
+                        font-weight: bold;
+                    }
+                     :nth-child(2) {
+                        background-color: white;
+                    }
+                }
+            }
+            .dat-ve_item2 {
+                .dat-ve_item2_content {
+                    text-align: center;
+                    width: 80%;
+                    display: grid;
+                    grid-template-columns: 3px 1fr 200px;
+                    grid-column-gap: 10px;
+                    .ten-day-ghe {
+                        display: grid;
+                        grid-template-rows: 35px;
+                        grid-column-gap: 10px;
+                        grid-row-gap: 10px;
+                    }
+                    .danh-sach-ghe {
+                        margin: auto;
+                        display: grid;
+                        grid-template-columns: repeat(16, 1fr);
+                        grid-column-gap: 10px;
+                        grid-row-gap: 10px;
+                        button {
+                            padding: auto;
+                            margin: auto;
+                            height: 35px;
+                            width: 35px;
+                            background-color: #1087ec;
+                            border-radius: 5px;
+                            border: none;
+                            .vip {
+                                background-color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
-    }
-   
 }
-
