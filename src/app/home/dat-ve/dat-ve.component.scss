@@ -1,16 +1,22 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
+* {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 350px;
     .wrapper1 {
         position: relative;
         .footer {
-            box-shadow: 0px 3px 8px 8px #e9ecef;
+            box-shadow: -20px 3px 8px 8px #e9ecef;
             height: 100px;
             line-height: 100px;
             width: 100%;
             .step {
+                display: grid;
+                grid-template-columns: 1fr 100px;
                 span {
                     font-size: 18px;
                     margin-right: 80px;
@@ -18,9 +24,10 @@
             }
         }
         .dat-ve {
-            width: 80%;
             margin: auto;
             .dat-ve_item1 {
+                margin-top: 20px;
+                margin-bottom: 20px;
                 .dat-ve_item1_content2 {
                     p {
                         font-size: 20px;
@@ -37,12 +44,12 @@
                 }
             }
             .dat-ve_item2 {
+                text-align: center;
                 .dat-ve_item2_content {
-                    text-align: center;
-                    width: 80%;
-                    display: grid;
-                    grid-template-columns: 3px 1fr 200px;
-                    grid-column-gap: 10px;
+                    // text-align: center;
+                    // display: grid;
+                    // grid-template-columns: 3px 1fr 200px;
+                    // grid-column-gap: 10px;
                     .ten-day-ghe {
                         display: grid;
                         grid-template-rows: 35px;
@@ -50,55 +57,68 @@
                         grid-row-gap: 10px;
                     }
                     .danh-sach-ghe {
+                        width: 50%;
                         margin: auto;
                         display: grid;
                         grid-template-columns: repeat(16, 1fr);
                         grid-column-gap: 10px;
                         grid-row-gap: 10px;
-                        button {
-                            padding: auto;
-                            margin: auto;
-                            height: 35px;
-                            width: 35px;
-                            background-color: #1087ec;
-                            border-radius: 5px;
-                            border: none;
-                            .vip {
-                                background-color: red;
-                            }
+                        .button-ghe {
+                            @include btn-ghe;
+                        }
+                        .vip {
+                            background-color: #ef8add;
+                        }
+                        .daDat {
+                            background-color: #6c757d;
+                        }
+                        .selected {
+                            background-color: #19a739;
                         }
                     }
                 }
             }
+        }
+        .button-ghe {
+            @include btn-ghe;
+        }
+        .vip {
+            background-color: #ef8add;
+        }
+        .daDat {
+            background-color: #6c757d;
+        }
+        .selected {
+            background-color: #19a739;
         }
     }
 }
 
 .wrapper2 {
     box-sizing: border-box;
-    p {margin: 0;}
+    box-shadow: -3px 3px 8px 8px #e9ecef;
+    p {
+        margin: 0;
+    }
     .tong-tien {
         text-align: center;
         height: 100px;
         border-bottom: $color-grey dashed 1px;
-      color: #4de013;
-      font-size: 28px;
-      line-height: 100px;
-   
+        color: #4de013;
+        font-size: 28px;
+        line-height: 100px;
     }
     .thong-tin-phim {
-       
-        height: 100px;
-        border-bottom: $color-grey dashed 1px; 
-
-        p:nth-child(1)  {
-          padding-top: 15px;
+        border-bottom: $color-grey dashed 1px;
+        padding-bottom: 10px;
+        p:nth-child(1) {
+            padding-top: 15px;
             color: $color-primary;
             font-weight: bold;
-            span{
+            span {
                 width: 20px;
                 height: 20px;
-                background-color:#4de013 ;
+                background-color: #4de013;
                 font-weight: bold;
                 border-radius: 5px;
                 padding: 0 5px 0 5px;
@@ -107,41 +127,40 @@
         }
     }
     .ghe {
-        height: 50px;
         border-bottom: $color-grey dashed 1px;
         line-height: 50px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: flex-start;
         color: red;
-
+        span {
+            color: $color-primary;
+            font-weight: bold;
+        }
     }
-    .email{ 
+    .email {
         height: 50px;
-
         border-bottom: $color-grey dashed 1px;
-
         input {
             border: none;
             height: 49px;
             width: 100%;
         }
-        }
-    .phone{ height: 50px;
+    }
+    .phone {
+        height: 50px;
         border-bottom: $color-grey dashed 1px;
         input {
-            
             border: none;
             height: 49px;
             width: 100%;
         }
     }
     .thanh-toan {
-       margin-top:10px;
-       margin-bottom:20px
-        
+        margin-top: 10px;
+        margin-bottom: 20px;
+        p:nth-child(1) {
+            margin-bottom: 20px;
+        }
     }
-    .ghi-chu {  
+    .ghi-chu {
         span {
             width: 20px;
             height: 20px;
@@ -150,14 +169,13 @@
             background-color: red;
             padding: 0px 10px 0px 10px;
             font-weight: bold;
-            
         }
         height: 70px;
         text-align: center;
         margin: auto;
     }
-    .dat-ve{
-        button{
+    .dat-ve {
+        button {
             background-color: $color-primary;
             width: 100%;
             border: none;
@@ -165,6 +183,5 @@
             color: white;
             font-size: 22px;
         }
-      
     }
 }

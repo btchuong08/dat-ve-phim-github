@@ -18,6 +18,9 @@ export class DatVeComponent implements OnInit {
   vip = "Vip";
   anphabet: any;
   indexGhe: any;
+  danhSachGheChon :any =[];
+  tongTien:any =0;
+ 
 
 
 
@@ -36,6 +39,34 @@ export class DatVeComponent implements OnInit {
 
   ) { }
 
+
+  selectedGhe =(ghe) =>{
+   
+    this.DanhSachPhongVe.danhSachGhe.map((item,index) =>{
+      if (item.maGhe === ghe.maGhe) {
+        this.DanhSachPhongVe.danhSachGhe[index].selected =!this.DanhSachPhongVe.danhSachGhe[index].selected
+
+        if (this.DanhSachPhongVe.danhSachGhe[index].selected === true) {
+          this.danhSachGheChon.push(item);
+          this.tongTien=this.tongTien+item.giaVe;
+        } else {
+           let  index1 = this.danhSachGheChon.findIndex((item) =>{
+              return item.maGhe === ghe.maGhe
+            });
+
+          
+          
+          if (index1 != -1) {
+            this.danhSachGheChon.splice(index1,1);
+          }
+          this.tongTien=this.tongTien-item.giaVe;
+        }
+      }
+      
+    })
+ 
+
+  }
   ngOnInit() {
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {
       this.maLichChieu = params.maLichChieu;
@@ -45,10 +76,17 @@ export class DatVeComponent implements OnInit {
 
     this.PhimService.LayDanhSachPhongVe(this.maLichChieu).subscribe((DanhSachPhongVe: any) => {
 
-      console.log(DanhSachPhongVe);
+     
 
       this.DanhSachPhongVe = DanhSachPhongVe;
+      this.DanhSachPhongVe.danhSachGhe.map((item,index) =>{
+        this.DanhSachPhongVe.danhSachGhe[index].selected= false;
+      })
       this.getDayGhe();
+      console.log(this.DanhSachPhongVe);
+
+
+      
 
     })
   }
