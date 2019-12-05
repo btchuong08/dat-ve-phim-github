@@ -5,15 +5,20 @@
 }
 
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr 350px;
+    position: relative;
+    // display: grid;
+    // grid-template-columns: 1fr 350px;
     .wrapper1 {
         position: relative;
+        
+        padding-right: 350px;
+
         .footer {
             box-shadow: -20px 3px 8px 8px #e9ecef;
             height: 100px;
             line-height: 100px;
             width: 100%;
+        //    background-color: rgba($color: $color-primary, $alpha: 0.1);
             .step {
                 display: grid;
                 grid-template-columns: 1fr 100px;
@@ -25,10 +30,26 @@
         }
         .dat-ve {
             margin: auto;
+           
             .dat-ve_item1 {
                 margin-top: 20px;
                 margin-bottom: 20px;
-                .dat-ve_item1_content2 {
+               
+               
+            }
+            .dat-ve_item2 {
+                // text-align: center;
+                // width: 80%;
+                    position: relative;
+
+                .screen{ 
+                    position: absolute;
+                   top: 0px;
+                  left: 50%;
+                   transform:translateX(-50%);
+                   .dat-ve_item2_content2 {
+                       margin-bottom: 20px;
+                       margin-top: 10px;
                     p {
                         font-size: 20px;
                         margin-bottom: 5px;
@@ -42,23 +63,27 @@
                         background-color: white;
                     }
                 }
-            }
-            .dat-ve_item2 {
-                text-align: center;
+
+                    
+                }
                 .dat-ve_item2_content {
+                    
                     // text-align: center;
                     // display: grid;
                     // grid-template-columns: 3px 1fr 200px;
                     // grid-column-gap: 10px;
-                    .ten-day-ghe {
-                        display: grid;
-                        grid-template-rows: 35px;
-                        grid-column-gap: 10px;
-                        grid-row-gap: 10px;
-                    }
+                    // .ten-day-ghe {
+                    //     display: grid;
+                    //     grid-template-rows: 35px;
+                    //     grid-column-gap: 10px;
+                    //     grid-row-gap: 10px;
+                    // }
+                   
                     .danh-sach-ghe {
-                        width: 50%;
+                        padding-top: 180px;
+                        width: 700px;
                         margin: auto;
+                        
                         display: grid;
                         grid-template-columns: repeat(16, 1fr);
                         grid-column-gap: 10px;
@@ -79,24 +104,36 @@
                 }
             }
         }
-        .button-ghe {
-            @include btn-ghe;
+
+        .btn-example {
+            display: grid;
+            // grid-template-columns: 1px 1px;
+
+            .button-ghe {
+                @include btn-ghe;
+            }
+            .vip {
+                background-color: #ef8add;
+            }
+            .daDat {
+                background-color: #6c757d;
+            }
+            .selected {
+                background-color: #19a739;
+            }
         }
-        .vip {
-            background-color: #ef8add;
-        }
-        .daDat {
-            background-color: #6c757d;
-        }
-        .selected {
-            background-color: #19a739;
-        }
+      
     }
 }
 
 .wrapper2 {
+    position: absolute;
+    width: 350px;
+    top: 0px;
+    right: 0px;
     box-sizing: border-box;
     box-shadow: -3px 3px 8px 8px #e9ecef;
+    background-color:white;
     p {
         margin: 0;
     }
@@ -173,6 +210,7 @@
         height: 70px;
         text-align: center;
         margin: auto;
+        margin-bottom: 20px;
     }
     .dat-ve {
         button {
