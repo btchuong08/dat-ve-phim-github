@@ -7,11 +7,11 @@
                 <div>
                     <span>01 CHỌN GHẾ</span>
                     <span>
-                            02 THANH TOÁN
-                        </span>
+                        02 THANH TOÁN
+                    </span>
                     <span>
-                            03 KẾT QUẢ ĐẶT VÉ
-                        </span>
+                        03 KẾT QUẢ ĐẶT VÉ
+                    </span>
 
                 </div>
 
@@ -27,20 +27,32 @@
 
         <div class="dat-ve">
 
-            <div class="dat-ve_item1 container">
+            <div class="dat-ve_item1  ">
 
-                <div class="dat-ve_item1_content2">
+                <!-- <div class="dat-ve_item1_content2">
                     <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                     <p>
-                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                     </p>
 
-                </div>
+                </div> -->
 
             </div>
             <div class="dat-ve_item2">
 
-                <div>
+
+
+                <div class="screen">
+
+                    <div class="dat-ve_item2_content2">
+                        <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+                        <p>
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                            {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                        </p>
+
+                    </div>
                     <img src="assets\img\icons\screen.png" alt="">
                 </div>
                 <div class="dat-ve_item2_content">
@@ -54,10 +66,12 @@
                         </div>
                     </div> -->
 
-                    <div class="danh-sach-ghe container">
+                    <div class="danh-sach-ghe ">
 
                         <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                            <button class="button-ghe" (click)="selectedGhe(item)" [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}"> </button>
+                            <button class="button-ghe" (click)="selectedGhe(item)"
+                                [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
+                            </button>
                         </ng-container>
                         <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
 
@@ -72,8 +86,11 @@
 
             </div>
 
+            <div class="btn-example">
 
+                <div>
 
+<<<<<<< HEAD
             <div>
 
 
@@ -95,6 +112,53 @@
                     <p>
                         Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                     </p>
+=======
+                    <div>
+
+                        <button class="button-ghe "></button>
+                        <span>Ghế thường</span>
+                    </div>
+
+                    <div>
+                        <button class="button-ghe "></button>
+                        <span>Ghế Vip</span>
+                    </div>
+                </div>
+                <div>
+
+
+
+                    <div>
+                        <button class="button-ghe "></button>
+                        <span>Ghế đã đặt</span>
+                    </div>
+
+
+                    <div>
+                        <button class="button-ghe "></button>
+                        <span>Đang chọn</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="wrapper2 ">
+
+            <div class="container">
+
+                <div class="tong-tien">
+                    <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
+                </div>
+                <div class="thong-tin-phim">
+                    <p> <span>P</span> {{DanhSachPhongVe.thongTinPhim.tenPhim}}
+                    </p>
+
+                    <p>
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    </p>
+>>>>>>> b6447720b113e178a4f94d4e042008a2b7a7756d
                     <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
                 </div>
                 <div class="ghe">
@@ -110,6 +174,27 @@
                 <div class="email">
                     <input type="Email" placeholder="Email">
                 </div>
+<<<<<<< HEAD
+
+                <div class="phone">
+                    <input type="Phone" placeholder="Phone">
+                </div>
+
+                <div class="thanh-toan">
+                    <p>Hình thức thanh toán</p>
+                    <p>
+                        <mat-checkbox>Thanh toán qua ZaloPay</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox>Visa, Master, JCB</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox>Thẻ ATM nội địa</mat-checkbox>
+                    </p>
+                    <p>
+                        <mat-checkbox>Thanh toán tại cửa hàng tiện ích</mat-checkbox>
+                    </p>
+=======
 
                 <div class="phone">
                     <input type="Phone" placeholder="Phone">
@@ -130,6 +215,14 @@
                         <mat-checkbox>Thanh toán tại cửa hàng tiện ích</mat-checkbox>
                     </p>
 
+>>>>>>> b6447720b113e178a4f94d4e042008a2b7a7756d
+
+                </div>
+                <div class="ghi-chu">
+                    <p>
+                        <span class="!">!</span> Vé đã mua không thể hoàn tiền</p>
+                    <p>Mã vé sẽ được gửi qua tin nhắn SMS và email </p>
+                </div>
 
                 </div>
                 <div class="ghi-chu">
@@ -143,4 +236,10 @@
                 <button>Đặt vé</button>
             </div>
         </div>
+<<<<<<< HEAD
     </div>
+=======
+    </div>
+
+</div>
+>>>>>>> b6447720b113e178a4f94d4e042008a2b7a7756d
