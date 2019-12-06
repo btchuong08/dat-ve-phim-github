@@ -10,15 +10,14 @@
     // grid-template-columns: 1fr 350px;
     .wrapper1 {
         position: relative;
-        
         padding-right: 350px;
-
         .footer {
+            background-color: rgba($color: #fdedfd, $alpha: 0.5);
             box-shadow: -20px 3px 8px 8px #e9ecef;
             height: 100px;
             line-height: 100px;
             width: 100%;
-        //    background-color: rgba($color: $color-primary, $alpha: 0.1);
+            //    background-color: rgba($color: $color-primary, $alpha: 0.1);
             .step {
                 display: grid;
                 grid-template-columns: 1fr 100px;
@@ -29,45 +28,39 @@
             }
         }
         .dat-ve {
+            position: relative;
             margin: auto;
-           
             .dat-ve_item1 {
                 margin-top: 20px;
                 margin-bottom: 20px;
-               
-               
             }
             .dat-ve_item2 {
                 // text-align: center;
                 // width: 80%;
-                    position: relative;
-
-                .screen{ 
+                position: relative;
+                .screen {
                     position: absolute;
-                   top: 0px;
-                  left: 50%;
-                   transform:translateX(-50%);
-                   .dat-ve_item2_content2 {
-                       margin-bottom: 20px;
-                       margin-top: 10px;
-                    p {
-                        font-size: 20px;
-                        margin-bottom: 5px;
-                        color: gray;
+                    top: 0px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    .dat-ve_item2_content2 {
+                        margin-bottom: 20px;
+                        margin-top: 10px;
+                        p {
+                            font-size: 20px;
+                            margin-bottom: 5px;
+                            color: gray;
+                        }
+                         :nth-child(1) {
+                            color: $color-primary;
+                            font-weight: bold;
+                        }
+                         :nth-child(2) {
+                            background-color: white;
+                        }
                     }
-                     :nth-child(1) {
-                        color: $color-primary;
-                        font-weight: bold;
-                    }
-                     :nth-child(2) {
-                        background-color: white;
-                    }
-                }
-
-                    
                 }
                 .dat-ve_item2_content {
-                    
                     // text-align: center;
                     // display: grid;
                     // grid-template-columns: 3px 1fr 200px;
@@ -78,12 +71,10 @@
                     //     grid-column-gap: 10px;
                     //     grid-row-gap: 10px;
                     // }
-                   
                     .danh-sach-ghe {
                         padding-top: 180px;
                         width: 700px;
                         margin: auto;
-                        
                         display: grid;
                         grid-template-columns: repeat(16, 1fr);
                         grid-column-gap: 10px;
@@ -104,11 +95,24 @@
                 }
             }
         }
-
         .btn-example {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 100%);
+            width: 280px;
             display: grid;
-            // grid-template-columns: 1px 1px;
-
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 10px;
+            grid-template-rows: 40px 40px;
+            .btn-example_item {
+                position: relative;
+                span {
+                    position: absolute;
+                    margin-left: 10px;
+                    transform: translateY(5px);
+                }
+            }
             .button-ghe {
                 @include btn-ghe;
             }
@@ -122,7 +126,6 @@
                 background-color: #19a739;
             }
         }
-      
     }
 }
 
@@ -133,7 +136,8 @@
     right: 0px;
     box-sizing: border-box;
     box-shadow: -3px 3px 8px 8px #e9ecef;
-    background-color:white;
+    // background-color: #fdedfd;
+    background-color: rgba($color: #fdedfd, $alpha: 0.5);
     p {
         margin: 0;
     }
@@ -176,6 +180,7 @@
         height: 50px;
         border-bottom: $color-grey dashed 1px;
         input {
+            // background-color: rgba($color: #fdedfd, $alpha: 0.1);
             border: none;
             height: 49px;
             width: 100%;
@@ -185,6 +190,7 @@
         height: 50px;
         border-bottom: $color-grey dashed 1px;
         input {
+            // background-color: rgba($color: #fdedfd, $alpha: 0.5);
             border: none;
             height: 49px;
             width: 100%;
@@ -195,6 +201,9 @@
         margin-bottom: 20px;
         p:nth-child(1) {
             margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
         }
     }
     .ghi-chu {
@@ -210,7 +219,7 @@
         height: 70px;
         text-align: center;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
     .dat-ve {
         button {
