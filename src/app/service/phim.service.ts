@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class PhimService {
     LayDanhSachPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
     LayChiTietPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
     LayThongTinLichChieuHeThongRap: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=",
-    LayDanhSachPhongVe: "http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu="
+    LayDanhSachPhongVe: "http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/LayDanhSachPhongVe?MaLichChieu=",
+    DangNhap: 'http://movie0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangNhap'
   }
 
 
@@ -70,6 +72,11 @@ export class PhimService {
 
   }
 
+
+
+
+
+
   LayDanhSachPhim(): Observable<any> {
     let observable = this.http.get(this.api.LayDanhSachPhim).pipe(map((res: Response) => res.json()));
     return observable;
@@ -97,5 +104,13 @@ export class PhimService {
     let observable = this.http.get(this.api.LayDanhSachPhongVe + maLichChieu).pipe(map((res: Response) => res.json()));
     return observable;
 
+  }
+
+
+  // let headers = new HttpHeaders().set('header-name', 'header-value');
+  DangNhap = (user) => {
+
+    let observable = this.http.post(this.api.DangNhap, user).pipe(map((res: Response) => res.json()));
+    return observable;
   }
 }

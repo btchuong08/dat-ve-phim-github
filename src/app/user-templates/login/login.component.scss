@@ -1,0 +1,57 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 50px;
+
+    img{
+        width: 100%;
+    }
+
+
+    .login {
+        
+            p:nth-child(1) {
+                margin-top: 50px;
+                font-size: 30px;
+                color: $color-primary;
+        
+             }
+
+             
+             button {
+                 margin-top: 10px;
+                 width: 180px;
+                 color: white;
+                 border-radius: 5px;
+                 border: none;
+                 background-color: $color-primary;
+
+             }
+
+
+             .alert-login {
+                 background-color: none;
+                 color: red;
+             }
+             .disabled {
+                 background-color: #ccc8c8;
+             }
+             .logined {
+                 color: green;
+                 
+                     margin-top: 20px;
+                
+             }
+             .login-failed {
+                color: red;
+                
+                    margin-top: 20px;
+                
+
+             }
+    }
+}

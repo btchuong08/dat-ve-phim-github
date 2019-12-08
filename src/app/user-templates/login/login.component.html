@@ -1,25 +1,70 @@
-<div>
+<div class="wrapper">
+    <div>
+        <img src="assets\img\icons\123phimposter.jpeg" alt="">
+    </div>
 
-</div>
+    <div class="login">
+        <p>Log in to 123Phim</p>
 
-<div>
-    <p>Log in to AT&T API Marketplace</p>
-
-    <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
-        <div>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="User name" name="user" ngModel>
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field class="example-full-width">
-                <input matInput placeholder="Password" name="password" ngModel>
-            </mat-form-field>
-        </div>
-        <div>
-            <button mat-button type="submit">Login</button>
-        </div>
+        <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="User name" id='user' name='user' #user='ngModel' ngModel required>
 
 
-    </form>
+
+
+                </mat-form-field>
+
+                <div *ngIf="user.errors && (user.dirty || user.touched)" class="alert-login">
+                    <div *ngIf="user?.errors.required">
+
+
+                        <span>Vui lòng nhập user</span>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <div>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Password" type='password' name="password" #password='ngModel' ngModel
+                        required>
+                </mat-form-field>
+                <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert-login">
+                    <div *ngIf="password?.errors.required">
+
+
+                        <span>Vui lòng nhập password</span>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div>
+                <button type="submit" class="submit" [disabled]='!loginForm.valid'
+                    [ngClass]="{disabled: !loginForm.valid}">Login</button>
+            </div>
+
+
+            <div class="login-failed " *ngIf="error !==''">
+
+                <span>{{this.error}}</span>
+            </div>
+
+            <div class="logined" *ngIf="isLogin">
+
+                <span>Đăng nhập thành công</span>
+            </div>
+
+
+
+
+        </form>
+    </div>
+
 </div>
