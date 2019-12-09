@@ -9,7 +9,17 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
+  isLogin: boolean = false;
+  username: any = '';
+
   ngOnInit() {
+    
+      if (sessionStorage.getItem("username" ) !== null) {
+      
+        this.isLogin=true;
+        this.username=sessionStorage.getItem("username")
+      }
+
   }
 
 }

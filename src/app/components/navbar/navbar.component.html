@@ -12,7 +12,19 @@
         <a href="">Ứng dụng</a>
     </div>
 
-    <div class="item item3">
-        <a [routerLink]="['/login']">Login</a>
+    <div class="item item3 dropdown">
+        <a *ngIf="!isLogin; else logined" [routerLink]="['/login']">Login</a>
     </div>
+
+
 </div>
+
+
+<ng-template #logined>
+
+    <a id="username" *ngIf="isLogin">{{username}}</a>
+
+    <button id="Logout">Logout</button>
+
+
+</ng-template>
