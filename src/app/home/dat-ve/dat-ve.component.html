@@ -15,8 +15,8 @@
 
                 </div>
 
-                <div>
-                    <span>Login</span>
+                <div class="login">
+                    <span>{{username}}</span>
                 </div>
 
 
@@ -48,7 +48,8 @@
                     <div class="dat-ve_item2_content2">
                         <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                         <p>
-                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                            {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                         </p>
 
                     </div>
@@ -68,7 +69,8 @@
                     <div class="danh-sach-ghe ">
 
                         <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                            <button class="button-ghe" (click)="selectedGhe(item)" [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
+                            <button class="button-ghe" (click)="selectedGhe(item)"
+                                [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
                             </button>
                         </ng-container>
                         <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
@@ -132,7 +134,8 @@
                 </p>
 
                 <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
                 </p>
 
 
@@ -154,7 +157,8 @@
                 </p>
 
                 <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
                 </p>
 
                 <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
@@ -203,7 +207,7 @@
         </div>
         <div>
             <div class="dat-ve">
-                <button>Đặt vé</button>
+                <button (click)="datVe()">Đặt vé</button>
             </div>
         </div>
 

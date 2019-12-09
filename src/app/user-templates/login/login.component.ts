@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 import { Router } from '@angular/router';
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   isLogin: boolean = false;
   constructor(
     private PhimService: PhimService,
-    private router :Router,
+    private router: Router,
     private _location: Location
 
   ) { }
@@ -34,14 +34,14 @@ export class LoginComponent implements OnInit {
       this.isLogin = true;
       this.error = '';
       console.log(result);
-      sessionStorage.setItem("username",result.taiKhoan)
-      
-      setTimeout(() =>{
+      sessionStorage.setItem("username", result.taiKhoan)
+
+      setTimeout(() => {
         this._location.back();
-      },3000);
-     
-     
-     
+      }, 2000);
+
+
+
 
     }
       , err => {

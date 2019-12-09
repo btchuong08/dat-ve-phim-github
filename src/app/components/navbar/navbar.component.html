@@ -7,9 +7,9 @@
 
     <div class="navbar_nav  item2 ">
         <a href=#phim-dang-chieu>Lịch Chiếu</a>
-        <a href="">Cụm rạp</a>
-        <a href="">Tin tức</a>
-        <a href="">Ứng dụng</a>
+        <a href=#cum-rap>Cụm rạp</a>
+        <a href=#tin-tuc>Tin tức</a>
+        <a href=#tin-tuc>Ứng dụng</a>
     </div>
 
     <div class="item item3 dropdown">
@@ -24,7 +24,7 @@
 
     <a id="username" *ngIf="isLogin">{{username}}</a>
 
-    <button id="Logout">Logout</button>
+    <button id="Logout" (click)="logout()">Logout</button>
 
 
 </ng-template>

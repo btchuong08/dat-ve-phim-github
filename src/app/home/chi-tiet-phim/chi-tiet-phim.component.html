@@ -95,8 +95,7 @@
                         <div class="xuat-chieu">
                             <img src="assets\img\icons\2_0.png" alt="">
 
-                            <a routerLink="/checkout/{{maLichChieu}}" *ngFor="let item of lichChieu[index]"
-                                (click)="muaVe(item,tenCumRap[index])">
+                            <a *ngFor="let item of lichChieu[index]" (click)="muaVe(item,tenCumRap[index])">
                                 {{item.slice(11, 16)}}</a>
 
 

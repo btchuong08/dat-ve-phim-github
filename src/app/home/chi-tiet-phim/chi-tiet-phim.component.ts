@@ -4,7 +4,8 @@ import { PhimService } from './../../service/phim.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chi-tiet-phim',
@@ -30,7 +31,7 @@ export class ChiTietPhimComponent implements OnInit {
   today = "";
   lichChieu: any = [];
   maLichChieu = "";
-
+  isLogin: boolean = false;
   deduplicate(arr) {
     let set = new Set(arr);
     return Array.from(set);
@@ -45,7 +46,9 @@ export class ChiTietPhimComponent implements OnInit {
   }
   constructor(
     private ActivatedRoute: ActivatedRoute,
-    private PhimService: PhimService
+    private PhimService: PhimService,
+    private _location: Location,
+    private router: Router
   ) { }
 
   timPhimTheoNgay = (tenCumRap, ngayChieu) => {
@@ -80,13 +83,28 @@ export class ChiTietPhimComponent implements OnInit {
 
   }
   muaVe = (ngayChieuGioChieu, tenCumRap) => {
-    this.phim.lichChieu.map((item) => {
-      if (item.ngayChieuGioChieu === ngayChieuGioChieu && item.thongTinRap.tenCumRap === tenCumRap) {
-        this.maLichChieu = item.maLichChieu;
 
+    if (sessionStorage.getItem("username") !== null) {
 
-      }
-    })
+      this.isLogin = true;
+
+    } else {
+      this.isLogin = false;
+    }
+
+    if (this.isLogin === false) {
+      alert("Vui lòng đăng nhập trước khi mua vé!!!");
+      this.router.navigate(['/', 'login']);
+    } else {
+      this.phim.lichChieu.map((item) => {
+        if (item.ngayChieuGioChieu === ngayChieuGioChieu && item.thongTinRap.tenCumRap === tenCumRap) {
+          this.maLichChieu = item.maLichChieu;
+          this.router.navigate(['/', 'checkout', this.maLichChieu]);
+
+        }
+      })
+    }
+
 
   }
   setDefault = (tenHeThongRap, ngayChieu) => {
@@ -96,6 +114,8 @@ export class ChiTietPhimComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
 
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {
       this.maPhim = params.id;

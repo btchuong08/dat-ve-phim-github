@@ -12,13 +12,19 @@ export class NavbarComponent implements OnInit {
   isLogin: boolean = false;
   username: any = '';
 
+
+  logout = () => {
+    alert("Bạn muốn đăng xuất? ")
+    sessionStorage.removeItem("username");
+    this.isLogin = false;
+  }
   ngOnInit() {
-    
-      if (sessionStorage.getItem("username" ) !== null) {
-      
-        this.isLogin=true;
-        this.username=sessionStorage.getItem("username")
-      }
+
+    if (sessionStorage.getItem("username") !== null) {
+
+      this.isLogin = true;
+      this.username = sessionStorage.getItem("username")
+    }
 
   }
 
