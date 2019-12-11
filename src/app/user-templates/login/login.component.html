@@ -31,8 +31,7 @@
 
             <div>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password" type='password' name="password" #password='ngModel' ngModel
-                        required>
+                    <input matInput placeholder="Password" type='password' name="password" #password='ngModel' ngModel required>
                 </mat-form-field>
                 <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert-login">
                     <div *ngIf="password?.errors.required">
@@ -46,8 +45,7 @@
 
             </div>
             <div>
-                <button type="submit" class="submit" [disabled]='!loginForm.valid'
-                    [ngClass]="{disabled: !loginForm.valid}">Login</button>
+                <button type="submit" class="submit" [disabled]='!loginForm.valid' [ngClass]="{disabled: !loginForm.valid}">Login</button>
             </div>
 
 

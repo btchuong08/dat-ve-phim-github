@@ -5,6 +5,9 @@
 
             <div class="step container">
                 <div>
+                    <a [routerLink]="['']">
+                        <img src="assets\img\icons\web-logo.png" alt="">
+                    </a>
                     <span>01 CHỌN GHẾ</span>
                     <span>
                         02 THANH TOÁN
@@ -48,8 +51,7 @@
                     <div class="dat-ve_item2_content2">
                         <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                         <p>
-                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
-                            {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                         </p>
 
                     </div>
@@ -69,8 +71,7 @@
                     <div class="danh-sach-ghe ">
 
                         <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                            <button class="button-ghe" (click)="selectedGhe(item)"
-                                [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
+                            <button class="button-ghe" (click)="selectedGhe(item)" [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
                             </button>
                         </ng-container>
                         <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
@@ -134,8 +135,7 @@
                 </p>
 
                 <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                 </p>
 
 
@@ -157,8 +157,7 @@
                 </p>
 
                 <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                    {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                 </p>
 
                 <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>

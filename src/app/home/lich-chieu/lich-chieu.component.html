@@ -42,7 +42,7 @@
             <div class="lich-chieu">
                 <img src="../../../assets/img/icons/2_0.png" alt="">
                 <ng-container *ngFor="let item of item.lstLichChieuTheoPhim">
-                    <a *ngIf="item.ngayChieuGioChieu.slice(0, 10) === today" href="">
+                    <a *ngIf="item.ngayChieuGioChieu.slice(0, 10) === today" (click)="datVe(item)">
                         {{item.ngayChieuGioChieu.slice(11,16)}}
                     </a>
                 </ng-container>
