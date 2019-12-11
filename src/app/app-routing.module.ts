@@ -10,9 +10,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "", loadChildren: () => HomeTemplatesModule },
+  { path: "", loadChildren: () => HomeTemplatesModule, pathMatch: 'full' },
   { path: "home", loadChildren: () => HomeTemplatesModule },
-  { path: "login", loadChildren: () => UserTemplatesModule }
+  { path: "login", loadChildren: () => UserTemplatesModule },
+ 
 ];
 
 @NgModule({
