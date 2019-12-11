@@ -2,6 +2,8 @@ import { PhimService } from './../../service/phim.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-lich-chieu',
@@ -16,8 +18,11 @@ export class LichChieuComponent implements OnInit {
   public ListPhimOfRap: Array<any> = [];
   public DanhSachPhim: Array<any> = [];
   public today : string = "2019-01-01"
-  constructor(private PhimService: PhimService) { };
+  constructor(private PhimService: PhimService,
+    private router: Router) { };
    active :boolean =false;
+
+
   LayThongTinLichChieuHeThongRap = (heThongRap) => {
 
     heThongRap.map((item) => {
@@ -58,6 +63,11 @@ export class LichChieuComponent implements OnInit {
     })
     this.ListPhimOfRap=ListPhimOfRap;
     
+  }
+  datVe=(phim)=> {
+
+    this.router.navigate(['/', 'checkout', phim.maLichChieu]);
+  
   }
 
   ngOnInit() {

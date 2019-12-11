@@ -1,14 +1,17 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  selector: 'app-admin-navbar',
+  templateUrl: './admin-navbar.component.html',
+  styleUrls: ['./admin-navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
+export class AdminNavbarComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(
+    private Router :Router
+  ) { }
   isLogin: boolean = false;
   username: any = '';
   maLoaiNguoiDung: any = ''
@@ -18,6 +21,7 @@ export class NavbarComponent implements OnInit {
     // sessionStorage.removeItem("username");
     sessionStorage.clear();
     this.isLogin = false;
+    this.Router.navigate(['/']);
   }
   ngOnInit() {
 

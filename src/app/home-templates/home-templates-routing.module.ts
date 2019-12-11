@@ -5,6 +5,9 @@ import { HomeComponent } from './../home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeTemplatesComponent } from './home-templates.component';
+import { 
+  AuthGuardService as AuthGuard 
+} from '../auth/auth-guard.service';
 
 
 
@@ -25,7 +28,7 @@ const routes: Routes = [
 
   },
   {
-    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule
+    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule,  canActivate: [AuthGuard]
 
   }
 

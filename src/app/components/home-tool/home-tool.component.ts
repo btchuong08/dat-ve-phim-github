@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSliderModule } from '@angular/material/slider';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home-tool',
   templateUrl: './home-tool.component.html',
@@ -15,17 +15,23 @@ export class HomeToolComponent implements OnInit {
   private subChiTietPhim = new Subscription();
   public DanhSachPhim: Array<any> = [];
   public phim: any = "";
+  public maPhim: any = "";
+
   public ngayChieuGioChieu: any = [];
   public ngayChieu: any = ["Vui lòng chọn rạp"];
   public GioChieu: any = ["Vui lòng chọn ngày chiếu"];
 
   public cumRap: any = ["Vui lòng chọn Phim"];
   public xuatChieu: any = ["Vui lòng chọn ngày chiếu"];
-  constructor(private PhimService: PhimService) { }
+
+  public enable: boolean =false;
+  constructor(private PhimService: PhimService,
+
+    private Router: Router) { }
 
   getPhim = (id) => {
 
-
+      this.maPhim=id;
     this.subChiTietPhim = this.PhimService.LayChiTietPhim(id).subscribe((result) => {
 
       this.phim = result;
@@ -90,10 +96,16 @@ export class HomeToolComponent implements OnInit {
         gioChieu.push(item.slice(11))
       }
     })
-    this.GioChieu = gioChieu
+    this.GioChieu = gioChieu;
+  
+  }
+
+  enableButton =() =>{
+    this.enable =true;
   }
   datVe = (data) => {
-    alert("Chuyển tới trang chọn ghế")
+    
+    this.Router.navigate(['phim', this.maPhim]);
   }
   ngOnInit() {
     this.subDanhSachPhim = this.PhimService.LayDanhSachPhim().subscribe((result) => {

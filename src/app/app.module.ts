@@ -1,3 +1,4 @@
+import { AuthService } from './auth/auth.service';
 import { HomeTemplatesModule } from './home-templates/home-templates.module';
 
 import { ComponentsModule } from './components/components.module';
@@ -15,6 +16,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SafePipeModule } from 'safe-pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickModule } from 'ngx-slick';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 
 @NgModule({
@@ -42,7 +44,7 @@ import { SlickModule } from 'ngx-slick';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [PhimService],
+  providers: [PhimService, AuthGuardService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

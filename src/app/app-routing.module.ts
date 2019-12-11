@@ -1,7 +1,10 @@
+import { AdminTemplatesModule } from './admin-templates/admin-templates.module';
 import { UserTemplatesModule } from './user-templates/user-templates.module';
 import { HomeTemplatesModule } from './home-templates/home-templates.module';
 import { HomeModule } from './home/home.module';
-
+import { 
+  AuthGuardService as AuthGuard 
+} from './auth/auth-guard.service';
 
 
 import { NgModule } from '@angular/core';
@@ -13,7 +16,12 @@ const routes: Routes = [
   { path: "", loadChildren: () => HomeTemplatesModule, pathMatch: 'full' },
   { path: "home", loadChildren: () => HomeTemplatesModule },
   { path: "login", loadChildren: () => UserTemplatesModule },
+<<<<<<< HEAD
  
+=======
+  { path: "admin", loadChildren: () => AdminTemplatesModule ,  canActivate: [AuthGuard]},
+  { path: '**', redirectTo: '' }
+>>>>>>> df1c3ee9272a408dd1c2f43531916d054790b806
 ];
 
 @NgModule({
