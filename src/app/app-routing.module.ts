@@ -13,15 +13,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "", loadChildren: () => HomeTemplatesModule, pathMatch: 'full' },
+  { path: "", loadChildren: () => HomeTemplatesModule },
   { path: "home", loadChildren: () => HomeTemplatesModule },
   { path: "login", loadChildren: () => UserTemplatesModule },
-<<<<<<< HEAD
- 
-=======
   { path: "admin", loadChildren: () => AdminTemplatesModule ,  canActivate: [AuthGuard]},
   { path: '**', redirectTo: '' }
->>>>>>> df1c3ee9272a408dd1c2f43531916d054790b806
 ];
 
 @NgModule({
