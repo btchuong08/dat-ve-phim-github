@@ -1,3 +1,141 @@
-p {
-    font-size: 100px;
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+
+.users {
+    margin-left: 250px;
+    .title {
+        p {
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 30px;
+            padding-bottom: 10px;
+         
+        }
+        @include underLine ()
+    }
+
+.add-user-warpper {
+    background-color: #eef2f7;
+      .add-user {
+       
+        margin-top: 30px;
+        margin-left: 30px;
+        p{ padding-top: 10px;
+    font-size: 24px;
+    color: grey;
+}
+
+        .btn{
+            padding: 0;
+            button{
+               
+                border-radius: 20px;
+                border: none;
+               background-color:$color-primary;
+                width: 150px;
+               color: white;
+               height: 40px;
+               padding: 0;
+            }
+         
+        }
+
+
+        .list-users {
+            margin-top: 20px;
+            background-color: white;
+
+            .search {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                p {
+                    margin-left: 50px;
+                    font-size: 20px;
+                }
+                .search-btn{
+                    margin: auto;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column-gap: 20px;
+                    input {
+                        border-radius: 10px;
+                        width: 200px;
+                       
+                    }
+                    button {
+                        border-radius: 10px;
+                        width: 100px;
+                        border:none;
+                        background-color: $color-primary;
+                        color: white;
+                       
+                    }
+                 
+                }
+            }
+
+
+            .table {
+                th {
+                  color: black;
+                    font-weight: normal;
+                }
+                td {
+                    color:gray ;
+                }
+                a{      opacity: 0.8;
+                    text-decoration: none;
+                }
+            }
+           
+                tr:hover {
+                   background-color:  #eef2f7;
+                }
+            
+        }
+    }
+}
+}
+
+
+.pagination-controls {
+    text-align: center;
+}
+
+
+.modal {
+    border:none;
+    .modal-header {
+        background-color: $color-primary;
+        color: white;
+    }
+
+    .modal-body {
+        .signup-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .footer {
+
+        button {
+            background-color: $color-primary;
+             color: white;
+          
+             border: none;
+             border-radius: 10px;
+             text-align: center;
+             margin-left: 20px;
+        }
+        // .save{
+        //     background-color: $color-primary;
+        // color: white;
+        // }
+        // .close {
+        //     background-color: $color-primary;
+        //     color: white;
+        // }
+    }
 }

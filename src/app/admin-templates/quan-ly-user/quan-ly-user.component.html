@@ -1,1 +1,177 @@
-<p>quan-ly-user works!</p>
+<div class="users">
+
+    <div class="title">
+        <p>Danh Sách User</p>
+    </div>
+
+    <div class="add-user-warpper">
+        <div class="add-user">
+            <p>Bạn có thể thêm, chỉnh sửa, xóa thông tin của người dùng!</p>
+
+            <div class="btn">
+                <button data-toggle="modal" data-target="#exampleModal">Add User</button>
+            </div>
+
+
+
+
+            <div class="list-users">
+
+
+                <div class="search">
+                    <div>
+                        <p> Danh sách người dùng</p>
+
+                    </div>
+                    <div class="search-btn">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+                            autocomplete="off" placeholder="Search">
+
+                        <button *ngIf="listDeteleUser.length !== 0"> Detele</button>
+                    </div>
+
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name="" id="" autocomplete="off">
+                            </th>
+                            <th>Tài Khoản</th>
+                            <th>Họ Tên</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr
+                            *ngFor="let item of listUsers | filter:searchText | paginate: { itemsPerPage: 15, currentPage: p } ">
+                            <td scope="row">
+                                <input type="checkbox" name="" id="" autocomplete="off" (click)="clicked(item)">
+                            </td>
+                            <td>
+                                <a href=""> {{item.taiKhoan}}</a>
+                            </td>
+                            <td> {{item.hoTen}}</td>
+                            <td> {{item.email}}</td>
+                            <td> {{item.soDt}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+                <div *ngFor="let item of listUsers  | paginate: { itemsPerPage: 30, currentPage: p }">
+
+                </div>
+
+                <pagination-controls class="pagination-controls" (pageChange)="p = $event"></pagination-controls>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm User</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+
+
+                <form form class="container signup-form  text-center" #signupForm="ngForm"
+                    (ngSubmit)="signup(signupForm.value)">
+
+                    <div>
+
+
+
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
+                                    ngModel required maxlength=25 min="3">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
+                                    ngModel required>
+                            </mat-form-field>
+                        </div>
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <div>
+
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel'
+                                    ngModel required>
+                            </mat-form-field>
+                        </div>
+
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Mã loại người dùng</mat-label>
+                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel'
+                                    ngModel>
+                                    <option value="KhachHang">User</option>
+                                    <option value="QuanTri">Admin</option>
+
+                                </select>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="footer">
+                            <button type="submit" class="btn btn-primary save" [disabled]='!signupForm.valid'>Add
+                                User</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

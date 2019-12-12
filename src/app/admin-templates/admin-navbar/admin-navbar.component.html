@@ -6,14 +6,18 @@
 
 
     <div class="navbar_nav  item2 ">
-        <a [routerLink]="['/admin/list-user']">User</a>
-        <a [routerLink]="['/admin/list-phim']" routerLinkActive="router-link-active">Phim</a>
-
+        <a href=#phim-dang-chieu>Lịch Chiếu</a>
+        <a href=#cum-rap>Cụm rạp</a>
+        <a href=#tin-tuc>Tin tức</a>
+        <a href=#tin-tuc>Ứng dụng</a>
     </div>
 
-    <div class="item item3 dropdown">
+    <div class="item item3 ">
         <a *ngIf="!isLogin; else logined" [routerLink]="['/login']">Login</a>
     </div>
+
+
+
 
 
 </div>
@@ -21,9 +25,24 @@
 
 <ng-template #logined>
 
-    <a id="username">{{username}}</a>
-    <a [routerLink]="['/admin']" routerLinkActive="router-link-active" *ngIf="maLoaiNguoiDung === 'KhachHang'">Admin Page</a>
-    <button id="Logout" (click)="logout()">Logout</button>
+    <!-- <a id="username dropbtn ">{{username}}</a>
+    <a [routerLink]="['/admin']" routerLinkActive="router-link-active" *ngIf="maLoaiNguoiDung === 'KhachHang'">Admin
+        Page</a>
+    <button id="Logout" (click)="logout()">Logout</button> -->
+
+
+    <div class="dropdown">
+        <a id="username dropbtn ">{{username}}</a>
+        <div class="dropdown-content">
+            <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active"
+                *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
+                Page</a>
+            <button id="Logout" (click)="logout()">Logout</button>
+
+
+        </div>
+    </div>
+
 
 
 </ng-template>

@@ -1,10 +1,10 @@
 import { PhimService } from './../../service/phim.service';
-import { Component, OnInit , ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 import { Location } from '@angular/common';
-import decode from 'jwt-decode';
+
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 @Component({
@@ -15,7 +15,7 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
 
-  @ViewChild('loginForm', {static: false}) loginForm: NgForm
+  @ViewChild('loginForm', { static: false }) loginForm: NgForm
   private subLogin = new Subscription();
   error: any = '';
   isLogin: boolean = false;
@@ -26,13 +26,13 @@ export class LoginComponent implements OnInit {
 
   ) { }
 
-  setValue =()=> {
+  setValue = () => {
     this.loginForm.setValue({
       name: 'dpnguyen',
       password: '123456'
-     
+
     })
-  
+
   }
   login = (user) => {
     var data = {
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       // const tokenPayload = decode(accessToken);
       // console.log(tokenPayload);
       // // console.log(tokenPayload.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name);
-      
+
       setTimeout(() => {
         this._location.back();
       }, 2000);
@@ -70,13 +70,13 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit() {
     if (sessionStorage.getItem("accessToken") !== null)
-    this.router.navigate(['']);
-   
+      this.router.navigate(['']);
+
   }
 
-//   ngAfterViewInit() {
-//   this.setValue()
-//   }
+  //   ngAfterViewInit() {
+  //   this.setValue()
+  //   }
 }
 
 

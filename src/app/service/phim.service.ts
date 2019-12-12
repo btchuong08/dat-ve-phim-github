@@ -23,15 +23,7 @@ export class PhimService {
   }
 
 
-  readonly apiBody: any = {
-    user: {
-      grant_type: "password",
-      client_id: "cpaasportal",
-      username: "staas-admin@mnoc.att.com",
-      password: "STaaS-1234",
-      scope: "openid"
-    }
-  }
+
   public heThongRap: Array<any> = [
     {
       "maHeThongRap": "CineStar",

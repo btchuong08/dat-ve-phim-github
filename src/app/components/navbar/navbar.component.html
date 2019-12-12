@@ -22,9 +22,20 @@
 
 <ng-template #logined>
 
-    <a id="username">{{username}}</a>
+    <!-- <a id="username">{{username}}</a>
     <a [routerLink]="['/admin']" routerLinkActive="router-link-active" *ngIf="maLoaiNguoiDung === 'KhachHang'">Admin Page</a>
-    <button id="Logout" (click)="logout()">Logout</button>
+    <button id="Logout" (click)="logout()">Logout</button> -->
+
+    <div class="dropdown">
+        <a id="username dropbtn ">{{username}}</a>
+        <div class="dropdown-content">
+            <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active"
+                *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
+                Page</a>
+            <button id="Logout" (click)="logout()">Logout</button>
+
+        </div>
+    </div>
 
 
 </ng-template>

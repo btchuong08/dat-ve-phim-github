@@ -1,3 +1,4 @@
+import { AdminService } from './service/admin.service';
 import { AuthService } from './auth/auth.service';
 import { HomeTemplatesModule } from './home-templates/home-templates.module';
 
@@ -17,7 +18,9 @@ import { SafePipeModule } from 'safe-pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SlickModule } from 'ngx-slick';
 import { AuthGuardService } from './auth/auth-guard.service';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { AuthGuardService } from './auth/auth-guard.service';
     SlickCarouselModule,
     BrowserAnimationsModule,
     SlickModule.forRoot(),
-    HomeTemplatesModule
+    HomeTemplatesModule,
+    AngularFontAwesomeModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule
 
 
 
@@ -44,7 +50,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [PhimService, AuthGuardService,AuthService],
+  providers: [PhimService, AuthGuardService, AuthService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
