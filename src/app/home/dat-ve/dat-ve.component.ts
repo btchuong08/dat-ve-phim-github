@@ -102,7 +102,8 @@ export class DatVeComponent implements OnInit {
       } else {
         this.isLogin = false;
       }
-      this.username = sessionStorage.getItem("username")
+     
+      this.username = sessionStorage.getItem("username").slice(0,1).toUpperCase()
 
 
     })

@@ -21,6 +21,7 @@ import { AuthGuardService } from './auth/auth-guard.service';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HomeTemplatesModule,
     AngularFontAwesomeModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgxLoadingModule.forRoot({})
 
 
 

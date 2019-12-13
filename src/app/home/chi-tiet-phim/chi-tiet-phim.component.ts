@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./chi-tiet-phim.component.scss']
 })
 export class ChiTietPhimComponent implements OnInit {
-
+  public loading = false;
 
   public phim: any = {};
   public ngayChieuGioChieu: any = [];
@@ -115,7 +115,7 @@ export class ChiTietPhimComponent implements OnInit {
 
   ngOnInit() {
 
-
+    this.loading = true;
 
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {
       this.maPhim = params.id;
@@ -144,7 +144,7 @@ export class ChiTietPhimComponent implements OnInit {
 
 
 
-
+      this.loading = false;
 
     })
 

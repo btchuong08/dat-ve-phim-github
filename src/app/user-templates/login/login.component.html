@@ -1,13 +1,16 @@
 <div class="wrapper">
-    <div>
-        <img src="assets\img\icons\123phimposter.jpeg" alt="">
-    </div>
 
-    <div class="login">
-        <p>Log in to 123Phim</p>
+    <div class="img">
+        <img src="assets/img/icons/bg-login2.jpg" alt="">
+    </div>
+    <div class="login text-center ">
+        <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo" src="assets\img\icons\web-logo.png" alt=""></a>
+
+        <p class="title">Log in to 123Phim</p>
 
         <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
             <div>
+
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="User name" id='user' name='user' #user='ngModel' ngModel required>
 
@@ -63,6 +66,12 @@
 
 
         </form>
+        <div class="home">
+            <a [routerLink]="['']" routerLinkActive="router-link-active">Quay về trang chủ</a>
+        </div>
+
     </div>
+
+
 
 </div>

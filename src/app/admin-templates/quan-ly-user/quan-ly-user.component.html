@@ -24,8 +24,7 @@
 
                     </div>
                     <div class="search-btn">
-                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
-                            autocomplete="off" placeholder="Search">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
 
                         <button *ngIf="listDeteleUser.length !== 0"> Detele</button>
                     </div>
@@ -44,8 +43,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr
-                            *ngFor="let item of listUsers | filter:searchText | paginate: { itemsPerPage: 15, currentPage: p } ">
+                        <tr *ngFor="let item of listUsers | filter:searchText | paginate: { itemsPerPage: 15, currentPage: p } ">
                             <td scope="row">
                                 <input type="checkbox" name="" id="" autocomplete="off" (click)="clicked(item)">
                             </td>
@@ -82,23 +80,21 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Thêm User</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="header">
+                <img src="assets\img\icons\123phimposter.jpeg" alt="">
+
             </div>
             <div class="modal-body">
+                <div class="title">
+                    <p>Add new user</p>
+                </div>
 
 
 
-
-                <form form class="container signup-form  text-center" #signupForm="ngForm"
-                    (ngSubmit)="signup(signupForm.value)">
+                <form form class="container signup-form  text-center" #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
 
                     <div>
 
@@ -107,24 +103,23 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
-                                    ngModel required maxlength=25 min="3">
+                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel' ngModel required maxlength=25 min="3">
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
-                                    ngModel required>
+                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel' ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
-                                    required>
+                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel required>
                             </mat-form-field>
                         </div>
 
+
+                        <p>Accept Terns</p>
                     </div>
 
                     <div>
@@ -132,22 +127,19 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
-                                    required>
+                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel required>
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel'
-                                    ngModel required>
+                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
                                 <mat-label>Mã loại người dùng</mat-label>
-                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel'
-                                    ngModel>
+                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel' ngModel>
                                     <option value="KhachHang">User</option>
                                     <option value="QuanTri">Admin</option>
 
@@ -157,9 +149,9 @@
 
 
                         <div class="footer">
-                            <button type="submit" class="btn btn-primary save" [disabled]='!signupForm.valid'>Add
+                            <button type="submit" class="btn btn-primary " [disabled]='!signupForm.valid'>Add
                                 User</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary save" data-dismiss="modal">Close</button>
 
                         </div>
 

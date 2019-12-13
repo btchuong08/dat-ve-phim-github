@@ -1,6 +1,7 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
 .footer {
+    font-family: roboto;
     background-color: $color-grey-drak;
     color: white;
     .footer-content {

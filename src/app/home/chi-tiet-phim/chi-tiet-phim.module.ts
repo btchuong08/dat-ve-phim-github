@@ -6,14 +6,15 @@ import { ChiTietPhimComponent } from './chi-tiet-phim.component';
 import { MatButtonModule } from '@angular/material/button';
 import { SafePipeModule } from 'safe-pipe';
 
-
+import { NgxLoadingModule } from 'ngx-loading';
 @NgModule({
   declarations: [ChiTietPhimComponent],
   imports: [
     CommonModule,
     ChiTietPhimRoutingModule,
     MatButtonModule,
-    SafePipeModule
+    SafePipeModule,
+    NgxLoadingModule
   ]
 })
 export class ChiTietPhimModule { }

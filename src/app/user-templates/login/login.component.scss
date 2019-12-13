@@ -1,57 +1,65 @@
 @import '../../../sass/variables';
 @import '../../../sass/mixins';
-
-
-.wrapper{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-column-gap: 50px;
-
-    img{
+.wrapper {
+    position: relative;
+    // background-image: url("../../../../src/assets/img/icons/bg-login.jpg");
+    // width: 2000px;
+    // height: 2000px;
+    img {
         width: 100%;
+        height: 100%;
     }
-
-
     .login {
-        
-            p:nth-child(1) {
-                margin-top: 50px;
-                font-size: 30px;
-                color: $color-primary;
-        
-             }
+        background-color: rgba(255, 255, 255, .4);
+        box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+        z-index: 9;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 400px;
+        margin-top: 100px;
+        .logo {
+            margin: 30px 0 20px 0;
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+        }
+        p.title {
+            font-size: 22px;
+            color: $color-primary;
+        }
+        button {
+            margin-top: 10px;
+            width: 180px;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            background-color: $color-primary;
+        }
+        .alert-login {
+            background-color: none;
+            color: red;
+        }
+        .disabled {
+            background-color: #ccc8c8;
+        }
+        .logined {
+            color: green;
+            margin-top: 20px;
+        }
+        .login-failed {
+            color: red;
+            margin-top: 20px;
+        }
+    }
+}
 
-             
-             button {
-                 margin-top: 10px;
-                 width: 180px;
-                 color: white;
-                 border-radius: 5px;
-                 border: none;
-                 background-color: $color-primary;
-
-             }
-
-
-             .alert-login {
-                 background-color: none;
-                 color: red;
-             }
-             .disabled {
-                 background-color: #ccc8c8;
-             }
-             .logined {
-                 color: green;
-                 
-                     margin-top: 20px;
-                
-             }
-             .login-failed {
-                color: red;
-                
-                    margin-top: 20px;
-                
-
-             }
+.home {
+    margin-top: 10px;
+    a {
+        text-decoration: none;
+        font-size: 12px;
     }
 }

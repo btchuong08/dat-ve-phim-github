@@ -24,7 +24,8 @@ export class NavbarComponent implements OnInit {
     if (sessionStorage.getItem("username") !== null) {
 
       this.isLogin = true;
-      this.username = sessionStorage.getItem("username")
+      this.username = sessionStorage.getItem("username").slice(0,1).toUpperCase()
+  
       this.maLoaiNguoiDung = sessionStorage.getItem("maLoaiNguoiDung")
     }
 

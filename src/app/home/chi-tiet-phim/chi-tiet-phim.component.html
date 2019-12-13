@@ -1,23 +1,28 @@
 <div class="bg">
 
 
+    <div *ngIf="!loading" class="warpper">
 
-    <div class="warpper">
+        <div class="gioi-thieu-warpper  container">
+            <div class="gioi-thieu ">
 
-        <div class="gioi-thieu-warpper">
-            <div class="gioi-thieu">
-                <div class="play-video-warpper">
-                    <div>
-                        <img src={{phim.hinhAnh}} alt="">
-                    </div>
 
-                    <div class="play-video">
-                        <button class="btn_play-video" data-toggle="modal" data-target="#trailerPhimModal"
-                            (click)="showtrailer()">
-                            <img src="./assets/img/icons/play-video.png" alt="">
-                        </button>
+                <div>
+                    <div class="play-video-warpper">
+
+
+
+                        <img class="video-img" src={{phim.hinhAnh}} alt="">
+
+
+                        <div class="play-video">
+                            <button class="btn_play-video" data-toggle="modal" data-target="#trailerPhimModal" (click)="showtrailer()">
+                                <img src="./assets/img/icons/play-video.png" alt="">
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div class="intro">
                     <!-- <p>Ngày công chiếu: {{phim.ngayKhoiChieu.slice(0,10)}}</p> -->
                     <p class="ten-phim">{{phim.tenPhim}}</p>
@@ -26,6 +31,10 @@
 
                     <button mat-raised-button color="primary">Mua vé</button>
 
+                </div>
+
+                <div class="danh-gia">
+                    <img src="assets\img\icons\danhGia.PNG" alt="">
                 </div>
             </div>
         </div>
@@ -74,7 +83,7 @@
                 <div class="ngay-chieu">
 
                     <button *ngFor="let item of ngayChieu" (click)=changeNgay(item)>
-                        {{item}}
+                        {{item  }}
                     </button>
 
 
@@ -113,20 +122,31 @@
 
 
 <!-- Modal -->
-<div class="modal fade " id="trailerPhimModal" tabindex="-1" role="dialog" aria-labelledby="trailerPhimModal"
-    aria-hidden="true">
+<div class="modal fade " id="trailerPhimModal" tabindex="-1" role="dialog" aria-labelledby="trailerPhimModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
 
             <!-- <iframe width="640" height="390" [src]="safeTrailerURL | safe: 'resourceUrl'"></iframe> -->
-            <iframe width="636" height="386" [src]="safeTrailerURL | safe: 'resourceUrl'" frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+            <iframe width="636" height="386" [src]="safeTrailerURL | safe: 'resourceUrl'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <!-- <button type="button" class="close btn-close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button> -->
         </div>
     </div>
+</div>
+
+
+<!-- ------------------------------------------ loading------------------------- -->
+
+<div class="my-container ">
+    <ng-template #customLoadingTemplate>
+        <div class="custom-class loading">
+
+        </div>
+    </ng-template>
+
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
+
 </div>
