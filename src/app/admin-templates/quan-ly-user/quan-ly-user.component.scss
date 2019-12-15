@@ -2,20 +2,31 @@
 @import '../../../sass/mixins';
 .users {
     margin-left: 250px;
+
+    background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
+    background-position: center;
+     min-height: 1150px;
+    background-size: cover;
     .title {
+        background-color: rgba(255, 255, 255, .6);
         p {
-            margin-top: 30px;
-            margin-left: 30px;
+            color: $color-primary;
+            margin-left: 60px;
             font-size: 30px;
             padding-bottom: 10px;
+            padding-top: 10px;
         }
-        @include underLine ()
+        // @include underLine ()
     }
     .add-user-warpper {
-        background-color: #eef2f7;
+        // background-color: #eef2f7;
+        // background-color: rgba(255, 255, 255, .6);
+        background-color: transparent;
         .add-user {
             margin-top: 30px;
-            margin-left: 30px;
+            margin-left: 60px;
+            margin-right: 60px;
+           
             p {
                 padding-top: 10px;
                 font-size: 24px;
@@ -34,23 +45,32 @@
                 }
             }
             .list-users {
+                border-radius: 10px;
                 margin-top: 20px;
-                background-color: white;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                background-color: rgba(255, 255, 255, .6);
                 .search {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
+               justify-content: flex-end;
+                   
                     p {
                         margin-left: 50px;
                         font-size: 20px;
                     }
                     .search-btn {
+                      
                         margin: auto;
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        grid-column-gap: 20px;
+                      
                         input {
+                           
+                            margin-left: 30px;
                             border-radius: 10px;
                             width: 200px;
+                            background-color: rgba(255, 255, 255, .8);
+                            transform: translateX(80px);
+                            // // margin-bottom: 30px;
                         }
                         button {
                             border-radius: 10px;
@@ -62,12 +82,37 @@
                     }
                 }
                 .table {
+                    .table-title:hover {
+                        background-color: transparent;
+                    }
                     th {
                         color: black;
                         font-weight: normal;
                     }
+                    .setting {
+                        padding-right: 30px;
+                    }
+                    .tai-khoan {
+                      padding-left: 50px;
+                      
+                    }
                     td {
                         color: gray;
+                        a {
+                            margin-left: 30px;
+                        }
+                        button {
+                            border: none;
+                            background-color: transparent;
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                background-color: transparent;
+                            //    visibility: visible;
+                            display: none;
+                            }
+                        }
+                        
                     }
                     a {
                         opacity: 0.8;
@@ -75,7 +120,19 @@
                     }
                 }
                 tr:hover {
-                    background-color: #eef2f7;
+                   
+                      background-color:  #f9f9f9;
+                    // background-color: #eef2f7;
+                    td{
+                        button 
+                        {
+                        img {
+                        //    visibility: hidden;
+                        display: inline;
+                        }
+                    }
+                  }
+                    
                 }
             }
         }
@@ -83,18 +140,43 @@
 }
 
 .pagination-controls {
+  
     text-align: center;
+    background-color: transparent;
+   margin-bottom: 20px;
+
+   .ngx-pagination {
+    margin-left: -100px !important;
+    transform: translateX(-40px);
+   
+}
 }
 
-.modal {
+
+.modal1 {
     // background-image: url(../../../assets/img/icons/bg-login2.jpg);
     .modal-dialog {
+
+        position: fixed;
+        top: 40%;
+        left: 45%;
+        transform: translate(-50%,-50%);
         .modal-content {
             // border: none;
-            // background-image: url(../../../assets/img/icons/bg-login2.jpg);
+            background-image: url(../../../assets/img/icons/bg-login2.jpg);
             width: 750px;
             display: grid;
             grid-template-columns: 1fr 2fr;
+            position: relative;
+
+            .add-user-modal-close {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: #ef6161;
+                border: none;
+                border-radius: 10px;
+            }
         }
     }
     .header {
@@ -107,8 +189,10 @@
     }
     .modal-body {
         padding: 0;
+         background-color: rgba(255, 255, 255, .6);
         .title {
             background-color: $color-primary;
+            // background-color: rgba($color-primary, 0.6);
             padding: 0;
             p {
                 font-size: 24px;
@@ -118,15 +202,27 @@
             }
         }
         .signup-form {
-            background-color: rgba(255, 255, 255, .6);
+           
+            // background-color: rgba(255, 255, 255, .5);
             display: grid;
             grid-template-columns: 1fr 1fr;
             padding: 0;
         }
+
+        .terms {
+            margin-top: 30px;
+            color: $color-primary;
+            font-size: 12px;
+            input {
+             transform: translateY(2px);
+
+
+            }
+        }
     }
     .footer {
         button {
-            margin-top: 30px;
+            margin-top: 20px;
             background-color: $color-primary;
             color: white;
             border: none;
@@ -136,6 +232,12 @@
         }
         button.save {
             background-color: #ef6161;
+        }
+        button.save:hover {
+            background-color: #f53232;
+        }
+        button.add:hover {
+            background-color: #1f38c1;
         }
         // .save{
         //     background-color: $color-primary;
@@ -147,3 +249,96 @@
         // }
     }
 }
+
+
+// ----------------------------
+.add-user-modal {
+    font-size: 20px;
+    text-align: center;
+    .passed {
+        padding: 20px;
+       p { color: green;}
+       
+    }
+    .failed {
+        padding: 20px;
+        p {  color: red;}
+      
+    }
+}
+
+
+.modal2 {
+    // background-image: url(../../../assets/img/icons/bg-login2.jpg);
+    .modal-dialog {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .modal-content { 
+            background-image: url(../../../assets/img/icons/bg-login2.jpg);
+
+            .modal-header{
+                background-color: $color-primary;
+                color: white;
+                font-size: 24px;
+            }
+            .modal-body {
+                background-color: rgba(255, 255, 255, .6);
+                margin: auto;
+                padding-bottom: 10px;
+            }
+            .modal-footer {
+                border: none;
+                background-color: rgba(255, 255, 255, .6);
+                button {
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $color-primary;
+                }
+                button.no {
+                    background-color: #ef6161;
+                   
+                }
+                button.no:hover {
+                    background-color: #f53232;
+                }
+                button.yes:hover {
+                    background-color: #1f38c1;
+                }
+                
+            }
+        }}}
+
+
+
+        .delete-user-modal {
+            position: relative;
+            padding-bottom: 40px;
+            background-color: rgba(255, 255, 255, .6);
+            .delete-user-modal-close {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: #ef6161;
+                border: none;
+                border-radius: 10px;
+            }
+        
+        }
+
+
+        .delete-user-modal {
+            font-size: 17px;
+           
+            .passed {
+                padding: 20px;
+               p { color: green;}
+               
+            }
+            .failed {
+                padding: 20px;
+                p {  color: red;}
+              
+            }
+        }

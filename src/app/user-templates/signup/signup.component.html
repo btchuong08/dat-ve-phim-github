@@ -1,0 +1,100 @@
+<div class="wrapper">
+
+    <div class="img">
+        <img src="assets/img/icons/bg-login2.jpg" alt="">
+    </div>
+    <div class="signup  ">
+        <div class="title">
+            <span>Đăng ký tài khoản 123Phim</span>
+            <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo"
+                    src="assets\img\icons\web-logo.png" alt=""></a>
+            <p class="failed" *ngIf="error !==''">{{error}} Vui lòng thử lại</p>
+
+            <div class="a-passed">
+                <a class="passed" *ngIf="creatUsersuccess" [routerLink]="['/login']"> Đăng kí thành công, vui lòng đăng
+                    nhập!</a>
+            </div>
+
+
+        </div>
+
+
+        <form form class="container signup-form " (ngSubmit)="signup(signupForm.value)" #signupForm="ngForm">
+
+
+            <div class="form-input text-center">
+                <div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
+                                ngModel required maxlength=25 min="3">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
+                                ngModel required>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Nhập lại Passowrd" type='password' required>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+
+                <div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
+                                required>
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field>
+                            <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel
+                                required>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer text-center">
+
+                <div class="terms">
+                    <input class="styled" type="checkbox">
+                    <span> I accept the terms and conditions</span>
+
+
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary " [disabled]='!signupForm.valid'>Đăng ký</button>
+                    <div class="home">
+                        <a [routerLink]="['/login']" routerLinkActive="router-link-active">Đã có tài khoản? Đăng
+                            nhập</a>
+                    </div>
+                </div>
+
+
+                <!-- <button type="submit" class="btn btn-primary add">Add
+            User</button> -->
+
+
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+
+</div>

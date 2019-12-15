@@ -1,0 +1,69 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+
+.wrapper {
+    margin-top: 60px;
+   
+    background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
+    background-position: center;
+     min-height: 800px;
+    background-size: cover;
+
+
+    .title {
+        background-color: rgba(255, 255, 255, .6);
+        p {
+           color: $color-primary;
+            margin-left: 120px;
+            font-size: 30px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+    }
+    .editForm {
+    margin: 120px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 60px;
+
+    .form-item{
+        background-color: rgba(255, 255, 255, .6);
+    border:none;
+    border-radius: 10px;
+
+   .form-item_content{
+       margin: 30px;
+       input {
+           height: 30px;
+           border: none;
+           border-radius: 10px;
+           background-color: rgba(255, 255, 255, .6);
+           margin-bottom: 20px;
+
+       }
+       p {
+           text-align: start;
+       }
+
+       button {
+           text-align: center;
+           height: 30px;
+        border: none;
+        border-radius: 10px;
+        background-color: $color-primary;
+        color: white;
+        width: 120px;
+       }
+       .dat-ve {
+        text-align: start;
+        .phim{
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+       }
+   }
+
+    }
+}
+
+}

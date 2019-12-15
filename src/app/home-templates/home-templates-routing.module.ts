@@ -5,9 +5,10 @@ import { HomeComponent } from './../home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeTemplatesComponent } from './home-templates.component';
-import { 
-  AuthGuardService as AuthGuard 
+import {
+  AuthGuardService as AuthGuard
 } from '../auth/auth-guard.service';
+import { ProfileModule } from '../user-templates/profile/profile.module';
 
 
 
@@ -22,13 +23,14 @@ const routes: Routes = [
           path: "phim/:id", loadChildren: () => ChiTietPhimModule
 
         },
+        { path: "profile", loadChildren: () => ProfileModule, canActivate: [AuthGuard] },
 
 
       ]
 
   },
   {
-    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule,  canActivate: [AuthGuard]
+    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule, canActivate: [AuthGuard]
 
   }
 

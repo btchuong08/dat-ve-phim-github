@@ -14,7 +14,7 @@ export class PhimService {
   public datVe: any = {};
   readonly api: any = {
     LayDanhSachKhoaHoc: "http://elearning0706.cybersoft.edu.vn/api/QuanLyKhoaHoc/LayDanhSachKhoaHoc?MaNhom=GP01",
-    getToken: "https://nvs-cpaas-oauth.kandy.io/auth/realms/att/protocol/openid-connect/token",
+
     LayDanhSachPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01",
     LayChiTietPhim: "http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayThongTinPhim?MaPhim=",
     LayThongTinLichChieuHeThongRap: "http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maHeThongRap=",

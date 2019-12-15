@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   isLogin: boolean = false;
   username: any = '';
@@ -18,14 +18,16 @@ export class NavbarComponent implements OnInit {
     // sessionStorage.removeItem("username");
     sessionStorage.clear();
     this.isLogin = false;
+    this.router.navigate(['']);
   }
   ngOnInit() {
 
     if (sessionStorage.getItem("username") !== null) {
 
       this.isLogin = true;
-      this.username = sessionStorage.getItem("username").slice(0,1).toUpperCase()
-  
+      // this.username = sessionStorage.getItem("username").slice(0, 1).toUpperCase()
+      this.username = sessionStorage.getItem("username")
+
       this.maLoaiNguoiDung = sessionStorage.getItem("maLoaiNguoiDung")
     }
 

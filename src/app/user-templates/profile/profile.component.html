@@ -1,0 +1,86 @@
+<div class="wrapper ">
+
+    <div class="title">
+        <p> Thông tin User</p>
+
+    </div>
+
+
+    <form class="editForm text-center">
+
+        <div class="form-item ">
+
+            <div class="form-item_content">
+
+
+                <p>Tài Khoản</p>
+                <input type="text" readonly name='taiKhoan' ngModel value={{user.taiKhoan}}>
+
+                <p>Mật Khẩu</p>
+                <input type="password" name='matKhau' ngModel value={{user.matKhau}}>
+
+                <p>Mật khẩu mới</p>
+                <input type="password">
+
+                <p>Nhập lại mật khẩu mới</p>
+                <input type="password">
+
+                <div class="text-center">
+                    <button type="submit">Thay đổi</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-item_content">
+
+
+                <p>Họ tên</p>
+                <input type="text" value={{user.hoTen}}>
+
+                <p>Email</p>
+                <input type="email" value={{user.email}}>
+
+                <p>Số điện thoại</p>
+                <input type="number" value={{user.soDT}}>
+
+                <p>Loại người dùng</p>
+                <input type="text" value={{user.loaiNguoiDung}} disabled>
+
+                <div class="text-center">
+                    <button type="submit">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-item_content">
+                <p>Thông tin đặt vé</p>
+
+                <div class="dat-ve">
+
+
+                    <div *ngIf="user.thongTinDatVe.length=== 0">
+                        <span>
+                            Bạn chưa đặt vé.
+                        </span>
+                        <a [routerLink]="['/#phim-dang-chieu']" routerLinkActive="router-link-active">Đặt vé ngay!</a>
+                    </div>
+
+                    <div *ngIf="user.thongTinDatVe.length !== 0">
+                        <div class="phim" *ngFor="let item of user.thongTinDatVe">
+                            Phim: {{item.tenPhim}}, ngày đặt: {{item.ngayDat}}
+                            <div *ngFor="let item1 of item.danhSachGhe">Rạp: {{item1.tenHeThongRap}}, ghế:
+                                {{item1.tenGhe}}</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </form>
+</div>

@@ -1,38 +1,45 @@
 <div class="wrapper  ">
 
-    <div class="wrapper1  ">
-        <div class="footer">
+    <div class="wrapper-content">
+        <div class="wrapper1  ">
 
-            <div class="step container">
-                <div>
-                    <a [routerLink]="['']">
-                        <img src="assets\img\icons\web-logo.png" alt="">
-                    </a>
-                    <span>01 CHỌN GHẾ</span>
-                    <span>
-                        02 THANH TOÁN
-                    </span>
-                    <span>
-                        03 KẾT QUẢ ĐẶT VÉ
-                    </span>
+
+
+            <div class="footer">
+
+                <div class="step container">
+                    <div>
+                        <a [routerLink]="['']">
+                            <img src="assets\img\icons\web-logo.png" alt="">
+                        </a>
+                        <span>01 CHỌN GHẾ</span>
+                        <span>
+                            02 THANH TOÁN
+                        </span>
+                        <span>
+                            03 KẾT QUẢ ĐẶT VÉ
+                        </span>
+                        <!-- <span>
+                        tài khoản đặt vé:{{username}}
+                    </span> -->
+
+                    </div>
+
+                    <!-- <div class="login">
+                    <span>Chào {{username}}!</span>
+                </div> -->
+
+
 
                 </div>
-
-                <div class="login">
-                    <span>{{username}}</span>
-                </div>
-
-
-
             </div>
-        </div>
 
 
-        <div class="dat-ve">
+            <div class="dat-ve">
 
-            <div class="dat-ve_item1  ">
+                <div class="dat-ve_item1  ">
 
-                <!-- <div class="dat-ve_item1_content2">
+                    <!-- <div class="dat-ve_item1_content2">
                     <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                     <p>
                         Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
@@ -41,175 +48,239 @@
 
                 </div> -->
 
-            </div>
-            <div class="dat-ve_item2">
-
-
-
-                <div class="screen">
-
-                    <div class="dat-ve_item2_content2">
-                        <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
-                        <p>
-                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
-                        </p>
-
-                    </div>
-                    <img src="assets\img\icons\screen.png" alt="">
                 </div>
-                <div class="dat-ve_item2_content">
+                <div class="dat-ve_item2">
 
 
 
-                    <!-- <div class="ten-day-ghe">
+                    <div class="screen">
+
+                        <div class="dat-ve_item2_content2">
+                            <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
+                            <p>
+                                Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                                {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                            </p>
+
+                        </div>
+                        <img src="assets\img\icons\screen.png" alt="">
+                    </div>
+                    <div class="dat-ve_item2_content">
+
+
+
+                        <!-- <div class="ten-day-ghe">
                         <div *ngFor="let item of anphabet">
                             <p>{{item}}</p>
 
                         </div>
                     </div> -->
 
-                    <div class="danh-sach-ghe ">
+                        <div class="danh-sach-ghe ">
 
-                        <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                            <button class="button-ghe" (click)="selectedGhe(item)" [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
-                            </button>
-                        </ng-container>
-                        <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
-
-
-
-                    </div>
+                            <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
+                                <button class="button-ghe" (click)="selectedGhe(item) " [disabled]=item.daDat
+                                    [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
+                                </button>
+                            </ng-container>
+                            <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
 
 
 
-                </div>
+                        </div>
 
 
-            </div>
 
-            <div class="btn-example">
-
-                <div>
-                    <div class="btn-example_item">
-
-                        <button class="button-ghe "></button>
-                        <span>Ghế thường</span>
-                    </div>
-
-                    <div class="btn-example_item">
-                        <button class="button-ghe vip "></button>
-                        <span>Ghế Vip</span>
                     </div>
 
 
                 </div>
 
-                <div>
+                <div class="btn-example">
+
+                    <div>
+                        <div class="btn-example_item">
+
+                            <button disabled class="button-ghe "></button>
+                            <span>Ghế thường</span>
+                        </div>
+
+                        <div class="btn-example_item">
+                            <button disabled class="button-ghe vip "></button>
+                            <span>Ghế Vip</span>
+                        </div>
 
 
-
-                    <div class="btn-example_item">
-                        <button class="button-ghe daDat "></button>
-                        <span>Ghế đã đặt</span>
                     </div>
 
+                    <div>
 
-                    <div class="btn-example_item">
-                        <button class="button-ghe selected"></button>
-                        <span>Đang chọn</span>
+
+
+                        <div class="btn-example_item">
+                            <button disabled class="button-ghe daDat "></button>
+                            <span>Ghế đã đặt</span>
+                        </div>
+
+
+                        <div class="btn-example_item">
+                            <button disabled class="button-ghe selected"></button>
+                            <span>Đang chọn</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="wrapper2 ">
-
-        <div class="container">
-
-            <div class="tong-tien">
-                <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
-            </div>
-            <div class="thong-tin-phim">
-                <p> <span>P</span> {{DanhSachPhongVe.thongTinPhim.tenPhim}}
-                </p>
-
-                <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
-                </p>
 
 
-            </div>
+        <div class="wrapper2 ">
 
-        </div>
+            <div class="container">
 
-    </div>
-
-    <div class="wrapper2 ">
-
-        <div class="container">
-
-            <div class="tong-tien">
-                <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
-            </div>
-            <div class="thong-tin-phim">
-                <p> <span>P</span> {{DanhSachPhongVe.thongTinPhim.tenPhim}}
-                </p>
-
-                <p>
-                    Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
-                </p>
-
-                <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
-            </div>
-            <div class="ghe">
-                <div>
-                    <p>Ghế:
-                        <span *ngFor="let item of danhSachGheChon"> {{item.tenGhe}}</span>
-
+                <div class="tong-tien">
+                    <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
+                </div>
+                <div class="thong-tin-phim">
+                    <p> <span>P</span> {{DanhSachPhongVe.thongTinPhim.tenPhim}}
                     </p>
+
+                    <p>
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                    </p>
+
+
                 </div>
 
-
-            </div>
-            <div class="email">
-                <input type="Email" placeholder="Email">
             </div>
 
-            <div class="phone">
-                <input type="Phone" placeholder="Phone">
-            </div>
+        </div>
 
-            <div class="thanh-toan">
-                <p>Hình thức thanh toán</p>
-                <p>
-                    <mat-checkbox>Thanh toán qua ZaloPay</mat-checkbox>
-                </p>
-                <p>
-                    <mat-checkbox>Visa, Master, JCB</mat-checkbox>
-                </p>
-                <p>
-                    <mat-checkbox>Thẻ ATM nội địa</mat-checkbox>
-                </p>
-                <p>
-                    <mat-checkbox>Thanh toán tại cửa hàng tiện ích</mat-checkbox>
-                </p>
+        <div class="wrapper2 ">
+            <form action="" #datVeForm="ngForm" (ngSubmit)="datVe(datVeForm.value) ">
 
-            </div>
-            <div class="ghi-chu">
-                <p>
-                    <span class="!">!</span> Vé đã mua không thể hoàn tiền</p>
-                <p>Mã vé sẽ được gửi qua tin nhắn SMS và email </p>
-            </div>
+                <div class="container wrapper2_content">
+
+                    <form action=""></form>
+                    <div class="tong-tien">
+                        <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
+                    </div>
+                    <div class="thong-tin-phim">
+                        <p> <span>P</span> {{DanhSachPhongVe.thongTinPhim.tenPhim}}
+                        </p>
+
+                        <p>
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                            {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                            {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                        </p>
+
+                        <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
+                    </div>
+                    <div class="ghe">
+                        <div>
+                            <p>Ghế:
+                                <span *ngFor="let item of danhSachGheChon"> {{item.tenGhe}}</span>
+
+                            </p>
+                        </div>
+
+
+                    </div>
+                    <div class="email">
+                        <input type="Email" placeholder="Email" name='email' #email='ngModel' ngModel required>
+                    </div>
+
+                    <div class="phone">
+                        <input type="number" placeholder="Phone" name='phone' #phone='ngModel' ngModel required>
+                    </div>
+
+                    <div class="thanh-toan  icon">
+                        <p>Hình thức thanh toán</p>
+                        <!-- <p>
+                <mat-radio-button value="1">Option 1</mat-radio-button>
+            </p> -->
+
+                        <p>
+                            <mat-radio-button [checked]="true" (click)="getHinhThucThanhToan('ZaloPay')"> <img
+                                    src="https://s3img.vcdn.vn/123phim/2018/12/08075f42d0c4bfc8f2063a35d5b9fca7.jpg"
+                                    alt="">
+                                Thanh toán qua ZaloPay</mat-radio-button>
+                        </p>
+                        <p>
+                            <mat-radio-button (click)="getHinhThucThanhToan('Visa')">
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/e20d486bc2a60a2a1d7186c0ec9e177b.png"
+                                    alt="">
+                                Visa, Master, JCB</mat-radio-button>
+                        </p>
+                        <p>
+                            <mat-radio-button (click)="getHinhThucThanhToan('ATM')">
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/784b134b515da6e0cb8779e2a33f8221.png"
+                                    alt="">
+                                Thẻ ATM nội địa</mat-radio-button>
+                        </p>
+                        <p>
+                            <mat-radio-button (click)="getHinhThucThanhToan('Cửa hàng tiện ích')">
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/fa954e5ecb81ef0fdc9bb2595dfbd015.png"
+                                    alt="">
+                                Thanh toán tại cửa hàng tiện ích</mat-radio-button>
+                        </p>
+
+                    </div>
+                    <div class="ghi-chu">
+                        <p>
+                            <span class="!">!</span> Vé đã mua không thể hoàn tiền</p>
+                        <p>Mã vé sẽ được gửi qua tin nhắn SMS và email </p>
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <div class="dat-ve">
+                        <button type="submit" data-toggle="modal" data-target="#confirmModal"
+                            [ngClass]="{disabled: !datVeForm.valid}" [disabled]='(!datVeForm.valid)'>Thanh toán</button>
+                    </div>
+                </div>
+
+            </form>
+
 
 
         </div>
-        <div>
-            <div class="dat-ve">
-                <button (click)="datVe()">Đặt vé</button>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="body">
+                <p> Xác nhận thanh toán</p>
+                <p>
+                    Bạn đã đặt {{danhSachGheChon.length}} vé: <span *ngFor="let item of danhSachGheChon">
+                        {{item.tenGhe}}</span>
+                </p>
+
+                <p>
+                    email: {{thongTinDatVe.email}}
+                </p>
+
+                <p>Số điện thoại: {{thongTinDatVe.phone}}</p>
+                <p>Hình thức thanh toán: {{thongTinDatVe.hinhThucThanhToan}}</p>
+                <p>Tổng tiền: {{tongTien}} </p>
+
+
+
+            </div>
+            <div class="footer">
+                <button type="button" class="btn " data-dismiss="modal">Close</button>
+                <button type="button" class="btn ">Save</button>
             </div>
         </div>
-
-
     </div>
 </div>

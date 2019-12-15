@@ -9,7 +9,8 @@
             <p>Bạn có thể thêm, chỉnh sửa, xóa thông tin của người dùng!</p>
 
             <div class="btn">
-                <button data-toggle="modal" data-target="#exampleModal">Add User</button>
+                <button data-toggle="modal" data-target="#exampleModal" (click)='resetForm()'>Add
+                    User</button>
             </div>
 
 
@@ -20,39 +21,44 @@
 
                 <div class="search">
                     <div>
-                        <p> Danh sách người dùng</p>
+                        <!-- <p> Danh sách người dùng</p> -->
 
                     </div>
                     <div class="search-btn">
-                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+                            autocomplete="off" placeholder="Search">
 
                         <button *ngIf="listDeteleUser.length !== 0"> Detele</button>
                     </div>
 
                 </div>
-                <table class="table">
+                <table class="table ">
                     <thead>
-                        <tr>
-                            <th>
-                                <input type="checkbox" name="" id="" autocomplete="off">
-                            </th>
-                            <th>Tài Khoản</th>
+                        <tr class="table-title">
+
+                            <th class="tai-khoan">Tài Khoản</th>
                             <th>Họ Tên</th>
                             <th>Email</th>
                             <th>Phone Number</th>
+                            <th class="setting">Setting</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let item of listUsers | filter:searchText | paginate: { itemsPerPage: 15, currentPage: p } ">
-                            <td scope="row">
-                                <input type="checkbox" name="" id="" autocomplete="off" (click)="clicked(item)">
-                            </td>
+                        <tr
+                            *ngFor="let item of listUsers | filter:searchText | paginate: { itemsPerPage: 15, currentPage: p } ">
+
                             <td>
-                                <a href=""> {{item.taiKhoan}}</a>
+                                <a routerLink="/admin/user/{{item.taiKhoan}}"> {{item.taiKhoan}}</a>
                             </td>
                             <td> {{item.hoTen}}</td>
                             <td> {{item.email}}</td>
                             <td> {{item.soDt}}</td>
+                            <td>
+                                <button data-toggle="modal" data-target="#deteleUserModal"
+                                    (click)='confirmDeteleUser(item.taiKhoan)'> <img
+                                        src="assets\img\icons\detele-icon.png"></button>
+
+                            </td>
                         </tr>
 
                     </tbody>
@@ -79,8 +85,9 @@
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal  singup user-->
+<div class="modal fade modal1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="header">
@@ -88,13 +95,15 @@
 
             </div>
             <div class="modal-body">
+
                 <div class="title">
                     <p>Add new user</p>
                 </div>
 
 
 
-                <form form class="container signup-form  text-center" #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
+                <form *ngIf="!addUser ; else addedUser" form class="container signup-form  text-center"
+                    #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
 
                     <div>
 
@@ -103,23 +112,34 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel' ngModel required maxlength=25 min="3">
+                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
+                                    ngModel required maxlength=25 min="3">
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel' ngModel required>
+                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
+                                    ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel required>
+                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
+                                    required>
                             </mat-form-field>
                         </div>
 
 
-                        <p>Accept Terns</p>
+                        <div class="terms">
+
+
+
+
+                            <input class="styled" type="checkbox">
+                            <span> I accept the terms and conditions</span>
+
+                        </div>
                     </div>
 
                     <div>
@@ -127,19 +147,22 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel required>
+                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
+                                    required>
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel required>
+                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel'
+                                    ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
                                 <mat-label>Mã loại người dùng</mat-label>
-                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel' ngModel>
+                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel'
+                                    ngModel>
                                     <option value="KhachHang">User</option>
                                     <option value="QuanTri">Admin</option>
 
@@ -151,6 +174,9 @@
                         <div class="footer">
                             <button type="submit" class="btn btn-primary " [disabled]='!signupForm.valid'>Add
                                 User</button>
+
+                            <!-- <button type="submit" class="btn btn-primary add">Add
+                                User</button> -->
                             <button type="button" class="btn btn-secondary save" data-dismiss="modal">Close</button>
 
                         </div>
@@ -167,3 +193,68 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #addedUser>
+    <div *ngIf="return" class="add-user-modal">
+        <div *ngIf="addUsersuccess" class="passed">
+            <p>Đã tạo User</p>
+
+        </div>
+
+        <div *ngIf="!addUsersuccess" class="failed">
+            <P>{{error}} Vui lòng thử lại</P>
+
+        </div>
+
+        <button type="button" class="btn btn-secondary add-user-modal-close " data-dismiss="modal">Close</button>
+    </div>
+
+</ng-template>
+
+
+
+<!-- ------------------------------------------------------------- -->
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade modal2" id="deteleUserModal" tabindex="-1" role="dialog" aria-labelledby="deteleUserModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xác nhận</h5>
+
+            </div>
+            <div *ngIf="!deletedUser ; else deteleUser">
+                <div class="modal-body">
+                    Bạn muốn xóa user {{taiKhoanDetele}} ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary yes" (click)='deleteUser()'>Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #deteleUser>
+    <div class="delete-user-modal">
+        <div *ngIf="deleteUsersuccess" class="passed">
+            <p>Đã xóa user {{taiKhoanDetele}}</p>
+
+        </div>
+
+        <div *ngIf="!deleteUsersuccess" class="failed">
+            <P>{{error}} Vui lòng thử lại</P>
+
+        </div>
+
+        <button type="button" class="btn btn-secondary delete-user-modal-close " data-dismiss="modal">Close</button>
+    </div>
+
+</ng-template>

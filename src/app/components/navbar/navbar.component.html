@@ -28,14 +28,17 @@
     <button id="Logout" (click)="logout()">Logout</button> -->
 
 
-    <div class="username"> <a id="username dropbtn "> Hi {{username}}</a>
+    <div class="username"> <a id="username dropbtn ">{{username}}</a>
 
 
 
         <img class="icon-logout" src="https://img.icons8.com/android/24/000000/logout-rounded-down.png">
         <div class="dropdown-content">
-            <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active" *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
+            <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active"
+                *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
                 Page</a>
+
+            <a [routerLink]="['/profile']">Profile</a>
             <button id="Logout" (click)="logout()">Logout</button>
 
         </div>

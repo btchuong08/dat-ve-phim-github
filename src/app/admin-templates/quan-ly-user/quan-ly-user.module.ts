@@ -11,6 +11,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [QuanLyUserComponent,],
   imports: [
@@ -22,7 +24,9 @@ import { MatInputModule } from '@angular/material';
     Ng2SearchPipeModule,
     MatFormFieldModule,
     MatInputModule,
-    NgForm
+    NgForm,
+    MatRadioModule,
+    MatDialogModule
 
 
 

@@ -8,7 +8,7 @@ import { HomeTemplatesRoutingModule } from './home-templates-routing.module';
 import { HomeTemplatesComponent } from './home-templates.component';
 import { HomeModule } from '../home/home.module';
 import { ComponentsModule } from '../components/components.module';
-
+import { MatInputModule } from '@angular/material';
 
 @NgModule({
   declarations: [HomeTemplatesComponent],
@@ -16,6 +16,7 @@ import { ComponentsModule } from '../components/components.module';
     CommonModule,
     HomeTemplatesRoutingModule,
     HomeModule, ComponentsModule,
+    MatInputModule
 
   ]
 })

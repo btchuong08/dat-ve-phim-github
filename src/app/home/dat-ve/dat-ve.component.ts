@@ -1,7 +1,10 @@
+import { AdminService } from './../../service/admin.service';
+import { map } from 'rxjs/operators';
 import { PhimService } from './../../service/phim.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+
 
 import { Router } from '@angular/router';
 
@@ -22,6 +25,17 @@ export class DatVeComponent implements OnInit {
   indexGhe: any;
   danhSachGheChon: any = [];
   tongTien: any = 0;
+  danhSachVe: any =
+    {
+      "maLichChieu": '',
+      "danhSachVe": [],
+      "taiKhoanNguoiDung": ''
+    }
+
+  thongTinDatVe: any = {
+    hinhThucThanhToan: 'ZaloPay'
+  }
+
 
   isLogin: boolean = false;
   username: any = "";
@@ -39,12 +53,17 @@ export class DatVeComponent implements OnInit {
   constructor(
     private ActivatedRoute: ActivatedRoute,
     private PhimService: PhimService,
-    private router: Router
+    private router: Router,
+    private AdminService: AdminService
 
   ) { }
 
-
+  getHinhThucThanhToan = (data) => {
+    this.thongTinDatVe.hinhThucThanhToan = data;
+  }
   selectedGhe = (ghe) => {
+
+
 
     this.DanhSachPhongVe.danhSachGhe.map((item, index) => {
       if (item.maGhe === ghe.maGhe) {
@@ -73,9 +92,36 @@ export class DatVeComponent implements OnInit {
   }
 
 
-  datVe = () => {
-    alert("Bạn đã đặt " + this.danhSachGheChon.length + " vé, trở về Trang Chủ...");
-    this.router.navigate(['']);
+  getdanhSachVe = () => {
+    this.danhSachVe.maLichChieu = this.maLichChieu;
+    this.danhSachVe.taiKhoanNguoiDung = sessionStorage.getItem("username");
+    this.danhSachGheChon.map((item, index) => {
+      let data =
+      {
+        "maGhe": item.maGhe,
+        "giaVe": item.giaVe
+      }
+      this.danhSachVe.danhSachVe[index] = data
+
+    })
+  }
+  datVe = (data) => {
+    this.thongTinDatVe.email = data.email;
+    this.thongTinDatVe.phone = data.phone;
+
+    console.log(this.thongTinDatVe)
+
+    this.getdanhSachVe();
+    // ************************************ dat ve ***************************
+    // this.AdminService.DatVe(this.danhSachVe).subscribe((result) => {
+    //   console.log(result)
+    // }, err => {
+    //   console.log(err);
+    //   this.isLogin = false;
+    // })
+
+    // alert("Bạn đã đặt " + this.danhSachGheChon.length + " vé, trở về Trang Chủ...");
+    // this.router.navigate(['']);
   }
   ngOnInit() {
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {
@@ -102,8 +148,8 @@ export class DatVeComponent implements OnInit {
       } else {
         this.isLogin = false;
       }
-     
-      this.username = sessionStorage.getItem("username").slice(0,1).toUpperCase()
+
+      this.username = sessionStorage.getItem("username").slice(0, 1).toUpperCase()
 
 
     })
