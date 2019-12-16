@@ -105,7 +105,7 @@ export class DatVeComponent implements OnInit {
 
     })
   }
-  datVe = (data) => {
+  getthongTinDatVe = (data) => {
     this.thongTinDatVe.email = data.email;
     this.thongTinDatVe.phone = data.phone;
 

@@ -158,11 +158,11 @@
         </div>
 
         <div class="wrapper2 ">
-            <form action="" #datVeForm="ngForm" (ngSubmit)="datVe(datVeForm.value) ">
+            <form action="" #datVeForm="ngForm" (ngSubmit)="getthongTinDatVe(datVeForm.value) ">
 
                 <div class="container wrapper2_content">
 
-                    <form action=""></form>
+
                     <div class="tong-tien">
                         <p *ngIf="tongTien != 0">{{tongTien}} đ</p>
                     </div>
@@ -259,27 +259,54 @@
 <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <div class="body">
+
+            <div class="title">
                 <p> Xác nhận thanh toán</p>
-                <p>
-                    Bạn đã đặt {{danhSachGheChon.length}} vé: <span *ngFor="let item of danhSachGheChon">
-                        {{item.tenGhe}}</span>
-                </p>
+            </div>
 
-                <p>
-                    email: {{thongTinDatVe.email}}
-                </p>
+            <div class="tong-tien">
+                <p>{{tongTien}} đ </p>
 
-                <p>Số điện thoại: {{thongTinDatVe.phone}}</p>
-                <p>Hình thức thanh toán: {{thongTinDatVe.hinhThucThanhToan}}</p>
-                <p>Tổng tiền: {{tongTien}} </p>
+            </div>
 
+
+            <div class="body">
+
+                <div class="body-content">
+
+
+
+                    <p>
+                        Bạn đã đặt <span>{{danhSachGheChon.length}}</span> vé, phim: <span>
+                            {{DanhSachPhongVe.thongTinPhim.tenPhim}}</span>
+                    </p>
+                    <p>
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
+                        {{DanhSachPhongVe.thongTinPhim.tenCumRap}}
+                    </p>
+
+
+                    <p>
+
+                        Ghế: <span class="ghe" *ngFor="let item of danhSachGheChon">
+                            {{item.tenGhe}}</span>
+                    </p>
+                    <p>
+                        Email: <span>{{thongTinDatVe.email}}</span>
+                    </p>
+
+                    <p>Số điện thoại: <span>{{thongTinDatVe.phone}}</span> </p>
+                    <p>Thanh toán qua <span>{{thongTinDatVe.hinhThucThanhToan}} </span> </p>
+                    <img src="assets\img\icons\qr.png" alt="">
+                </div>
 
 
             </div>
             <div class="footer">
-                <button type="button" class="btn " data-dismiss="modal">Close</button>
-                <button type="button" class="btn ">Save</button>
+                <button type="button" class="btn ">Xác nhận</button>
+                <button type="button" class="btn " data-dismiss="modal">Hủy</button>
+
             </div>
         </div>
     </div>

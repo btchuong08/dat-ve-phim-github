@@ -20,6 +20,7 @@
         width: 300px;
         height: 400px;
         margin-top: 100px;
+       
         .logo {
             margin: 30px 0 20px 0;
             width: 50px;
@@ -31,7 +32,7 @@
             color: $color-primary;
         }
         button {
-            margin-top: 10px;
+            // margin-top: 10px;
             width: 180px;
             color: white;
             border-radius: 5px;
@@ -47,19 +48,23 @@
         }
         .logined {
             color: green;
-            margin-top: 20px;
+           margin-top: -10px;
+            margin-bottom: 10px;
         }
         .login-failed {
             color: red;
-            margin-top: 20px;
+            margin-top: 10px;
         }
     }
 }
 
 .home {
     margin-top: 10px;
+    // padding-bottom: 30px;
     a {
+        padding-bottom: 10px;
         text-decoration: none;
         font-size: 12px;
+        
     }
 }

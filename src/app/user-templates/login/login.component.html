@@ -10,13 +10,18 @@
         <p class="title">Log in to 123Phim</p>
 
         <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+
+
+            <div class="logined" *ngIf="isLogin">
+
+                <span>Đăng nhập thành công</span>
+            </div>
+
+
             <div>
 
                 <mat-form-field class="example-full-width">
                     <input matInput placeholder="User name" id='user' name='user' #user='ngModel' ngModel required>
-
-
-
 
                 </mat-form-field>
 
@@ -60,11 +65,7 @@
                 <span>{{this.error}}</span>
             </div>
 
-            <div class="logined" *ngIf="isLogin">
-
-                <span>Đăng nhập thành công</span>
-            </div>
-
+           
 
 
 

@@ -325,8 +325,67 @@ background-size: cover;
             border: none;
             border-radius: 10px;
             background-color: rgba(white, $alpha: 0.6);
-            min-width: 500px;
+            min-width: 550px;
             min-height: 400px;
+
+            .title{
+                border: none;
+                border-top-left-radius:10px ;
+                border-top-right-radius: 10px;
+                text-align: center;
+                font-size: 20px;
+                color: $color-primary;
+              
+            
+                background-color: rgba(white, $alpha: 0.8);
+               p {
+                  margin: 10px;
+
+               }
+            }
+            .tong-tien{
+                font-size: 24px;
+                color: green;
+                text-align: end;
+                p{
+                  margin-right: 30px;
+                  margin-top: 20px;
+                  margin-bottom: -10px;
+                 
+                }
+            }
+            .body {
+                border: none;
+                
+                border-radius: 10px;
+                margin: 40px;
+                background-color: rgba(white, $alpha: 0.8);
+
+
+                .body-content {
+                    position: relative;
+                    margin: 30px;
+                    .ghe{
+                        // color: $color-primary;
+                        font-weight: bold;
+                    }
+                    span{
+                        font-weight: bold;
+                    }
+                    img{
+                        position: absolute;
+                       bottom: 0px;
+                       right: 0px;
+
+                        border: none;
+                
+                        border-radius: 10px;
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            
+            }
         }
     }
 }
