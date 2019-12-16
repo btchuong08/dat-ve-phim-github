@@ -39,6 +39,7 @@ export class DatVeComponent implements OnInit {
 
   isLogin: boolean = false;
   username: any = "";
+  datVesuccessfull : boolean = false;
 
 
 
@@ -109,7 +110,7 @@ export class DatVeComponent implements OnInit {
     this.thongTinDatVe.email = data.email;
     this.thongTinDatVe.phone = data.phone;
 
-    console.log(this.thongTinDatVe)
+    
 
     this.getdanhSachVe();
     // ************************************ dat ve ***************************
@@ -122,6 +123,13 @@ export class DatVeComponent implements OnInit {
 
     // alert("Bạn đã đặt " + this.danhSachGheChon.length + " vé, trở về Trang Chủ...");
     // this.router.navigate(['']);
+  }
+
+  datVe = () =>{
+console.log(this.thongTinDatVe)
+this.datVesuccessfull=true;
+
+
   }
   ngOnInit() {
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {

@@ -58,8 +58,7 @@
                         <div class="dat-ve_item2_content2">
                             <p>{{DanhSachPhongVe.thongTinPhim.tenCumRap}}</p>
                             <p>
-                                Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
-                                {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                                Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                             </p>
 
                         </div>
@@ -79,8 +78,7 @@
                         <div class="danh-sach-ghe ">
 
                             <ng-container *ngFor="let item of DanhSachPhongVe.danhSachGhe">
-                                <button class="button-ghe" (click)="selectedGhe(item) " [disabled]=item.daDat
-                                    [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
+                                <button class="button-ghe" (click)="selectedGhe(item) " [disabled]=item.daDat [ngClass]="{'vip': item.loaiGhe =='Vip', 'daDat' : item.daDat, 'selected': item.selected}">
                                 </button>
                             </ng-container>
                             <p *ngFor="let item of indexGhe; let index = index">{{index+1}}</p>
@@ -145,9 +143,7 @@
                     </p>
 
                     <p>
-                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
-                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                        {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                     </p>
 
 
@@ -171,9 +167,7 @@
                         </p>
 
                         <p>
-                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
-                            {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                            {{DanhSachPhongVe.thongTinPhim.tenRap}}
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenRap}}
                         </p>
 
                         <p>{{DanhSachPhongVe.thongTinPhim.diaChi}}</p>
@@ -203,28 +197,19 @@
             </p> -->
 
                         <p>
-                            <mat-radio-button [checked]="true" (click)="getHinhThucThanhToan('ZaloPay')"> <img
-                                    src="https://s3img.vcdn.vn/123phim/2018/12/08075f42d0c4bfc8f2063a35d5b9fca7.jpg"
-                                    alt="">
-                                Thanh toán qua ZaloPay</mat-radio-button>
+                            <mat-radio-button [checked]="true" (click)="getHinhThucThanhToan('ZaloPay')"> <img src="https://s3img.vcdn.vn/123phim/2018/12/08075f42d0c4bfc8f2063a35d5b9fca7.jpg" alt=""> Thanh toán qua ZaloPay</mat-radio-button>
                         </p>
                         <p>
                             <mat-radio-button (click)="getHinhThucThanhToan('Visa')">
-                                <img src="https://s3img.vcdn.vn/123phim/2018/12/e20d486bc2a60a2a1d7186c0ec9e177b.png"
-                                    alt="">
-                                Visa, Master, JCB</mat-radio-button>
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/e20d486bc2a60a2a1d7186c0ec9e177b.png" alt=""> Visa, Master, JCB</mat-radio-button>
                         </p>
                         <p>
                             <mat-radio-button (click)="getHinhThucThanhToan('ATM')">
-                                <img src="https://s3img.vcdn.vn/123phim/2018/12/784b134b515da6e0cb8779e2a33f8221.png"
-                                    alt="">
-                                Thẻ ATM nội địa</mat-radio-button>
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/784b134b515da6e0cb8779e2a33f8221.png" alt=""> Thẻ ATM nội địa</mat-radio-button>
                         </p>
                         <p>
                             <mat-radio-button (click)="getHinhThucThanhToan('Cửa hàng tiện ích')">
-                                <img src="https://s3img.vcdn.vn/123phim/2018/12/fa954e5ecb81ef0fdc9bb2595dfbd015.png"
-                                    alt="">
-                                Thanh toán tại cửa hàng tiện ích</mat-radio-button>
+                                <img src="https://s3img.vcdn.vn/123phim/2018/12/fa954e5ecb81ef0fdc9bb2595dfbd015.png" alt=""> Thanh toán tại cửa hàng tiện ích</mat-radio-button>
                         </p>
 
                     </div>
@@ -239,8 +224,7 @@
 
                 <div>
                     <div class="dat-ve">
-                        <button type="submit" data-toggle="modal" data-target="#confirmModal"
-                            [ngClass]="{disabled: !datVeForm.valid}" [disabled]='(!datVeForm.valid)'>Thanh toán</button>
+                        <button type="submit" data-toggle="modal" data-target="#confirmModal" [ngClass]="{disabled: !datVeForm.valid}" [disabled]='(!datVeForm.valid)'>Thanh toán</button>
                     </div>
                 </div>
 
@@ -260,54 +244,65 @@
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
 
-            <div class="title">
-                <p> Xác nhận thanh toán</p>
-            </div>
 
-            <div class="tong-tien">
-                <p>{{tongTien}} đ </p>
-
-            </div>
+            <div *ngIf="!datVesuccessfull">
 
 
-            <div class="body">
+                <div class="title">
+                    <p> Xác nhận thanh toán</p>
+                </div>
 
-                <div class="body-content">
+                <div class="tong-tien">
+                    <p>{{tongTien}} đ </p>
 
-
-
-                    <p>
-                        Bạn đã đặt <span>{{danhSachGheChon.length}}</span> vé, phim: <span>
-                            {{DanhSachPhongVe.thongTinPhim.tenPhim}}</span>
-                    </p>
-                    <p>
-                        Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} -
-                        {{DanhSachPhongVe.thongTinPhim.gioChieu}} -
-                        {{DanhSachPhongVe.thongTinPhim.tenCumRap}}
-                    </p>
-
-
-                    <p>
-
-                        Ghế: <span class="ghe" *ngFor="let item of danhSachGheChon">
-                            {{item.tenGhe}}</span>
-                    </p>
-                    <p>
-                        Email: <span>{{thongTinDatVe.email}}</span>
-                    </p>
-
-                    <p>Số điện thoại: <span>{{thongTinDatVe.phone}}</span> </p>
-                    <p>Thanh toán qua <span>{{thongTinDatVe.hinhThucThanhToan}} </span> </p>
-                    <img src="assets\img\icons\qr.png" alt="">
                 </div>
 
 
-            </div>
-            <div class="footer">
-                <button type="button" class="btn ">Xác nhận</button>
-                <button type="button" class="btn " data-dismiss="modal">Hủy</button>
+                <div class="body">
 
+                    <div class="body-content">
+
+
+
+                        <p>
+                            Bạn đã đặt <span>{{danhSachGheChon.length}}</span> vé, phim: <span>
+                            {{DanhSachPhongVe.thongTinPhim.tenPhim}}</span>
+                        </p>
+                        <p>
+                            Ngày chiếu: {{DanhSachPhongVe.thongTinPhim.ngayChieu}} - {{DanhSachPhongVe.thongTinPhim.gioChieu}} - {{DanhSachPhongVe.thongTinPhim.tenCumRap}}
+                        </p>
+
+
+                        <p>
+
+                            Ghế: <span class="ghe" *ngFor="let item of danhSachGheChon">
+                            {{item.tenGhe}}</span>
+                        </p>
+                        <p>
+                            Email: <span>{{thongTinDatVe.email}}</span>
+                        </p>
+
+                        <p>Số điện thoại: <span>{{thongTinDatVe.phone}}</span> </p>
+                        <p>Thanh toán qua <span>{{thongTinDatVe.hinhThucThanhToan}} </span> </p>
+                        <img src="assets\img\icons\qr.png" alt="">
+                    </div>
+
+
+                </div>
+                <div class="footer">
+                    <button type="button" class="btn " (click)=datVe()>Xác nhận</button>
+                    <button type="button" class="btn " data-dismiss="modal">Hủy</button>
+
+                </div>
             </div>
+
+            <div *ngIf="datVesuccessfull">
+
+                <div class="notification">
+                    Đặt vé Thành công
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

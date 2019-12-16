@@ -7,21 +7,18 @@
 .wrapper {
     background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
     background-position: center;
-     min-height: 1000px;
+    min-height: 1000px;
     background-size: cover;
     position: relative;
     // display: grid;
     // grid-template-columns: 1fr 350px;
-    .wrapper-content{
+    .wrapper-content {
         background-color: rgba($color: white, $alpha: .6);
         background-position: center;
- min-height: 1000px;
-background-size: cover;
+        min-height: 1000px;
+        background-size: cover;
     }
     .wrapper1 {
-
-
-       
         // min-height: 1000px;
         // background-color: rgba($color: white, $alpha: .6);
         position: relative;
@@ -53,7 +50,6 @@ background-size: cover;
             }
         }
         .dat-ve {
-            
             position: relative;
             margin: auto;
             .dat-ve_item1 {
@@ -73,7 +69,6 @@ background-size: cover;
                     .dat-ve_item2_content2 {
                         margin-bottom: 20px;
                         margin-top: 10px;
-                      
                         p {
                             font-size: 20px;
                             margin-bottom: 5px;
@@ -84,7 +79,6 @@ background-size: cover;
                             color: $color-primary;
                             font-weight: bold;
                         }
-                        
                     }
                 }
                 .dat-ve_item2_content {
@@ -157,21 +151,18 @@ background-size: cover;
 }
 
 .wrapper2 {
-    
     position: absolute;
     // position: fixed;
     width: 350px;
     top: 0px;
     right: 0px;
     box-sizing: border-box;
-     box-shadow: -3px 3px 8px 8px #e9ecef;
+    box-shadow: -3px 3px 8px 8px #e9ecef;
     // background-color: #fdedfd;
     // box-shadow: -3px 3px 8px 8px white;
-    .wrapper2_content{
+    .wrapper2_content {
         background-color: rgba(white, $alpha: 0.6);
         padding-bottom: 30px;
-      
-      
     }
     // background-color: rgba($color: #fdedfd, $alpha: 1);
     background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
@@ -183,7 +174,6 @@ background-size: cover;
     }
     .tong-tien {
         background-color: rgba(white, $alpha: 0.8);
-       
         margin-left: -15px;
         margin-right: -15px;
         text-align: center;
@@ -219,7 +209,6 @@ background-size: cover;
         span {
             color: $color-primary;
             font-weight: bold;
-
         }
         input {
             background-color: rgba(white, $alpha: 0.6);
@@ -228,7 +217,6 @@ background-size: cover;
     }
     .email {
         height: 50px;
-      
         margin-bottom: 30px;
         input {
             // background-color: rgba($color: #fdedfd, $alpha: 0.1);
@@ -242,7 +230,6 @@ background-size: cover;
     }
     .phone {
         height: 50px;
-        
         margin-bottom: 30px;
         input {
             // background-color: rgba($color: #fdedfd, $alpha: 0.5);
@@ -263,18 +250,14 @@ background-size: cover;
         p {
             margin-bottom: 10px;
         }
-
-       
-            img{ width: 40px;
-                height: 40px;
-                border-radius: 5px;
-                margin: 0 10px 0 10px;
-            }
-           
-        
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            margin: 0 10px 0 10px;
+        }
     }
     .ghi-chu {
-        
         span {
             width: 20px;
             height: 20px;
@@ -283,8 +266,6 @@ background-size: cover;
             background-color: red;
             padding: 0px 10px 0px 10px;
             font-weight: bold;
-           
-           
         }
         height: 70px;
         text-align: center;
@@ -293,9 +274,9 @@ background-size: cover;
         // margin-bottom: 30px;
     }
     .dat-ve {
-       .disabled {
-           background-color: rgba($color-primary, $alpha: 0.4);
-       }
+        .disabled {
+            background-color: rgba($color-primary, $alpha: 0.4);
+        }
         button {
             background-color: $color-primary;
             width: 100%;
@@ -308,84 +289,97 @@ background-size: cover;
 }
 
 #confirmModal {
-    
     border: none;
     border-radius: 10px;
     .modal-dialog {
-    
         position: fixed;
         top: 40%;
         left: 40%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         border: none;
-            border-radius: 10px;
-
-       
+        border-radius: 10px;
         .modal-content {
+            position: relative;
             border: none;
             border-radius: 10px;
             background-color: rgba(white, $alpha: 0.6);
             min-width: 550px;
             min-height: 400px;
-
-            .title{
+            .title {
                 border: none;
-                border-top-left-radius:10px ;
+                border-top-left-radius: 10px;
                 border-top-right-radius: 10px;
                 text-align: center;
                 font-size: 20px;
-                color: $color-primary;
-              
-            
+                // color: $color-primary;
                 background-color: rgba(white, $alpha: 0.8);
-               p {
-                  margin: 10px;
-
-               }
+                p {
+                    margin: 10px;
+                }
             }
-            .tong-tien{
+            .tong-tien {
                 font-size: 24px;
                 color: green;
                 text-align: end;
-                p{
-                  margin-right: 30px;
-                  margin-top: 20px;
-                  margin-bottom: -10px;
-                 
+                p {
+                    font-weight: bold;
+                    margin-right: 30px;
+                    margin-top: 20px;
+                    margin-bottom: -10px;
                 }
             }
             .body {
                 border: none;
-                
                 border-radius: 10px;
                 margin: 40px;
+                margin-bottom: 100px;
                 background-color: rgba(white, $alpha: 0.8);
-
-
                 .body-content {
                     position: relative;
                     margin: 30px;
-                    .ghe{
+                    .ghe {
                         // color: $color-primary;
                         font-weight: bold;
                     }
-                    span{
+                    span {
                         font-weight: bold;
                     }
-                    img{
+                    img {
                         position: absolute;
-                       bottom: 0px;
-                       right: 0px;
-
+                        bottom: 0px;
+                        right: 0px;
                         border: none;
-                
                         border-radius: 10px;
                         width: 100px;
                         height: 100px;
                     }
                 }
-            
             }
+            .footer {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                .btn {
+                    margin-bottom: 30px;
+                    margin-left: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: rgba($color: white, $alpha: .6);
+                }
+                .btn:hover {
+                    background-color: rgba($color: gray, $alpha: .6);
+                }
+            }
+        }
+        .notification {
+            border: none;
+            border-radius: 10px;
+            margin: 40px;
+            margin-bottom: 100px;
+            background-color: rgba(white, $alpha: 0.8);
+            min-width: 100px;
+            min-height: 100px;
         }
     }
 }
