@@ -32,8 +32,7 @@
             width: 100%;
             //    background-color: rgba($color: $color-primary, $alpha: 0.1);
             .step {
-                display: grid;
-                grid-template-columns: 1fr 100px;
+                
                 img {
                     width: 50px;
                     height: 50px;
@@ -44,6 +43,9 @@
                     font-size: 18px;
                     margin-right: 80px;
                 }
+                // .username{
+                //     color: $color-primary;
+                // }
                 .login {
                     color: $color-primary;
                 }
@@ -375,11 +377,26 @@
         .notification {
             border: none;
             border-radius: 10px;
-            margin: 40px;
+            margin: 80px;
             margin-bottom: 100px;
             background-color: rgba(white, $alpha: 0.8);
-            min-width: 100px;
-            min-height: 100px;
+            min-width: 350px;
+            min-height: 250px;
+            padding: 30px;
+
+            // min-width: 550px;
+            // min-height: 200px;
+
+            .successfully {
+                color: green;
+            }
+            span {
+                font-weight: bold;
+            }
+            a {
+                margin-right: 20px;
+                text-decoration: none;
+            }
         }
     }
 }

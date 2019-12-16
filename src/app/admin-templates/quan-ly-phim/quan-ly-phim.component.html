@@ -1,4 +1,246 @@
-<p>quan-ly-phim works!</p>
+<div class="users">
+
+    <div class="title">
+        <p>Danh Sách Phim</p>
+    </div>
+
+    <div class="add-user-warpper">
+        <div class="add-user">
+            <p class="p-add">Bạn có thể thêm, xóa, chỉnh sửa nội dung Phim!</p>
+
+            <div class="btn">
+                <button data-toggle="modal" data-target="#exampleModal" (click)='resetForm()'>Thêm Phim</button>
+            </div>
 
 
-<p>worked</p>
+
+
+            <div class="list-phim list-users">
+
+
+                <div class="search">
+                    <div>
+                        <!-- <p> Danh sách người dùng</p> -->
+
+                    </div>
+                    <div class="search-btn">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+                            autocomplete="off" placeholder="Search">
+
+                        <button *ngIf="listDeteleUser.length !== 0"> Detele</button>
+                    </div>
+
+                </div>
+
+
+                <div class="list-phim-content">
+                    <div *ngFor="let item of listPhim | filter:searchText  ">
+
+                        <a href="">
+                            <img src={{item.hinhAnh}} alt="">
+
+                        </a>
+
+
+
+
+                        <p>{{item.tenPhim}}</p>
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- Modal  singup user-->
+<div class="modal fade modal1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="header">
+                <img src="assets\img\icons\123phimposter.jpeg" alt="">
+
+            </div>
+            <div class="modal-body">
+
+                <div class="title">
+                    <p>Add new user</p>
+                </div>
+
+
+
+                <form *ngIf="!addUser ; else addedUser" form class="container signup-form  text-center"
+                    #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
+
+                    <div>
+
+
+
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
+                                    ngModel required maxlength=25 min="3">
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
+                                    ngModel required>
+                            </mat-form-field>
+                        </div>
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="terms">
+
+
+
+
+                            <input class="styled" type="checkbox">
+                            <span> I accept the terms and conditions</span>
+
+                        </div>
+                    </div>
+
+                    <div>
+
+
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <mat-form-field>
+                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel'
+                                    ngModel required>
+                            </mat-form-field>
+                        </div>
+
+                        <div>
+                            <mat-form-field>
+                                <mat-label>Mã loại người dùng</mat-label>
+                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel'
+                                    ngModel>
+                                    <option value="KhachHang">User</option>
+                                    <option value="QuanTri">Admin</option>
+
+                                </select>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="footer">
+                            <button type="submit" class="btn btn-primary " [disabled]='!signupForm.valid'>Add
+                                User</button>
+
+                            <!-- <button type="submit" class="btn btn-primary add">Add
+                                User</button> -->
+                            <button type="button" class="btn btn-secondary save" data-dismiss="modal">Close</button>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<ng-template #addedUser>
+    <div *ngIf="return" class="add-user-modal">
+        <div *ngIf="addUsersuccess" class="passed">
+            <p>Đã tạo User</p>
+
+        </div>
+
+        <div *ngIf="!addUsersuccess" class="failed">
+            <P>{{error}} Vui lòng thử lại</P>
+
+        </div>
+
+        <button type="button" class="btn btn-secondary add-user-modal-close " data-dismiss="modal">Close</button>
+    </div>
+
+</ng-template>
+
+
+
+<!-- ------------------------------------------------------------- -->
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade modal2" id="deteleUserModal" tabindex="-1" role="dialog" aria-labelledby="deteleUserModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <h5 class="modal-title">Xác nhận</h5>
+
+            </div> -->
+            <div *ngIf="!deletedUser ; else deteleUser">
+                <div class="modal-body">
+
+                    <p> Bạn muốn xóa user {{taiKhoanDetele}} ?</p>
+
+                </div>
+                <div class="footer">
+                    <button type="button" class="btn  " data-dismiss="modal">No</button>
+                    <button type="button" class="btn  " (click)='deleteUser()'>Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #deteleUser>
+    <div class="delete-user-modal">
+        <div *ngIf="deleteUsersuccess" class="passed">
+            <p>Đã xóa user {{taiKhoanDetele}}</p>
+
+        </div>
+
+        <div *ngIf="!deleteUsersuccess" class="failed">
+            <P>{{error}} Vui lòng thử lại</P>
+
+        </div>
+        <div class=" delete-user-modal-close">
+            <button type="button" class="btn  " data-dismiss="modal">Close</button>
+        </div>
+
+    </div>
+
+</ng-template>

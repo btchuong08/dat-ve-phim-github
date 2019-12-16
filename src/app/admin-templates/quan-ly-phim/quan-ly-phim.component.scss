@@ -1,3 +1,349 @@
-p {
-    font-size: 100px;
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.users {
+    margin-left: 250px;
+
+    background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
+    background-position: center;
+     min-height: 1300px;
+    background-size: cover;
+    .title {
+        background-color: rgba(255, 255, 255, .6);
+        p {
+            color: $color-primary;
+            margin-left: 60px;
+            font-size: 30px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        // @include underLine ()
+    }
+    .add-user-warpper {
+        // background-color: #eef2f7;
+        // background-color: rgba(255, 255, 255, .6);
+        background-color: transparent;
+        .add-user {
+            margin-top: 30px;
+            margin-left: 60px;
+            margin-right: 60px;
+           
+            p.p-add {
+                padding-top: 10px;
+                font-size: 24px;
+                color: grey;
+            }
+            .btn {
+                padding: 0;
+                button {
+                    border-radius: 20px;
+                    border: none;
+                    background-color: $color-primary;
+                    width: 150px;
+                    color: white;
+                    height: 40px;
+                    padding: 0;
+                }
+            }
+            .list-users {
+                border-radius: 10px;
+                margin-top: 20px;
+                padding-bottom: 20px;
+                padding-top: 20px;
+                background-color: rgba(255, 255, 255, .6);
+                .search {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+               justify-content: flex-end;
+                   
+                    p {
+                        margin-left: 50px;
+                        font-size: 20px;
+                    }
+                    .search-btn {
+                      
+                        margin: auto;
+                      
+                        input {
+                           
+                            margin-left: 30px;
+                            border-radius: 10px;
+                            width: 200px;
+                            background-color: rgba(255, 255, 255, .8);
+                            transform: translateX(80px);
+                            // // margin-bottom: 30px;
+                        }
+                        button {
+                            border-radius: 10px;
+                            width: 100px;
+                            border: none;
+                            background-color: $color-primary;
+                            color: white;
+                        }
+                    }
+                }
+               
+               
+            }
+        }
+    }
 }
+
+
+
+.modal1 {
+    // background-image: url(../../../assets/img/icons/bg-login2.jpg);
+    .modal-dialog {
+
+        position: fixed;
+        top: 40%;
+        left: 45%;
+        transform: translate(-50%,-50%);
+        border: none;
+        border-radius: 10px;
+        .modal-content {
+            // border: none;
+            background-image: url(../../../assets/img/icons/bg-login2.jpg);
+            width: 750px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            position: relative;
+            border: none;
+            border-radius: 10px;
+            .add-user-modal-close {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                background-color: #ef6161;
+                border: none;
+                border-radius: 10px;
+            }
+        }
+    }
+    .header {
+        // background-color: $color-primary;
+        color: white;
+        background-color: transparent;
+        img {
+            width: 250px;
+        }
+    }
+    .modal-body {
+        padding: 0;
+         background-color: rgba(255, 255, 255, .6);
+        .title {
+            background-color: $color-primary;
+            // background-color: rgba($color-primary, 0.6);
+            padding: 0;
+            p {
+                font-size: 24px;
+                color: white;
+                margin-left: 30px;
+                padding: 10px;
+            }
+        }
+        .signup-form {
+           
+            // background-color: rgba(255, 255, 255, .5);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            padding: 0;
+        }
+
+        .terms {
+            margin-top: 30px;
+            color: $color-primary;
+            font-size: 12px;
+            input {
+             transform: translateY(2px);
+
+
+            }
+        }
+    }
+    .footer {
+        button {
+            margin-top: 20px;
+            background-color: $color-primary;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            text-align: center;
+            margin-left: 20px;
+        }
+        button.save {
+            background-color: #ef6161;
+        }
+        button.save:hover {
+            background-color: #f53232;
+        }
+        button.add:hover {
+            background-color: #1f38c1;
+        }
+        // .save{
+        //     background-color: $color-primary;
+        // color: white;
+        // }
+        // .close {
+        //     background-color: $color-primary;
+        //     color: white;
+        // }
+    }
+}
+
+
+// ----------------------------
+.add-user-modal {
+    font-size: 20px;
+    text-align: center;
+    .passed {
+        padding: 20px;
+       p { color: green;}
+       
+    }
+    .failed {
+        padding: 20px;
+        p {  color: red;}
+      
+    }
+}
+
+
+.modal2 {
+    // background-image: url(../../../assets/img/icons/bg-login2.jpg);
+    .modal-dialog {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .modal-content { 
+            // background-image: url(../../../assets/img/icons/bg-login2.jpg);
+
+            position: relative;
+            border: none;
+            border-radius: 10px;
+            background-color: rgba(white, $alpha: 0.7);
+            min-width: 320px;
+            min-height: 200px;
+
+            .modal-header{
+                background-color: $color-primary;
+                color: white;
+                font-size: 24px;
+            }
+            .modal-body {
+                
+                border: none;
+                border-radius: 10px;
+                // background-color: rgba(255, 255, 255, .6);
+                margin: auto;
+                padding-bottom: 10px;
+                p {margin-top: 20px;
+                margin-left: 10px;}
+            }
+            .footer {
+
+                border: none;
+                border-radius: 10px;
+                position: absolute;
+                bottom: -20px;
+                left: 45%;
+                transform: translateX(-50%);
+                .btn {
+                    margin-bottom: 30px;
+                    margin-left: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    // background-color: rgba($color: white, $alpha: .6);
+                }
+                .btn:hover {
+                    background-color: rgba($color: gray, $alpha: .6);
+                }
+                // background-color: rgba(255, 255, 255, .6);
+                // button {
+                //     border: none;
+                //     border-radius: 10px;
+                //     background-color: $color-primary;
+                // }
+                // button.no {
+                //     background-color: #ef6161;
+                   
+                // }
+                // button.no:hover {
+                //     background-color: #f53232;
+                // }
+                // button.yes:hover {
+                //     background-color: #1f38c1;
+                // }
+                
+            }
+        }}}
+
+
+
+        .delete-user-modal {
+           
+            // padding-bottom: 40px;
+           
+            .delete-user-modal-close {
+                position: absolute;
+               
+                bottom: -20px;
+                left: 45%;
+                transform: translateX(-50%);
+                .btn {
+                    margin-bottom: 30px;
+                    margin-left: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    // background-color: rgba($color: white, $alpha: .6);
+                }
+                .btn:hover {
+                    background-color: rgba($color: gray, $alpha: .6);
+                }
+            }
+        
+        }
+
+
+        .delete-user-modal {
+            font-size: 17px;
+           
+            .passed {
+                margin-top: 10px;
+                margin-left: 10px;
+                padding: 20px;
+               p { color: green;}
+               
+            }
+            .failed {
+                margin-top: 10px;
+                padding: 20px;
+                margin-left: 10px;
+                p {  color: red;}
+              
+            }
+        }
+
+
+        // -------------------------------------------------- 
+.list-phim {
+   
+    .list-phim-content{
+        margin: 40px;
+        
+     display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 30px;
+      
+        img{
+            width: 180px;
+            height: 240px;
+            border: none;
+            border-radius: 10px;
+        }
+    
+    }
+   
+  
+ }

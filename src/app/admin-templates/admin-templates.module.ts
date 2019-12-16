@@ -1,6 +1,7 @@
+import { QuanLyPhimModule } from './quan-ly-phim/quan-ly-phim.module';
 import { UserComponent } from './user/user.component';
 import { QuanLyUserComponent } from './quan-ly-user/quan-ly-user.component';
-import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
+
 import { AdminComponent } from './admin/admin.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -21,9 +22,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
+
 
 @NgModule({
-  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyPhimComponent, QuanLyUserComponent, MenuComponent, UserComponent],
+  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyUserComponent, MenuComponent, UserComponent, QuanLyPhimComponent],
   imports: [
     CommonModule,
     AdminTemplatesRoutingModule,
@@ -37,7 +40,9 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+
+
   ]
 })
 export class AdminTemplatesModule { }

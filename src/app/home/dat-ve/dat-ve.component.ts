@@ -39,7 +39,7 @@ export class DatVeComponent implements OnInit {
 
   isLogin: boolean = false;
   username: any = "";
-  datVesuccessfull : boolean = false;
+  datVesuccessfull: boolean = false;
 
 
 
@@ -110,9 +110,20 @@ export class DatVeComponent implements OnInit {
     this.thongTinDatVe.email = data.email;
     this.thongTinDatVe.phone = data.phone;
 
-    
+
 
     this.getdanhSachVe();
+
+
+    // alert("Bạn đã đặt " + this.danhSachGheChon.length + " vé, trở về Trang Chủ...");
+    // this.router.navigate(['']);
+  }
+
+  datVe = () => {
+    console.log(this.thongTinDatVe);
+    console.log(this.danhSachVe)
+    this.datVesuccessfull = true;
+
     // ************************************ dat ve ***************************
     // this.AdminService.DatVe(this.danhSachVe).subscribe((result) => {
     //   console.log(result)
@@ -121,16 +132,22 @@ export class DatVeComponent implements OnInit {
     //   this.isLogin = false;
     // })
 
-    // alert("Bạn đã đặt " + this.danhSachGheChon.length + " vé, trở về Trang Chủ...");
-    // this.router.navigate(['']);
-  }
-
-  datVe = () =>{
-console.log(this.thongTinDatVe)
-this.datVesuccessfull=true;
-
 
   }
+
+  setDefault = () => {
+    this.datVesuccessfull = false;
+    this.tongTien = 0;
+    this.thongTinDatVe = {
+      hinhThucThanhToan: 'ZaloPay'
+    };
+    this.danhSachGheChon = [];
+  }
+
+  close = () => {
+    this.router.navigate(['']);
+  }
+
   ngOnInit() {
     this.subParam = this.ActivatedRoute.params.subscribe((params) => {
       this.maLichChieu = params.maLichChieu;
@@ -157,8 +174,10 @@ this.datVesuccessfull=true;
         this.isLogin = false;
       }
 
-      this.username = sessionStorage.getItem("username").slice(0, 1).toUpperCase()
+      // this.username = sessionStorage.getItem("username").slice(0, 1).toUpperCase()
+      // this.username = sessionStorage.getItem("username")
 
+      this.setDefault();
 
     })
   }

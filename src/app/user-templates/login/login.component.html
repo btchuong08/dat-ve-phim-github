@@ -4,7 +4,8 @@
         <img src="assets/img/icons/bg-login2.jpg" alt="">
     </div>
     <div class="login text-center ">
-        <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo" src="assets\img\icons\web-logo.png" alt=""></a>
+        <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo"
+                src="assets\img\icons\web-logo.png" alt=""></a>
 
         <p class="title">Log in to 123Phim</p>
 
@@ -27,14 +28,14 @@
 
                 </mat-form-field>
 
-                <div *ngIf="user.errors && (user.dirty || user.touched)" class="alert-login">
+                <!-- <div *ngIf="user.errors && (user.dirty || user.touched)" class="alert-login">
                     <div *ngIf="user?.errors.required">
 
 
                         <span>Vui lòng nhập user</span>
                     </div>
 
-                </div>
+                </div> -->
 
 
 
@@ -42,21 +43,23 @@
 
             <div>
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Password" type='password' name="password" #password='ngModel' ngModel required>
+                    <input matInput placeholder="Password" type='password' name="password" #password='ngModel' ngModel
+                        required>
                 </mat-form-field>
-                <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert-login">
+                <!-- <div *ngIf="password.errors && (password.dirty || password.touched)" class="alert-login">
                     <div *ngIf="password?.errors.required">
 
 
                         <span>Vui lòng nhập password</span>
                     </div>
 
-                </div>
+                </div> -->
 
 
             </div>
             <div>
-                <button type="submit" class="submit" [disabled]='!loginForm.valid' [ngClass]="{disabled: !loginForm.valid}">Login</button>
+                <button type="submit" class="submit" [disabled]='!loginForm.valid'
+                    [ngClass]="{disabled: !loginForm.valid}">Login</button>
             </div>
 
 

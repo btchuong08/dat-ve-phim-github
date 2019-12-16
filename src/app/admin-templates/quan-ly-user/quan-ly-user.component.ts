@@ -57,9 +57,9 @@ export class QuanLyUserComponent implements OnInit {
       this.return = true;
       this.subDanhUsers = this.AdminService.LayDanhSachNguoiDung().subscribe((result) => {
         this.listUsers = result;
-       
-  
-  
+
+
+
       })
 
     }

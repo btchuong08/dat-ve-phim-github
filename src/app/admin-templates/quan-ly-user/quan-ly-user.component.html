@@ -224,17 +224,19 @@
     aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
-            <div class="modal-header">
+            <!-- <div class="modal-header">
                 <h5 class="modal-title">Xác nhận</h5>
 
-            </div>
+            </div> -->
             <div *ngIf="!deletedUser ; else deteleUser">
                 <div class="modal-body">
-                    Bạn muốn xóa user {{taiKhoanDetele}} ?
+
+                    <p> Bạn muốn xóa user {{taiKhoanDetele}} ?</p>
+
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary no" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-primary yes" (click)='deleteUser()'>Yes</button>
+                <div class="footer">
+                    <button type="button" class="btn  " data-dismiss="modal">No</button>
+                    <button type="button" class="btn  " (click)='deleteUser()'>Yes</button>
                 </div>
             </div>
         </div>
@@ -253,8 +255,10 @@
             <P>{{error}} Vui lòng thử lại</P>
 
         </div>
+        <div class=" delete-user-modal-close">
+            <button type="button" class="btn  " data-dismiss="modal">Close</button>
+        </div>
 
-        <button type="button" class="btn btn-secondary delete-user-modal-close " data-dismiss="modal">Close</button>
     </div>
 
 </ng-template>
