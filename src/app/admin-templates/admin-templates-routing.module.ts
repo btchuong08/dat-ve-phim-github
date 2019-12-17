@@ -1,3 +1,4 @@
+import { PhimComponent } from './phim/phim.component';
 import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 import { UserComponent } from './user/user.component';
 import { QuanLyUserComponent } from './quan-ly-user/quan-ly-user.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
         { path: "list-user", component: QuanLyUserComponent },
         { path: "list-phim", component: QuanLyPhimComponent },
         { path: "user/:id", component: UserComponent },
+        { path: "phim/:id", component: PhimComponent },
 
 
 

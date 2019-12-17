@@ -1,0 +1,64 @@
+<div class="wrapper">
+
+    <div class="title">
+        <p> Thông tin Phim</p>
+
+    </div>
+
+
+    <form class="editForm text-center" (ngSubmit)="edit(editForm.value)" #editForm="ngForm">
+
+        <div class="form-item ">
+
+            <div class="form-item_content">
+
+
+
+                <img src={{Phim.hinhAnh}} alt="">
+
+                <div class="text-center">
+                    <button type="submit">Thay đổi</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-item_content">
+
+
+                <p>Tên Phim</p>
+                <input type="text" value={{Phim.tenPhim}}>
+
+                <p>Mã Phim</p>
+                <input type="email" value={{Phim.maPhim}}>
+
+                <p>Ngày khởi chiếu</p>
+                <input type="number" value={{Phim.ngayKhoiChieu}}>
+
+                <p>Trailer Link</p>
+                <input type="text" value={{Phim.trailer}}>
+
+                <div class="text-center">
+                    <button type="submit">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-item_content">
+                <p>Mô tả</p>
+                <textarea name="" id="" cols="30" rows="10" value="{{Phim.moTa}}"></textarea>
+
+
+                <!-- <p>{{Phim.moTa}}</p> -->
+
+                <div class="text-center">
+                    <button type="submit">Thay đổi</button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </form>
+</div>

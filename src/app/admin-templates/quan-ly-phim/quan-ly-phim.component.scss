@@ -2,10 +2,9 @@
 @import '../../../sass/mixins';
 .users {
     margin-left: 250px;
-
     background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
     background-position: center;
-     min-height: 1300px;
+    min-height: 1300px;
     background-size: cover;
     .title {
         background-color: rgba(255, 255, 255, .6);
@@ -26,7 +25,6 @@
             margin-top: 30px;
             margin-left: 60px;
             margin-right: 60px;
-           
             p.p-add {
                 padding-top: 10px;
                 font-size: 24px;
@@ -53,18 +51,14 @@
                 .search {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-               justify-content: flex-end;
-                   
+                    justify-content: flex-end;
                     p {
                         margin-left: 50px;
                         font-size: 20px;
                     }
                     .search-btn {
-                      
                         margin: auto;
-                      
                         input {
-                           
                             margin-left: 30px;
                             border-radius: 10px;
                             width: 200px;
@@ -81,23 +75,18 @@
                         }
                     }
                 }
-               
-               
             }
         }
     }
 }
 
-
-
 .modal1 {
     // background-image: url(../../../assets/img/icons/bg-login2.jpg);
     .modal-dialog {
-
         position: fixed;
         top: 40%;
         left: 45%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         border: none;
         border-radius: 10px;
         .modal-content {
@@ -129,7 +118,7 @@
     }
     .modal-body {
         padding: 0;
-         background-color: rgba(255, 255, 255, .6);
+        background-color: rgba(255, 255, 255, .6);
         .title {
             background-color: $color-primary;
             // background-color: rgba($color-primary, 0.6);
@@ -142,21 +131,17 @@
             }
         }
         .signup-form {
-           
             // background-color: rgba(255, 255, 255, .5);
             display: grid;
             grid-template-columns: 1fr 1fr;
             padding: 0;
         }
-
         .terms {
             margin-top: 30px;
             color: $color-primary;
             font-size: 12px;
             input {
-             transform: translateY(2px);
-
-
+                transform: translateY(2px);
             }
         }
     }
@@ -190,23 +175,23 @@
     }
 }
 
-
 // ----------------------------
 .add-user-modal {
     font-size: 20px;
     text-align: center;
     .passed {
         padding: 20px;
-       p { color: green;}
-       
+        p {
+            color: green;
+        }
     }
     .failed {
         padding: 20px;
-        p {  color: red;}
-      
+        p {
+            color: red;
+        }
     }
 }
-
 
 .modal2 {
     // background-image: url(../../../assets/img/icons/bg-login2.jpg);
@@ -214,34 +199,32 @@
         position: fixed;
         top: 40%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        .modal-content { 
+        transform: translate(-50%, -50%);
+        .modal-content {
             // background-image: url(../../../assets/img/icons/bg-login2.jpg);
-
             position: relative;
             border: none;
             border-radius: 10px;
             background-color: rgba(white, $alpha: 0.7);
             min-width: 320px;
             min-height: 200px;
-
-            .modal-header{
+            .modal-header {
                 background-color: $color-primary;
                 color: white;
                 font-size: 24px;
             }
             .modal-body {
-                
                 border: none;
                 border-radius: 10px;
                 // background-color: rgba(255, 255, 255, .6);
                 margin: auto;
                 padding-bottom: 10px;
-                p {margin-top: 20px;
-                margin-left: 10px;}
+                p {
+                    margin-top: 20px;
+                    margin-left: 10px;
+                }
             }
             .footer {
-
                 border: none;
                 border-radius: 10px;
                 position: absolute;
@@ -266,7 +249,6 @@
                 // }
                 // button.no {
                 //     background-color: #ef6161;
-                   
                 // }
                 // button.no:hover {
                 //     background-color: #f53232;
@@ -274,76 +256,127 @@
                 // button.yes:hover {
                 //     background-color: #1f38c1;
                 // }
-                
-            }
-        }}}
-
-
-
-        .delete-user-modal {
-           
-            // padding-bottom: 40px;
-           
-            .delete-user-modal-close {
-                position: absolute;
-               
-                bottom: -20px;
-                left: 45%;
-                transform: translateX(-50%);
-                .btn {
-                    margin-bottom: 30px;
-                    margin-left: 30px;
-                    border: none;
-                    border-radius: 10px;
-                    // background-color: rgba($color: white, $alpha: .6);
-                }
-                .btn:hover {
-                    background-color: rgba($color: gray, $alpha: .6);
-                }
-            }
-        
-        }
-
-
-        .delete-user-modal {
-            font-size: 17px;
-           
-            .passed {
-                margin-top: 10px;
-                margin-left: 10px;
-                padding: 20px;
-               p { color: green;}
-               
-            }
-            .failed {
-                margin-top: 10px;
-                padding: 20px;
-                margin-left: 10px;
-                p {  color: red;}
-              
             }
         }
+    }
+}
 
-
-        // -------------------------------------------------- 
-.list-phim {
-   
-    .list-phim-content{
-        margin: 40px;
-        
-     display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
-        grid-row-gap: 30px;
-      
-        img{
-            width: 180px;
-            height: 240px;
+.delete-user-modal {
+    // padding-bottom: 40px;
+    .delete-user-modal-close {
+        position: absolute;
+        bottom: -20px;
+        left: 45%;
+        transform: translateX(-50%);
+        .btn {
+            margin-bottom: 30px;
+            margin-left: 30px;
             border: none;
             border-radius: 10px;
+            // background-color: rgba($color: white, $alpha: .6);
         }
-    
+        .btn:hover {
+            background-color: rgba($color: gray, $alpha: .6);
+        }
     }
-   
-  
- }
+}
+
+.delete-user-modal {
+    font-size: 17px;
+    .passed {
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 20px;
+        p {
+            color: green;
+        }
+    }
+    .failed {
+        margin-top: 10px;
+        padding: 20px;
+        margin-left: 10px;
+        p {
+            color: red;
+        }
+    }
+}
+
+// -------------------------------------------------- 
+.list-phim {
+    .list-phim-content {
+        margin: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 40px;
+        grid-row-gap: 20px;
+        a.poster {
+            img {
+                // width: 180px;
+                // height: 240px;
+                width: 100%;
+                height: 300px;
+                border: none;
+                border-radius: 10px;
+                transition: all 2s;
+            }
+        }
+        .ten-phim {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .item {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            .edit {
+                overflow: hidden;
+                width: 100%;
+                text-align: center;
+                // visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                // transform: translate(-200%, -200%);
+                transform: translate(-50%, 300%);
+                transition: all 2s;
+                // display: none;
+                a {
+                    margin-right: 20px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: white;
+                    img {
+                        border-radius: 10px;
+                        background-color: white;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+                button {
+                    background-color: transparent;
+                    border: none;
+                    border-radius: 10px;
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+         :hover {
+            a.poster {
+                img {
+                    // transform: translateY(-100px);
+                    transform: rotateY(0.5turn)
+                }
+            }
+            .edit {
+                // visibility: visible;
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

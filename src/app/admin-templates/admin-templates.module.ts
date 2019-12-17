@@ -1,3 +1,4 @@
+import { PhimComponent } from './phim/phim.component';
 import { QuanLyPhimModule } from './quan-ly-phim/quan-ly-phim.module';
 import { UserComponent } from './user/user.component';
 import { QuanLyUserComponent } from './quan-ly-user/quan-ly-user.component';
@@ -26,7 +27,7 @@ import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 
 
 @NgModule({
-  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyUserComponent, MenuComponent, UserComponent, QuanLyPhimComponent],
+  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyUserComponent, MenuComponent, UserComponent, QuanLyPhimComponent, PhimComponent],
   imports: [
     CommonModule,
     AdminTemplatesRoutingModule,

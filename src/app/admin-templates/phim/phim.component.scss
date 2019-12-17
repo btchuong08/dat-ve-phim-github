@@ -1,0 +1,66 @@
+@import '../../../sass/variables';
+@import '../../../sass/mixins';
+.wrapper {
+    margin-left: 250px;
+    background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
+    background-position: center;
+    min-height: 800px;
+    background-size: cover;
+    .title {
+        background-color: rgba(255, 255, 255, .6);
+        p {
+            color: $color-primary;
+            margin-left: 60px;
+            font-size: 30px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+    }
+    .editForm {
+        margin: 60px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 60px;
+        .form-item {
+            background-color: rgba(255, 255, 255, .6);
+            border: none;
+            border-radius: 10px;
+            .form-item_content {
+                margin: 30px;
+                input {
+                    height: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: rgba(255, 255, 255, .6);
+                    margin-bottom: 20px;
+                }
+                p {
+                    text-align: start;
+                }
+                img {
+                    width: 200px;
+                    height: 280px;
+                    border: none;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }
+                button {
+                    text-align: center;
+                    height: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $color-primary;
+                    color: white;
+                    width: 120px;
+                }
+                textarea {
+                    background-color: rgba(255, 255, 255, .6);
+                    padding: 30px;
+                    border: none;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
