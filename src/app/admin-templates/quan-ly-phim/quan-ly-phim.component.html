@@ -24,7 +24,8 @@
 
                     </div>
                     <div class="search-btn">
-                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search">
+                        <input class="form-control" type="text" name="search" [(ngModel)]="searchText"
+                            autocomplete="off" placeholder="Search">
 
                         <button *ngIf="listDeteleUser.length !== 0"> Detele</button>
                     </div>
@@ -35,7 +36,8 @@
                 <div class="list-phim-content">
                     <div class="item" *ngFor="let item of listPhim | filter:searchText  ">
 
-                        <a class="poster" routerLink="/admin/phim/{{item.maPhim}}" routerLinkActive="router-link-active">
+                        <a class="poster" routerLink="/admin/phim/{{item.maPhim}}"
+                            routerLinkActive="router-link-active">
                             <img src={{item.hinhAnh}} alt="">
 
                         </a>
@@ -46,12 +48,13 @@
                         <p class="ten-phim">{{item.tenPhim}}</p>
                         <div class="edit">
 
-                            <a routerLink="/admin/phim/{{item.maPhim}}" routerLinkActive="router-link-active"> <img src="https://img.icons8.com/ios/50/000000/settings.png"> </a>
+                            <a routerLink="/admin/phim/{{item.maPhim}}" routerLinkActive="router-link-active"> <img
+                                    src="https://img.icons8.com/ios/50/000000/settings.png"> </a>
 
 
-                            <button>
-                                <img src="assets\img\icons\detele-icon.png" >
-                              
+                            <button data-toggle="modal" data-target="#deteleUserModal" (click)=confirmDetelePhim(item)>
+                                <img src="assets\img\icons\detele-icon.png">
+
                             </button>
                         </div>
 
@@ -77,7 +80,8 @@
 
 
 <!-- Modal  singup user-->
-<div class="modal fade modal1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade modal1" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="header">
@@ -92,7 +96,8 @@
 
 
 
-                <form *ngIf="!addUser ; else addedUser" form class="container signup-form  text-center" #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
+                <form *ngIf="!addUser ; else addedUser" form class="container signup-form  text-center"
+                    #signupForm="ngForm" (ngSubmit)="signup(signupForm.value)">
 
                     <div>
 
@@ -101,18 +106,21 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel' ngModel required maxlength=25 min="3">
+                                <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
+                                    ngModel required maxlength=25 min="3">
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel' ngModel required>
+                                <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
+                                    ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel required>
+                                <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
+                                    required>
                             </mat-form-field>
                         </div>
 
@@ -133,19 +141,22 @@
 
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel required>
+                                <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
+                                    required>
                             </mat-form-field>
                         </div>
                         <div>
                             <mat-form-field>
-                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel required>
+                                <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel'
+                                    ngModel required>
                             </mat-form-field>
                         </div>
 
                         <div>
                             <mat-form-field>
                                 <mat-label>Mã loại người dùng</mat-label>
-                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel' ngModel>
+                                <select matNativeControl required name='maLoaiNguoiDung' #maLoaiNguoiDung='ngModel'
+                                    ngModel>
                                     <option value="KhachHang">User</option>
                                     <option value="QuanTri">Admin</option>
 
@@ -203,7 +214,8 @@
 
 
 <!-- Modal -->
-<div class="modal fade modal2" id="deteleUserModal" tabindex="-1" role="dialog" aria-labelledby="deteleUserModal" aria-hidden="true">
+<div class="modal fade modal2" id="deteleUserModal" tabindex="-1" role="dialog" aria-labelledby="deteleUserModal"
+    aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
             <!-- <div class="modal-header">
@@ -213,12 +225,12 @@
             <div *ngIf="!deletedUser ; else deteleUser">
                 <div class="modal-body">
 
-                    <p> Bạn muốn xóa user {{taiKhoanDetele}} ?</p>
+                    <p> Bạn muốn xóa Phim {{Phim.tenPhim}} ?</p>
 
                 </div>
                 <div class="footer">
                     <button type="button" class="btn  " data-dismiss="modal">No</button>
-                    <button type="button" class="btn  " (click)='deleteUser()'>Yes</button>
+                    <button type="button" class="btn  " data-dismiss="modal">Yes</button>
                 </div>
             </div>
         </div>

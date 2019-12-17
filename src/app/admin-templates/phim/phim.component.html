@@ -6,7 +6,7 @@
     </div>
 
 
-    <form class="editForm text-center" (ngSubmit)="edit(editForm.value)" #editForm="ngForm">
+    <form class="editForm text-center">
 
         <div class="form-item ">
 
@@ -16,7 +16,7 @@
 
                 <img src={{Phim.hinhAnh}} alt="">
 
-                <div class="text-center">
+                <div class="text-center btn  " data-toggle="modal" data-target="#editUserModal">
                     <button type="submit">Thay đổi</button>
                 </div>
 
@@ -30,15 +30,15 @@
                 <input type="text" value={{Phim.tenPhim}}>
 
                 <p>Mã Phim</p>
-                <input type="email" value={{Phim.maPhim}}>
+                <input type="text" value={{Phim.maPhim}}>
 
                 <p>Ngày khởi chiếu</p>
-                <input type="number" value={{Phim.ngayKhoiChieu}}>
+                <input type="text" value={{Phim.ngayKhoiChieu}}>
 
                 <p>Trailer Link</p>
                 <input type="text" value={{Phim.trailer}}>
 
-                <div class="text-center">
+                <div class="text-center btn" data-toggle="modal" data-target="#editUserModal">
                     <button type="submit">Thay đổi</button>
                 </div>
             </div>
@@ -46,12 +46,12 @@
         <div class="form-item">
             <div class="form-item_content">
                 <p>Mô tả</p>
-                <textarea name="" id="" cols="30" rows="10" value="{{Phim.moTa}}"></textarea>
+                <!-- <textarea name="" id="" cols="30" rows="10" value="{{Phim.moTa}}"></textarea> -->
 
 
-                <!-- <p>{{Phim.moTa}}</p> -->
+                <p>{{Phim.moTa}}</p>
 
-                <div class="text-center">
+                <div class="text-center btn" data-toggle="modal" data-target="#editUserModal">
                     <button type="submit">Thay đổi</button>
                 </div>
             </div>
@@ -61,4 +61,30 @@
         </div>
 
     </form>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade modal2" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editUserModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <!-- <div class="modal-header">
+                <h5 class="modal-title">Xác nhận</h5>
+
+            </div> -->
+            <div>
+                <div class="modal-body">
+
+                    <p> Bạn muốn lưu chỉnh sửa ?</p>
+
+                </div>
+                <div class="footer">
+                    <button type="button" class="btn  " data-dismiss="modal">No</button>
+                    <button type="button" class="btn  " data-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

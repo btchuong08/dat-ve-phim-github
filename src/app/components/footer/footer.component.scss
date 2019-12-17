@@ -4,9 +4,48 @@
     font-family: roboto;
     background-color: $color-grey-drak;
     color: white;
+
+    .footer-content1 {
+        padding: 30px;
+        padding-bottom: 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+        grid-column-gap: 20px;
+        @include underLine;
+        font-size: 14px;
+        p.title{ 
+            color: white;
+
+        }
+        .doi-tac {
+            display: grid;
+        grid-template-columns: 30px 30px 30px 30px 30px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        img {
+            border-radius: 100%;
+        }
+        }
+        p {
+            color: #949494;
+           
+        }
+        p:hover {
+            color: white;
+        }
+        img{
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            margin-right: 20px;
+        }
+    }
     .footer-content {
         line-height: 15px;
-        padding-top: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         position: relative;
         display: grid;
         grid-template-columns: 1fr 8fr 1fr;

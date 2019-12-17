@@ -39,8 +39,9 @@ export class QuanLyPhimComponent implements OnInit {
 
   listDeteleUser: any = [];
 
-  clicked = (item) => {
-
+  Phim: any = {};
+  confirmDetelePhim = (item) => {
+    this.Phim = item;
   }
 
   resetForm = () => {
