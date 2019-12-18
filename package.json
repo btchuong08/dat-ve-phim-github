@@ -24,7 +24,6 @@
     "@angular/router": "~8.2.12",
     "@auth0/angular-jwt": "^3.0.1",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
-    "@nicky-lenaers/ngx-scroll-to": "^3.0.1",
     "@types/jquery": "^3.3.31",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^4.3.1",

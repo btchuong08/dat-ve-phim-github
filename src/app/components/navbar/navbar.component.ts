@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -21,13 +20,6 @@ export class NavbarComponent implements OnInit {
     this.isLogin = false;
     this.router.navigate(['']);
   }
-
-
-  scrollToElement($element): void {
-    console.log($element);
-    $element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
-  }
-
   ngOnInit() {
 
     if (sessionStorage.getItem("username") !== null) {

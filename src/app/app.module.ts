@@ -22,7 +22,6 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxLoadingModule } from 'ngx-loading';
-import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [
@@ -45,8 +44,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     AngularFontAwesomeModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    NgxLoadingModule.forRoot({}),
-    ScrollToModule.forRoot()
+    NgxLoadingModule.forRoot({})
 
 
 
