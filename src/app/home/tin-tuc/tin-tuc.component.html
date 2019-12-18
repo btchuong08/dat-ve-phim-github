@@ -1,183 +1,478 @@
 <div class="wrapper container " id="tin-tuc">
-    <div class="title-wrapper">
 
-        <span>
-            Điện Ảnh 24h
-        </span>
+    <div class="wrapper-content">
 
-        <span>Review</span>
+        <div class="title-wrapper">
 
 
-        <span>
-            Khuyến Mãi
-        </span>
+            <button (click)='getDienAnh()'>  Điện Ảnh 24h</button>
+
+            <button (click)='getReview()'>Review</button>
 
 
-
-    </div>
-
+            <button (click)='getKhuyenMai()'> Khuyến Mãi</button>
 
 
-    <div class="content-1">
-        <div>
-            <a
-                href="https://123phim.vn/goc-dien-anh/7803-4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-doctor-sleep">
-                <img src="https://s3img.vcdn.vn/123phim/2019/11/4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-15738060056189.jpg"
-                    alt="">
-
-                <p>4 sự khác biệt thú vị giữa bản điện ảnh và nguyên tác gốc của Doctor Sleep</p>
-
-
-
-
-            </a>
-
-            <div>
-                Mike Flanagan đã thay đổi kịch bản so với tiểu thuyết gốc, nhưng vì sao "cha đẻ" lại vô vùng thích thú,
-                hào hứng Doctor Sleep?
-            </div>
-            <div class="content-1_logo">
-                <a href="">
-                    <img src="assets\img\icons\like.png" alt="">
-                    <span>0</span>
-                </a>
-                <a href="">
-                    <img src="assets\img\icons\comment.png" alt="">
-                    <span>0</span>
-                </a>
-            </div>
 
         </div>
-
-        <div>
-
-            <a
-                href="https://123phim.vn/goc-dien-anh/7799-dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet">
-                <img src="https://s3img.vcdn.vn/123phim/2019/10/dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet-15723562360234.jpg"
-                    alt="">
-
-                <p>
-                    Đầu năm 2020, Ju-On sẵn sàng chào đón bạn tại phòng chiếu Việt
-
-                </p>
+        <div *ngIf="dienAnh">
 
 
-            </a>
-            <div>
-                <br>
-                <p>
-                    Xem trailer mà gai hết người thật sự.
-                </p>
 
-                <div class="content-1_logo">
-                    <br>
-                    <a href="">
-                        <img src="assets\img\icons\like.png" alt="">
-                        <span>0</span>
+
+
+
+
+
+
+            <div class="content-1">
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7803-4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-doctor-sleep">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/12/chi-chi-em-em-tuong-phim-tinh-cam-hoa-ra-hack-nao-muon-tung-ca-dau-15764005900817.jpg" alt="">
+
+                        <p>Chị Chị Em Em - Tưởng phim tình cảm hóa ra 'hack não' muốn tung cả đầu</p>
                     </a>
-                    <a href="">
-                        <img src="assets\img\icons\comment.png" alt="">
-                        <span>0</span>
-                    </a>
+
+                    <div>
+                        Bộ phim đầu tay ở vai trò đạo diễn của Kathy Uyên mang đến hàng loạt nút thắt “ảo diệu” và cảm xúc dâng trào.
+                    </div>
+                    <div class="content-1_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
                 </div>
 
+                <div>
+
+                    <a href="https://123phim.vn/goc-dien-anh/7799-dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/12/chi-chi-em-em-ban-remix-cuc-gat-cua-doi-lua-phan-boi-tinh-duc-15763077972671.jpg" alt="">
+
+                        <p>
+                            Chị Chị Em Em - Bản Remix cực 'gắt' của dối lừa - phản bội - tình dục
+
+                        </p>
+
+
+                    </a>
+                    <div>
+
+                        <div> Một câu chuyện lạ lẫm mà điện ảnh Việt Nam chưa từng có.</div>
+
+
+
+                        <div class="content-1_logo">
+                            <br>
+                            <a href="">
+                                <img src="assets\img\icons\like.png" alt="">
+                                <span>0</span>
+                            </a>
+                            <a href="">
+                                <img src="assets\img\icons\comment.png" alt="">
+                                <span>0</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-2">
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7794-bac-kim-thang-va-nhung-chi-tiet-dat-gia-trong-trailer-cuoi-cung">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/12/tro-choi-ky-ao-thang-cap-the-rock-va-dong-bon-tiep-tuc-pha-dao-the-gioi-ao-15762670084453.jpg" alt="">
+
+                        <p> Trò Chơi Kỳ Ảo: Thăng Cấp - The Rock và đồng bọn tiếp tục 'phá đảo thế giới ảo'
+                        </p>
+
+                    </a>
+                    <div>
+                        Với sự xuất hiện của “hội phụ lão”, Jumanji: The Next Level trở nên hài hước và lầy lội hơn hẳn phần đầu tiên.
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7788-sau-10-ngay-khoi-chieu-joker-da-thu-ve-gan-60-ty-dong">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/11/ford-v-ferrari-tuyet-tac-ve-lich-su-cua-mon-the-thao-toc-do-15750174492320.jpg" alt="">
+                        <p>
+                            Ford v Ferrari - Tuyệt tác về lịch sử của môn thể thao tốc độ
+
+                        </p>
+
+                    </a>
+                    <div>
+                        <br>
+                        <p class="newsDescription ng-binding ng-scope" ng-if="isBigNews($index)">Dù đã bước sang đến tuần thứ 2 nhưng Joker vẫn chưa có dấu hiệu hạ nhiệt tại phòng chiếu Việt.</p>
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-2_2">
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7787-vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t-15710479210371.jpg" alt="">
+                        <p>
+                            Vì sao Joker là kẻ phản diện được yêu thích nhất?
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/b3106edaf174fc6f1c9976b0e9eca940.jpg" alt="">
+                        <p>
+                            Sheeran, 'Lọ Lem' Lily James và nhiều sao lớn cùng góp mặt trong phim
+                        </p>
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/vuot-ai-kiem-quyet-that-son-tam-linh-chinh-thuc-tan-cong-phong-ve-viet-15688605409009.jpg" alt="">
+                        <p>
+                            Vượt ải kiểm quyệt, Thất Sơn Tâm Linh chính thức tấn công phòng vé
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7782-khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-dang-lam-mua-lam-gio-tai-cac-lhp-trong-nam-nay">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-lam-mua-lam-gio-tai-cac-lhp-nam-nay-15687978421102.jpg" alt="">
+                        <p>
+                            Không phô trương, cầu kỳ nhưng Lời Từ Biệt lại đang 'làm mưa làm gió'
+                        </p>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div *ngIf="review">
+            <div class="content-1">
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7803-4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-doctor-sleep">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/11/4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-15738060056189.jpg" alt="">
+
+                        <p>4 sự khác biệt thú vị giữa bản điện ảnh và nguyên tác gốc của Doctor Sleep</p>
+
+
+
+
+                    </a>
+
+                    <div>
+                        Mike Flanagan đã thay đổi kịch bản so với tiểu thuyết gốc, nhưng vì sao "cha đẻ" lại vô vùng thích thú, hào hứng Doctor Sleep?
+                    </div>
+                    <div class="content-1_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <a href="https://123phim.vn/goc-dien-anh/7799-dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet-15723562360234.jpg" alt="">
+
+                        <p>
+                            Đầu năm 2020, Ju-On sẵn sàng chào đón bạn tại phòng chiếu Việt
+
+                        </p>
+
+
+                    </a>
+                    <div>
+                        <br>
+                        <p>
+                            Xem trailer mà gai hết người thật sự.
+                        </p>
+
+                        <div class="content-1_logo">
+                            <br>
+                            <a href="">
+                                <img src="assets\img\icons\like.png" alt="">
+                                <span>0</span>
+                            </a>
+                            <a href="">
+                                <img src="assets\img\icons\comment.png" alt="">
+                                <span>0</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-2">
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7794-bac-kim-thang-va-nhung-chi-tiet-dat-gia-trong-trailer-cuoi-cung">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/eb43fee011ec1fb7e9ab514b4f38cb99.jpg" alt="">
+
+                        <p> Bắc Kim Thang và những chi tiết đắt giá trong trailer cuối cùng
+                        </p>
+
+                    </a>
+
+                    <div>
+                        Xem xong trailer này, có ai tiếc thay thân phận của Hai Lầm hay không?
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7788-sau-10-ngay-khoi-chieu-joker-da-thu-ve-gan-60-ty-dong">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/e88783518d5cadbd285b9f59ffe64d2c.jpg" alt="">
+                        <p>
+                            Sau 10 ngày khởi chiếu, Joker đã thu về gần 60 tỷ đồng
+                        </p>
+
+                    </a>
+                    <div>
+                        <p class="newsDescription ng-binding ng-scope" ng-if="isBigNews($index)">Dù đã bước sang đến tuần thứ 2 nhưng Joker vẫn chưa có dấu hiệu hạ nhiệt.</p>
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-2_2">
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7787-vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t-15710479210371.jpg" alt="">
+                        <p>
+                            Vì sao Joker là kẻ phản diện được yêu thích nhất?
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/b3106edaf174fc6f1c9976b0e9eca940.jpg" alt="">
+                        <p>
+                            Sheeran, 'Lọ Lem' Lily James và nhiều sao lớn cùng góp mặt trong phim
+                        </p>
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/vuot-ai-kiem-quyet-that-son-tam-linh-chinh-thuc-tan-cong-phong-ve-viet-15688605409009.jpg" alt="">
+                        <p>
+                            Vượt ải kiểm quyệt, Thất Sơn Tâm Linh chính thức tấn công phòng vé
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7782-khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-dang-lam-mua-lam-gio-tai-cac-lhp-trong-nam-nay">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-lam-mua-lam-gio-tai-cac-lhp-nam-nay-15687978421102.jpg" alt="">
+                        <p>
+                            Không phô trương, cầu kỳ nhưng Lời Từ Biệt lại đang 'làm mưa làm gió'
+                        </p>
+
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div *ngIf="khuyenMai" id='khuyenMai'>
+            <div class="content-1">
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7803-4-su-khac-biet-thu-vi-giua-ban-dien-anh-va-nguyen-tac-goc-cua-doctor-sleep">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/11/123phim-thu-6-khong-den-toi-uu-dai-huy-diet-11k-ve-anh-trai-yeu-quai-15746782357665.jpg" alt="">
+
+                        <p>[123Phim] Thứ 6 Không Đen Tối - Ưu đãi huỷ diệt 11k/vé Anh Trai Yêu Quái</p>
+                    </a>
+
+                    <div>
+                        Từ giờ đến 05.12.2019, chỉ cần lần đầu mua vé trên 123Phim, chọn thanh toán bằng ZaloPay hoặc mục Vé Phim trên ZaloPay, bạn có thể đặt ngay vé phim Anh Trai Yêu Quái với giá chỉ 11k/vé.
+                    </div>
+                    <div class="content-1_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <a href="https://123phim.vn/goc-dien-anh/7799-dau-nam-2020-ju-on-san-sang-chao-don-ban-tai-phong-chieu-viet">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/11/123phim-nhap-ma-psm30k-giam-ngay-30k-khi-dat-ve-phap-su-mu-ai-chet-gio-tay-15729439150313.jpg" alt="">
+
+                        <p>
+                            [123Phim] NHẬP MÃ 'PSM30K' - Giảm ngay 30k khi đặt vé Pháp Sư Mù: Ai Chết Giơ Tay
+
+                        </p>
+
+
+                    </a>
+                    <div>
+
+                        <div>123Phim đồng hành cùng phim Việt - Giảm ngay 30k mỗi giao dịch khi đặt vé Pháp Sư Mù: Ai Chết Giơ Tay trên ứng dụng 123Phim.</div>
+
+
+
+                        <div class="content-1_logo">
+                            <br>
+                            <a href="">
+                                <img src="assets\img\icons\like.png" alt="">
+                                <span>0</span>
+                            </a>
+                            <a href="">
+                                <img src="assets\img\icons\comment.png" alt="">
+                                <span>0</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-2">
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7794-bac-kim-thang-va-nhung-chi-tiet-dat-gia-trong-trailer-cuoi-cung">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/mega-gs-mot-doa-hoa-thay-ngan-loi-yeu-15713106171102.jpg" alt="">
+
+                        <p> [Mega GS] Một đoá hoa thay ngàn lời yêu
+                        </p>
+
+                    </a>
+                    <div>
+                        Chỉ với một cành hoa hồng vào ngày 20.10 cũng sẽ đủ để cho người phụ nữ của bạn cảm thấy hạnh phúc.
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="https://123phim.vn/goc-dien-anh/7788-sau-10-ngay-khoi-chieu-joker-da-thu-ve-gan-60-ty-dong">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/123phim-nhap-ma-bkt-giam-ngay-20k-khi-dat-ve-bac-kim-thang-15712976725554.jpg" alt="">
+                        <p>
+                            [123Phim] NHẬP MÃ 'BKT' - Giảm ngay 20k
+
+                        </p>
+
+                    </a>
+                    <div>
+
+                        <p class="newsDescription ng-binding ng-scope" ng-if="isBigNews($index)">Dù đã bước sang đến tuần thứ 2 nhưng Joker vẫn chưa có dấu hiệu hạ nhiệt tại phòng chiếu Việt.</p>
+                    </div>
+                    <div class="content-2_logo">
+                        <a href="">
+                            <img src="assets\img\icons\like.png" alt="">
+                            <span>0</span>
+                        </a>
+                        <a href="">
+                            <img src="assets\img\icons\comment.png" alt="">
+                            <span>0</span>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <div class="content-2_2">
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7787-vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/10/vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t-15710479210371.jpg" alt="">
+                        <p>
+                            Vì sao Joker là kẻ phản diện được yêu thích nhất?
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/b3106edaf174fc6f1c9976b0e9eca940.jpg" alt="">
+                        <p>
+                            Sheeran, 'Lọ Lem' Lily James và nhiều sao lớn cùng góp mặt trong phim
+                        </p>
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/vuot-ai-kiem-quyet-that-son-tam-linh-chinh-thuc-tan-cong-phong-ve-viet-15688605409009.jpg" alt="">
+                        <p>
+                            Vượt ải kiểm quyệt, Thất Sơn Tâm Linh chính thức tấn công phòng vé
+                        </p>
+
+                    </a>
+                    <a class="content-2_2_item" href="https://123phim.vn/goc-dien-anh/7782-khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-dang-lam-mua-lam-gio-tai-cac-lhp-trong-nam-nay">
+                        <img src="https://s3img.vcdn.vn/123phim/2019/09/khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-lam-mua-lam-gio-tai-cac-lhp-nam-nay-15687978421102.jpg" alt="">
+                        <p>
+                            Không phô trương, cầu kỳ nhưng Lời Từ Biệt lại đang 'làm mưa làm gió'
+                        </p>
+
+                    </a>
+                </div>
             </div>
         </div>
+
+        <div class="xem-them">
+            <button>Xem Thêm</button>
+        </div>
+
     </div>
 
-    <div class="content-2">
 
-
-        <div>
-            <a
-                href="https://123phim.vn/goc-dien-anh/7794-bac-kim-thang-va-nhung-chi-tiet-dat-gia-trong-trailer-cuoi-cung">
-                <img src="https://s3img.vcdn.vn/123phim/2019/10/eb43fee011ec1fb7e9ab514b4f38cb99.jpg" alt="">
-
-                <p> Bắc Kim Thang và những chi tiết đắt giá trong trailer cuối cùng
-                </p>
-
-            </a>
-            <div>
-                Xem xong trailer này, có ai tiếc thay thân phận của Hai Lầm hay không?
-            </div>
-            <div class="content-2_logo">
-                <a href="">
-                    <img src="assets\img\icons\like.png" alt="">
-                    <span>0</span>
-                </a>
-                <a href="">
-                    <img src="assets\img\icons\comment.png" alt="">
-                    <span>0</span>
-                </a>
-            </div>
-        </div>
-
-
-        <div>
-            <a href="https://123phim.vn/goc-dien-anh/7788-sau-10-ngay-khoi-chieu-joker-da-thu-ve-gan-60-ty-dong">
-                <img src="https://s3img.vcdn.vn/123phim/2019/10/e88783518d5cadbd285b9f59ffe64d2c.jpg" alt="">
-                <p>
-                    Sau 10 ngày khởi chiếu, Joker đã thu về gần 60 tỷ đồng
-                </p>
-
-            </a>
-            <div>
-                <p class="newsDescription ng-binding ng-scope" ng-if="isBigNews($index)">Dù đã bước sang đến
-                    tuần
-                    thứ 2
-                    nhưng Joker vẫn chưa có dấu hiệu hạ nhiệt tại phòng chiếu Việt.</p>
-            </div>
-            <div class="content-2_logo">
-                <a href="">
-                    <img src="assets\img\icons\like.png" alt="">
-                    <span>0</span>
-                </a>
-                <a href="">
-                    <img src="assets\img\icons\comment.png" alt="">
-                    <span>0</span>
-                </a>
-            </div>
-
-        </div>
-
-
-
-        <div class="content-2_2">
-            <a class="content-2_2_item"
-                href="https://123phim.vn/goc-dien-anh/7787-vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t">
-                <img src="https://s3img.vcdn.vn/123phim/2019/10/vi-sao-joker-la-ke-pha-n-die-n-duo-c-yeu-thi-ch-nha-t-15710479210371.jpg"
-                    alt="">
-                <p>
-                    Vì sao Joker là kẻ phản diện được yêu thích nhất?
-                </p>
-
-            </a>
-            <a class="content-2_2_item"
-                href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
-                <img src="https://s3img.vcdn.vn/123phim/2019/09/b3106edaf174fc6f1c9976b0e9eca940.jpg" alt="">
-                <p>
-                    Sheeran, 'Lọ Lem' Lily James và nhiều sao lớn cùng góp mặt trong phim
-                </p>
-            </a>
-            <a class="content-2_2_item"
-                href="https://123phim.vn/goc-dien-anh/7784-ed-sheeran-lo-lem-lily-james-va-nhieu-sao-lon-cung-gop-mat-trong-phim-ca-nhac-yesterday">
-                <img src="https://s3img.vcdn.vn/123phim/2019/09/vuot-ai-kiem-quyet-that-son-tam-linh-chinh-thuc-tan-cong-phong-ve-viet-15688605409009.jpg"
-                    alt="">
-                <p>
-                    Vượt ải kiểm quyệt, Thất Sơn Tâm Linh chính thức tấn công phòng vé
-                </p>
-
-            </a>
-            <a class="content-2_2_item"
-                href="https://123phim.vn/goc-dien-anh/7782-khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-dang-lam-mua-lam-gio-tai-cac-lhp-trong-nam-nay">
-                <img src="https://s3img.vcdn.vn/123phim/2019/09/khong-pho-truong-cau-ky-nhung-loi-tu-biet-lai-lam-mua-lam-gio-tai-cac-lhp-nam-nay-15687978421102.jpg"
-                    alt="">
-                <p>
-                    Không phô trương, cầu kỳ nhưng Lời Từ Biệt lại đang 'làm mưa làm gió'
-                </p>
-
-            </a>
-        </div>
-    </div>
 
 </div>

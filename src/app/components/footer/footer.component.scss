@@ -4,8 +4,8 @@
     font-family: roboto;
     background-color: $color-grey-drak;
     color: white;
-
     .footer-content1 {
+        // margin-top: 150px;
         padding: 30px;
         padding-bottom: 5px;
         display: grid;
@@ -13,27 +13,25 @@
         grid-column-gap: 20px;
         @include underLine;
         font-size: 14px;
-        p.title{ 
+        p.title {
             color: white;
-
         }
         .doi-tac {
             display: grid;
-        grid-template-columns: 30px 30px 30px 30px 30px;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-        img {
-            border-radius: 100%;
-        }
+            grid-template-columns: 30px 30px 30px 30px 30px;
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            img {
+                border-radius: 100%;
+            }
         }
         p {
             color: #949494;
-           
         }
         p:hover {
             color: white;
         }
-        img{
+        img {
             text-align: center;
             width: 30px;
             height: 30px;
