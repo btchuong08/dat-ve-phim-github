@@ -1,30 +1,40 @@
 @import '../../../sass/variables';
+@import '../../../sass/mixins';
 .wrapper {
-    height: 900px;
+    // height: 1100px;
     margin: auto;
     width: 100%;
     text-align: center;
+    // position: relative;
+    .wrapper-content {
+        width: 80%;
+        transform: translateX(10%);
+        // @include midle;
+        top: 40%;
+        margin-bottom: 60px;
+    }
     img {
         border-radius: 5px;
     }
     .title-wrapper {
         margin: 30px 0 30px 0;
-        // padding-right: 20px
-        span {
-            margin-right: 40px;
-            font-size: $font-header;
+        button {
+            background-color: white;
+            margin-left: 30px;
+            // border: 1px solid grey;
+            border: none;
+            padding: 10px;
             color: $color-primary;
-            transition: all .5s;
+            font-size: 24px;
         }
-        span:hover {
-            font-weight: bold;
+        button:hover {
+            background-color: rgba($color-grey, $alpha: 0.6);
         }
     }
     .content-1 {
         .content-1_logo {
             margin: 20px 0 20px 0;
             a {
-              
                 margin-right: 20px;
                 line-height: 20px;
                 span {
@@ -62,7 +72,6 @@
     }
     .content-2 {
         .content-2_logo {
-         
             margin: 20px 0 20px 0;
             a {
                 font-weight: normal;
@@ -103,7 +112,6 @@
         grid-template-rows: 160px;
         grid-column-gap: 15px;
         .content-2_2 {
-           
             img {
                 width: 50px;
                 height: 50px;
@@ -113,12 +121,9 @@
             // grid-template-rows: 1fr 1fr 1fr 1fr ;
             // grid-row-gap: 15px;
             .content-2_2_item {
-                
                 display: grid;
                 grid-template-columns: 50px 1fr;
                 grid-column-gap: 10px;
-             
-
                 p {
                     font-weight: normal;
                     color: gray;
@@ -128,5 +133,32 @@
                 }
             }
         }
+    }
+}
+
+.blank {
+    display: inline-block;
+    height: 60px;
+    background-color: yellow;
+}
+
+.xem-them {
+    button {
+        border-radius: 10px;
+        border: 1px solid grey;
+        background-color: white;
+        color: grey;
+        width: 130px;
+        // height: 30px;
+        padding: 10px;
+    }
+}
+
+.xem-them {
+    margin-top: 230px;
+    button:hover {
+        background-color: #fb4226;
+        border-color: #fb4226;
+        color: white;
     }
 }
