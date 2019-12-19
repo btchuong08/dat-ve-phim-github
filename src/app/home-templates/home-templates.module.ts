@@ -9,6 +9,7 @@ import { HomeTemplatesComponent } from './home-templates.component';
 import { HomeModule } from '../home/home.module';
 import { ComponentsModule } from '../components/components.module';
 import { MatInputModule } from '@angular/material';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [HomeTemplatesComponent],
@@ -16,7 +17,8 @@ import { MatInputModule } from '@angular/material';
     CommonModule,
     HomeTemplatesRoutingModule,
     HomeModule, ComponentsModule,
-    MatInputModule
+    MatInputModule,
+    ScrollToModule.forRoot()
 
   ]
 })

@@ -32,6 +32,9 @@ export class ChiTietPhimComponent implements OnInit {
   lichChieu: any = [];
   maLichChieu = "";
   isLogin: boolean = false;
+  showLichChieu:boolean = false;
+  showThongTin:boolean = false;
+  showDanhGia:boolean = false;
   deduplicate(arr) {
     let set = new Set(arr);
     return Array.from(set);
@@ -49,6 +52,8 @@ export class ChiTietPhimComponent implements OnInit {
     private PhimService: PhimService,
     private _location: Location,
     private router: Router
+    
+
   ) { }
 
   timPhimTheoNgay = (tenCumRap, ngayChieu) => {

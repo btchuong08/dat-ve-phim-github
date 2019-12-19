@@ -12,7 +12,7 @@ import { HomeComponent } from './home.component';
 
 import { SafePipeModule } from 'safe-pipe';
 import { SlickModule } from 'ngx-slick';
-
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -23,7 +23,8 @@ import { SlickModule } from 'ngx-slick';
     ComponentsModule, SafePipeModule,
     SlickModule.forRoot(),
     LichChieuModule,
-    TinTucModule
+    TinTucModule,
+    ScrollToModule.forRoot()
 
 
   ],

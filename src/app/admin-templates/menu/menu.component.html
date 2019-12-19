@@ -1,16 +1,15 @@
 <div class="menu">
     <div>
 
-        <a [routerLink]="['/']" routerLinkActive="router-link-active"> <img class="logo"
-                src="assets\img\icons\web-logo.png" alt=""></a>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"> <img class="logo" src="assets\img\icons\web-logo.png" alt=""></a>
 
     </div>
     <div class="content">
         <div>
-            <a [routerLink]="['/admin/list-user']">Users</a>
+            <a [routerLink]="['/admin/list-user']" [ngClass]="{active: selectedIndex === 'user'}" (click)="setIndex('user')">Users</a>
         </div>
         <div>
-            <a [routerLink]="['/admin/list-phim']">Danh Sách Phim</a>
+            <a [routerLink]="['/admin/list-phim']" [ngClass]="{active: selectedIndex === 'phim'}" (click)="setIndex('phim')">Danh Sách Phim</a>
         </div>
 
     </div>

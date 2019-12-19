@@ -49,14 +49,18 @@ export class LichChieuComponent implements OnInit {
    
     
   }
-
-  getCumRap = (item) => {
+CumRapIndex : number = 0;
+  getCumRap = (item,index) => {
     this.CumRap = item[0].lstCumRap;
-    this.active=!this.active
-   
+    this.CumRapIndex=index
+   this.RapIndex=0
 
   }
-  getRap=(item) =>{
+
+  RapIndex : number = 0;
+  getRap=(item,index) =>{
+    this.RapIndex=index
+
     var ListPhimOfRap: Array<any> = [];
     item.danhSachPhim.map((item1) =>{
       ListPhimOfRap.push(item1)

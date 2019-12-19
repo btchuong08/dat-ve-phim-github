@@ -5,7 +5,6 @@
 
 .wrapper {
     // width: 1110px;
-   
     width: 70%;
     height: 350px;
     overflow: scroll;
@@ -22,6 +21,13 @@
     // // width: 75%;
     // text-align: center;
     .he-thong-rap {
+        .deactive {
+            opacity: 0.5;
+        }
+        .active {
+            // background-color: rgba($color: grey, $alpha: 0.5);
+            opacity: 1;
+        }
         text-align: center;
         padding-right: 20px;
         border-right: 1px solid $color-grey;
@@ -43,6 +49,13 @@
         }
     }
     .cum-rap {
+        margin-top: 5px;
+        .deactive {
+            opacity: 0.5;
+        }
+        .active {
+            opacity: 1;
+        }
         border-right: 1px solid $color-grey;
         text-align: start;
         .cum-rap_item {
@@ -62,6 +75,7 @@
             width: 50px;
             height: 50px;
             margin-right: 10px;
+            border-radius: 5px;
         }
         // display: inline-block;
         button {
@@ -129,7 +143,6 @@
                 height: 40px;
                 line-height: 30px;
                 width: 50px;
-                
             }
             a:hover {
                 color: red;

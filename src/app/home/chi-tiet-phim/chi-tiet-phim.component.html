@@ -29,7 +29,7 @@
                     <p>Đánh giá: {{phim.danhGia}} IMDb - 2D/Digital/3D/IMAX/4DX</p>
                     <!-- <a href="/phim/{{phim.maPhim}}#mua-ve">Mua vé</a> -->
 
-                    <button mat-raised-button color="primary">Mua vé</button>
+                    <button mat-raised-button color="primary" [ngx-scroll-to]="'lich-chieu'">Mua vé</button>
 
                 </div>
 
@@ -43,6 +43,9 @@
 
         <div class="title">
 
+            <!-- <button>Lịch Chiếu</button>
+            <button>Thông Tin</button>
+            <button>Đánh giá</button> -->
             <a href="">Lịch Chiếu</a>
             <a href="">Thông Tin</a>
             <a href="">Đánh giá</a>
@@ -53,7 +56,7 @@
 
 
 
-        <div class="lich-chieu" id="lich-chieu">
+        <div *ngIf="showLichChieu" class="lich-chieu" id="lich-chieu">
 
 
 
@@ -113,7 +116,38 @@
                 </div>
             </div>
 
+
+
+
         </div>
+        <div class="review ">
+            <div class="item1"> <span>Hiếu Nguyễn</span>
+
+                <button>Phim hay quá</button></div>
+
+            <div class="item2">
+
+                <button>Phim hay quá</button>
+                <span>Hiếu Nguyễn</span>
+            </div>
+
+            <div class="item1"> <span>Hiếu Nguyễn</span>
+
+                <button>Phim hay quá</button></div>
+
+            <div class="item2">
+
+                <button>Phim hay quá</button>
+                <span>Hiếu Nguyễn</span>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Viết đánh giá của bạn">
+                <button>Gửi</button>
+            </div>
+        </div>
+
+
     </div>
 
 

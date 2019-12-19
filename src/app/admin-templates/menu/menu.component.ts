@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-
+  selectedIndex= 'user';
   constructor() { }
 
+
+  setIndex =(data) =>{
+this.selectedIndex=data
+  }
   ngOnInit() {
   }
 

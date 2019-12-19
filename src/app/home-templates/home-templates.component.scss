@@ -1,0 +1,29 @@
+@import '../../sass/variables';
+// $primary-color: #3f51b5;
+.tool {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    .demo {
+        img {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+        }
+        transform: translateX(130px);
+        width: 160px;
+        background-color: $color-primary;
+        transition: all 1s;
+        margin-bottom: 5px;
+        height: 30px;
+        color: white;
+        a {
+            margin-left: 20px;
+            color: white;
+            text-decoration: white;
+        }
+    }
+    .demo:hover {
+        transform: translateX(0);
+    }
+}

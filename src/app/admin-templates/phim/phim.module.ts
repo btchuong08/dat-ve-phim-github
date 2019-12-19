@@ -5,6 +5,8 @@ import { PhimRoutingModule } from './phim-routing.module';
 import { PhimComponent } from './phim.component';
 import { FormsModule } from '@angular/forms';
 
+
+
 @NgModule({
   declarations: [PhimComponent],
   imports: [

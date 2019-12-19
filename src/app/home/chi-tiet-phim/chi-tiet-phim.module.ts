@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { SafePipeModule } from 'safe-pipe';
 
 import { NgxLoadingModule } from 'ngx-loading';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 @NgModule({
   declarations: [ChiTietPhimComponent],
   imports: [
@@ -14,7 +15,8 @@ import { NgxLoadingModule } from 'ngx-loading';
     ChiTietPhimRoutingModule,
     MatButtonModule,
     SafePipeModule,
-    NgxLoadingModule
+    NgxLoadingModule,
+    ScrollToModule.forRoot()
   ]
 })
 export class ChiTietPhimModule { }

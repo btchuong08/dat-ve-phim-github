@@ -7,42 +7,43 @@
 
     <div class="navbar_nav  item2 ">
         <div class="dropdown">
-            <a class="dropbtn" href=#phim-dang-chieu>Lịch Chiếu</a>
+            <a class="dropbtn" [routerLink]="['/']" routerLinkActive="router-link-active" [ngx-scroll-to]="'#phim-dang-chieu'">Lịch Chiếu</a>
+            <!-- <button [ngx-scroll-to]="'#phim-dang-chieu'">Go to destination</button> -->
             <!-- href=#phim-dang-chieu -->
 
             <div class="dropdown-content">
-                <a href=#phim-dang-chieu>Phim đang chiếu</a>
-                <a href=#phim-dang-chieu>Phim sắp chiếu</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'#phim-dang-chieu'">Phim đang chiếu</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'#phim-dang-chieu'">Phim sắp chiếu</a>
             </div>
 
         </div>
         <div class="dropdown">
-            <a class="dropbtn" href=#cum-rap>Cụm rạp</a>
+            <a [routerLink]="['/']" class="dropbtn" [ngx-scroll-to]="'cum-rap'">Cụm rạp</a>
 
 
             <div class="dropdown-content">
-                <a href=#cum-rap>BHD Star</a>
-                <a href=#cum-rap>Galaxy </a>
-                <a href=#cum-rap>Lotte cinema </a>
-                <a href=#cum-rap>CGV</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'cum-rap'">BHD Star</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'cum-rap'">Galaxy </a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'cum-rap'">Lotte cinema </a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'cum-rap'">CGV</a>
             </div>
         </div>
         <div class="dropdown">
-            <a class="dropbtn" href=#tin-tuc>Tin tức</a>
+            <a [routerLink]="['/']" class="dropbtn" [ngx-scroll-to]="'tin-tuc'">Tin tức</a>
             <div class="dropdown-content">
-                <a href=#tin-tuc>Khuyến mãi</a>
-                <a href=#tin-tuc>Review</a>
-                <a href=#tin-tuc>Tuyển dụng</a>
-                <a href=#tin-tuc>Liên hệ</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'tin-tuc'">Khuyến mãi</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'tin-tuc'">Review</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'tin-tuc'">Tuyển dụng</a>
+                <a [routerLink]="['/']" [ngx-scroll-to]="'tin-tuc'">Liên hệ</a>
             </div>
 
         </div>
         <div class="dropdown">
-            <a class="dropbtn" href=#tin-tuc>Ứng dụng</a>
+            <a [routerLink]="['/']" class="dropbtn" href=#tin-tuc>Ứng dụng</a>
 
             <div class="dropdown-content">
-                <a href=#tin-tuc>Android</a>
-                <a href=#tin-tuc>ios</a>
+                <a [routerLink]="['/']" href=#tin-tuc>Android</a>
+                <a [routerLink]="['/']" href=#tin-tuc>ios</a>
             </div>
 
         </div>

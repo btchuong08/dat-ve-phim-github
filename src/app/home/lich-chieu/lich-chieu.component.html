@@ -1,8 +1,8 @@
 <div class="wrapper container border" id="cum-rap">
 
     <div class="he-thong-rap  ">
-        <div *ngFor="let item of heThongRap, let index = index " class="he-thong-rap_item ">
-            <button (click)=getCumRap(ListCumRap[index])>
+        <div *ngFor="let item of heThongRap, let index = index " class="he-thong-rap_item deactive " [ngClass]="{active: CumRapIndex === index}">
+            <button (click)=getCumRap(ListCumRap[index],index)>
 
                 <img src={{item.logo}} alt="">
 
@@ -14,10 +14,10 @@
 
 
     <div class="cum-rap">
-        <div class="" *ngFor="let item of CumRap" class="cum-rap_item">
+        <div *ngFor="let item of CumRap, let index = index" class="cum-rap_item deactive" [ngClass]="{active: RapIndex === index}">
             <img src="../../../assets/img/icons/cinestar-quoc-thanh-15379636956745.jpg" alt="">
             <div class="cum-rap_hover">
-                <button id="btn" (click)="getRap(item)">
+                <button id="btn" (click)="getRap(item,index)">
                     {{item.tenCumRap}}
 
                 </button>

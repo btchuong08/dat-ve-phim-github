@@ -6,10 +6,10 @@
 
 
     <div class="navbar_nav  item2 ">
-        <a href=#phim-dang-chieu>Lịch Chiếu</a>
-        <a href=#cum-rap>Cụm rạp</a>
-        <a href=#tin-tuc>Tin tức</a>
-        <a href=#tin-tuc>Ứng dụng</a>
+        <a [routerLink]="['/']">Lịch Chiếu</a>
+        <a [routerLink]="['/']">Cụm rạp</a>
+        <a [routerLink]="['/']">Tin tức</a>
+        <a [routerLink]="['/']">Ứng dụng</a>
     </div>
 
     <div class="item item3 ">
@@ -38,8 +38,7 @@
 
             <div>
 
-                <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active"
-                    *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
+                <a [routerLink]="['/admin/list-user']" routerLinkActive="router-link-active" *ngIf="maLoaiNguoiDung === 'QuanTri'">Admin
                     Page</a>
 
             </div>

@@ -1,7 +1,7 @@
 <div class="wrapper ">
 
     <div class="title">
-        <p> Thông tin User</p>
+        <p> Thông tin User: {{user.taiKhoan}} </p>
 
     </div>
 
@@ -13,11 +13,11 @@
             <div class="form-item_content">
 
 
-                <p>Tài Khoản</p>
-                <input type="text" readonly name='taiKhoan' ngModel value={{user.taiKhoan}}>
+                <p>Ảnh đại diện: </p>
+                <img src="assets\img\icons\avatar.png" alt="">
 
-                <p>Mật Khẩu</p>
-                <input type="password" name='matKhau' ngModel value={{user.matKhau}}>
+                <!-- <p>Mật Khẩu</p>
+                <input type="password" name='matKhau' ngModel value={{user.matKhau}}> -->
 
                 <p>Mật khẩu mới</p>
                 <input type="password">
@@ -69,8 +69,8 @@
                     <div *ngIf="user.thongTinDatVe.length !== 0">
                         <div class="phim" *ngFor="let item of user.thongTinDatVe">
                             Phim: {{item.tenPhim}}, ngày đặt: {{item.ngayDat}}
-                            <div *ngFor="let item1 of item.danhSachGhe">Rạp: {{item1.tenHeThongRap}}, ghế:
-                                {{item1.tenGhe}}</div>
+                            <div *ngFor="let item1 of item.danhSachGhe">Rạp: {{item1.tenHeThongRap}}, ghế: {{item1.tenGhe}}
+                            </div>
                         </div>
 
                     </div>
