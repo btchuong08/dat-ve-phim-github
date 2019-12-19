@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./chi-tiet-phim.component.scss']
 })
 export class ChiTietPhimComponent implements OnInit {
-  public loading = false;
+  public loading = true;
 
   public phim: any = {};
   public ngayChieuGioChieu: any = [];
@@ -32,9 +32,9 @@ export class ChiTietPhimComponent implements OnInit {
   lichChieu: any = [];
   maLichChieu = "";
   isLogin: boolean = false;
-  showLichChieu:boolean = false;
-  showThongTin:boolean = false;
-  showDanhGia:boolean = false;
+  showLichChieu: boolean = false;
+  showThongTin: boolean = false;
+  showDanhGia: boolean = false;
   deduplicate(arr) {
     let set = new Set(arr);
     return Array.from(set);
@@ -52,7 +52,7 @@ export class ChiTietPhimComponent implements OnInit {
     private PhimService: PhimService,
     private _location: Location,
     private router: Router
-    
+
 
   ) { }
 
@@ -129,7 +129,7 @@ export class ChiTietPhimComponent implements OnInit {
     this.PhimService.LayChiTietPhim(this.maPhim).subscribe((phim: any) => {
       this.phim = phim;
       this.PhimService.phim = phim
-
+      this.loading = false;
       this.cumRap = this.deduplicate(this.phim.lichChieu.map((item) => {
         return item.thongTinRap.tenHeThongRap
       }))
@@ -149,7 +149,7 @@ export class ChiTietPhimComponent implements OnInit {
 
 
 
-      this.loading = false;
+      // this.loading = true;
 
     })
 

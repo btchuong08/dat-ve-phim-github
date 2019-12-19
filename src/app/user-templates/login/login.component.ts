@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   private subLogin = new Subscription();
   error: any = '';
   isLogin: boolean = false;
+  loading: boolean = false;
   constructor(
     private PhimService: PhimService,
     private router: Router,
@@ -35,37 +36,49 @@ export class LoginComponent implements OnInit {
 
   }
   login = (user) => {
+    this.error = '';
+    this.loading = true;
     var data = {
       "taiKhoan": user.user,
       "matKhau": user.password
     };
 
-    this.PhimService.DangNhap(data).subscribe((result) => {
-      this.isLogin = true;
-      this.error = '';
-      console.log(result);
-      sessionStorage.setItem("username", result.taiKhoan);
-      sessionStorage.setItem("maLoaiNguoiDung", result.maLoaiNguoiDung);
-      sessionStorage.setItem("accessToken", result.accessToken);
-      // const accessToken = sessionStorage.getItem('accessToken');
-      // console.log(accessToken);
-      // const tokenPayload = decode(accessToken);
-      // console.log(tokenPayload);
-      // // console.log(tokenPayload.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name);
 
-      setTimeout(() => {
-        this._location.back();
-      }, 2000);
+    setTimeout(() => {
+
+      this.PhimService.DangNhap(data).subscribe((result) => {
+        this.isLogin = true;
+        this.error = '';
+        this.loading = false
+        console.log(result);
+        sessionStorage.setItem("username", result.taiKhoan);
+        sessionStorage.setItem("maLoaiNguoiDung", result.maLoaiNguoiDung);
+        sessionStorage.setItem("accessToken", result.accessToken);
+        // const accessToken = sessionStorage.getItem('accessToken');
+        // console.log(accessToken);
+        // const tokenPayload = decode(accessToken);
+        // console.log(tokenPayload);
+        // // console.log(tokenPayload.http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name);
+
+        setTimeout(() => {
+          this._location.back();
+        }, 1000);
 
 
 
 
-    }
-      , err => {
-        console.log(err);
-        this.error = err._body;
-        this.isLogin = false;
-      });
+      }
+        , err => {
+          this.loading = false
+          console.log(err);
+          this.error = err._body;
+          this.isLogin = false;
+        });
+
+
+
+    }, 2000);
+
 
   }
   ngOnInit() {
