@@ -42,10 +42,13 @@
             grid-template-columns: 1fr 2fr;
             grid-column-gap: 20px;
             .button {
-                .button {
+                button {
                     border-radius: 10px;
                     border: none;
                     background-color: #fb4226;
+                    margin-bottom: 20px;
+                    color: white;
+                    width: 100px;
                 }
             }
         }
