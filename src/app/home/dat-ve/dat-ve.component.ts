@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class DatVeComponent implements OnInit {
 
-
+public loading:boolean =false;
   public maLichChieu;
   public phim;
   private subParam: Subscription;
@@ -120,9 +120,17 @@ export class DatVeComponent implements OnInit {
   }
 
   datVe = () => {
+    this.loading=true;
+    
     console.log(this.thongTinDatVe);
     console.log(this.danhSachVe)
     this.datVesuccessfull = true;
+    setTimeout(()=>{
+      this.loading=false;
+    },2000)
+
+
+
 
     // ************************************ dat ve ***************************
     // this.AdminService.DatVe(this.danhSachVe).subscribe((result) => {

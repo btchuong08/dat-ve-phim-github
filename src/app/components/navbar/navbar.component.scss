@@ -147,3 +147,34 @@
 /* Change the background color of the dropdown button when the dropdown content is shown */
 
 //   .dropdown:hover .dropbtn {background-color: #3e8e41;}
+// ----------------------------------------------------------- logout---------------
+.confirm-logout {
+    position: fixed;
+    right: 0;
+    top: 200px;
+    z-index: 100;
+    background-color: $color-primary;
+    width: 250px;
+    color: white;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 10px;
+    transition: all 1s;
+    transform: translateX(100%);
+    button {
+        margin-right: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, .6);
+        color: black;
+    }
+    button:hover {
+        background-color: rgba($color-primary, 1);
+        color: white;
+        border-color: rgba($color-primary, 1);
+    }
+}
+
+.confirm-logout.active {
+    transform: translateX(0);
+}

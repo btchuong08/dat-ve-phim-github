@@ -307,7 +307,16 @@
 
         <div class="modal-content" *ngIf="datVesuccessfull">
 
-            <div class="notification">
+
+            <div *ngIf="loading" class="loading">
+                <div class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                </div>
+            </div>
+
+            <div *ngIf="!loading" class="notification">
 
                 <P class="successfully">
                     Mua vé thành công
@@ -349,15 +358,4 @@
 
 
 
-</div>
-
-<!-- ---------------- active -->
-<div>
-
-    <input type="checkbox" id="activate-div">
-    <label for="activate-div">
-     <div class="my-div">
-        //MY DIV CONTENT
-     </div>
-    </label>
 </div>

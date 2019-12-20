@@ -13,8 +13,24 @@ export class NavbarComponent implements OnInit {
   username: any = '';
   maLoaiNguoiDung: any = ''
 
+  public confirmLogout :boolean =false;
+confirmToLogout =() =>{
+this.confirmLogout=true;
+}
+
+logoutYes=()=>{
+  this.logout();
+
+  this.confirmLogout=false;
+  
+}
+
+logoutNo=()=>{
+  this.confirmLogout=false;
+}
+
   logout = () => {
-    alert("Bạn muốn đăng xuất? ")
+    // alert("Bạn muốn đăng xuất? ")
     // sessionStorage.removeItem("username");
     sessionStorage.clear();
     this.isLogin = false;

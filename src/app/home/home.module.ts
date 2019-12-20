@@ -1,3 +1,4 @@
+import { UngDungModule } from './ung-dung/ung-dung.module';
 import { TinTucModule } from './tin-tuc/tin-tuc.module';
 import { LichChieuModule } from './lich-chieu/lich-chieu.module';
 
@@ -24,7 +25,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     SlickModule.forRoot(),
     LichChieuModule,
     TinTucModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    UngDungModule
 
 
   ],

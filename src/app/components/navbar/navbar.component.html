@@ -76,10 +76,23 @@
                 Page</a>
 
             <a [routerLink]="['/profile']">Profile</a>
-            <button id="Logout" (click)="logout()">Logout</button>
+            <button id="Logout" (click)="confirmToLogout()">Logout</button>
 
         </div>
     </div>
 
 
 </ng-template>
+
+
+<div class="confirm-logout" [ngClass]="{active: confirmLogout}">
+
+    <div>
+        <p>Bạn muốn đăng xuất ?</p>
+    </div>
+    <div>
+        <button (click)='logoutYes()'>Yes</button>
+        <Button (click)='logoutNo()'>No</Button>
+    </div>
+
+</div>
