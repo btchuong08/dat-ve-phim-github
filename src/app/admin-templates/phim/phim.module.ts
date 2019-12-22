@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [PhimComponent],
+  declarations: [],
   imports: [
     CommonModule,
     PhimRoutingModule,

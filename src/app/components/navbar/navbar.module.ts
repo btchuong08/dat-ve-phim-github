@@ -4,14 +4,15 @@ import { CommonModule } from '@angular/common';
 import { NavbarRoutingModule } from './navbar-routing.module';
 import { NavbarComponent } from './navbar.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
-
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [],
   imports: [
     CommonModule,
     NavbarRoutingModule,
-    ScrollToModule
+    ScrollToModule,
+    AngularFontAwesomeModule
   ],
-  exports:[NavbarComponent]
+  exports: []
 })
 export class NavbarModule { }

@@ -133,12 +133,12 @@ public loading:boolean =false;
 
 
     // ************************************ dat ve ***************************
-    // this.AdminService.DatVe(this.danhSachVe).subscribe((result) => {
-    //   console.log(result)
-    // }, err => {
-    //   console.log(err);
-    //   this.isLogin = false;
-    // })
+    this.AdminService.DatVe(this.danhSachVe).subscribe((result) => {
+      console.log(result)
+    }, err => {
+      console.log(err);
+      this.isLogin = false;
+    })
 
 
   }

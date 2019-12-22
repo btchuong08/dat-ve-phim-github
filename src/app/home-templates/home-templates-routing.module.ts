@@ -20,17 +20,24 @@ const routes: Routes = [
         { path: "home", component: HomeComponent },
 
         {
-          path: "phim/:id", loadChildren: () => ChiTietPhimModule
+          path: "phim/:id", loadChildren: () => import('./../home/chi-tiet-phim/chi-tiet-phim.module').then(m => m.ChiTietPhimModule)
+
 
         },
-        { path: "profile", loadChildren: () => ProfileModule, canActivate: [AuthGuard] },
+        {
+          path: "profile", loadChildren: () => import('../user-templates/profile/profile.module').then(m => m.ProfileModule)
+
+          , canActivate: [AuthGuard]
+        },
 
 
       ]
 
   },
   {
-    path: "checkout/:maLichChieu", loadChildren: () => DatVeModule, canActivate: [AuthGuard]
+    path: "checkout/:maLichChieu", loadChildren:  () => import('./../home/dat-ve/dat-ve.module').then(m => m.DatVeModule)
+    
+    , canActivate: [AuthGuard]
 
   }
 

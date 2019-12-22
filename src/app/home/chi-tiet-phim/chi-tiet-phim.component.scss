@@ -11,11 +11,11 @@
     /* Full height */
     // height: 100%;
     width: 100%;
-    min-height:1000px
+    min-height:1100px
 }
 
 .warpper {
-    height: 1000px;
+    min-height: 1150px;
     margin-top: 60px;
     .gioi-thieu {
         .play-video-warpper {
@@ -55,7 +55,8 @@
         justify-content: space-around;
         color: white;
         .intro {
-            transform: translateY(80px);
+            // transform: translateY(80px);
+            padding-top: 80px;
         }
         .ten-phim {
             font-size: 25px;
@@ -75,19 +76,26 @@
             }
         }
     }
+   
     .title {
+        z-index: 99;
         margin-top: 30px;
         text-align: center;
-        a {
+       
+
+        button {
             margin-left: 30px;
             font-size: 22px;
-            color: white // :hover{
-            //     font-size: 24px;
-            //     color: $color-primary;
-            // }
+            color: white;
+            border: none;
+            background-color: transparent;
+        }
+        button:hover{
+            color: $color-primary;
         }
     }
     .lich-chieu {
+       
         background-color: rgba(255, 255, 255, 1);
         box-shadow: 0 0 15px rgba(0, 0, 0, .3);
         position: absolute;
@@ -97,7 +105,9 @@
         margin-top: 60px;
         width: 70%;
         padding-bottom: 50px;
-        min-height: 400px;
+        min-height: 500px;
+        // min-height: 400px;
+        // max-height: 600px;;
         overflow: auto;
         border-radius: 5px;
         ;
@@ -182,44 +192,91 @@
         }
     }
     .review {
-        background-color: rgba(255, 255, 255, 0.6);
-        box-shadow: 0 0 15px rgba(0, 0, 0, .3);
-        position: absolute;
-        transform: translateX(-50%);
-        left: 50%;
-        border-radius: 10px;
-        min-width: 400px;
-        min-height: 300px;
-        margin-top: 40px;
-        button {
+        padding: 30px;
+        // background-color: rgba(255, 255, 255, 0.6);
+        // box-shadow: 0 0 15px rgba(0, 0, 0, .3);
+        // position: absolute;
+        // transform: translateX(-50%);
+        // left: 50%;
+        // border-radius: 10px;
+        // min-width: 400px;
+        // min-height: 300px;
+        // margin-top: 40px;
+
+        .review-item {
+            padding: 20px;
+            margin: auto;
+            margin-bottom: 20px;
+           width: 600px;
+            // min-height: 180px;
             border: none;
-            border-radius: 10px;
-            height: 25px;
-        }
-        input {
-            border: none;
-            border-radius: 10px;
-            height: 25px;
-            background-color: rgba(white, 0.6);
-            padding: 10px;
-        }
-        span {
-            color: white;
-        }
-        .item1 {
-            text-align: start;
-            button {
-                background-color: $color-primary;
-                color: white;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 1);
+            color: black;
+            .review-content {
+                border-bottom: 1px solid #e6e6e6;
+                .content1 {
+                    // line-height: 32px;
+                    display: grid;
+                    grid-template-columns: 32px 400px 120px;
+                    grid-column-gap: 10px;
+                    img {
+
+                        margin-right: 10px;
+                        width: 32px;
+                        height: 32px;
+                    }
+                    .content1-ten {
+                        p {
+                            // transform: translateY(-5px);
+                            font-size: 11px;
+                            color: gray;
+                        }
+                    }
+                }
+
+
+                .rate {
+                justify-self: end;
+                transform: translateY(-20px)
+               
+               
+                }
+            }
+            .like {
+                color: gray;
+                span{
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
             }
         }
-        .item2 {
-            text-align: end;
-            button {
-                background-color: rgba(gray, 0.6);
-                color: black;
-            }
-        }
+     
+       
+   
+
+.comment {
+  padding-top: 0px;
+    input {
+        border: 1px solid grey;
+        border-radius: 5px;
+        height: 25px;
+        background-color: rgba(white, 0.6);
+        padding: 10px;
+        width: 85%;
+    }
+   
+    text-align: start;
+    button.send {
+        margin-left: 20px;
+        border: none;
+            border-radius: 10px;
+                }
+    button.send:hover {
+   background-color: $color-primary;
+   color: white;
+}
+}
     }
 }
 
@@ -258,6 +315,57 @@
         height: 18px;
         // background-color: $color-primary;
         background-color:white;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+        animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+      }
+      
+      .spinner .bounce1 {
+        -webkit-animation-delay: -0.32s;
+        animation-delay: -0.32s;
+      }
+      
+      .spinner .bounce2 {
+        -webkit-animation-delay: -0.16s;
+        animation-delay: -0.16s;
+      }
+      
+      @-webkit-keyframes sk-bouncedelay {
+        0%, 80%, 100% { -webkit-transform: scale(0) }
+        40% { -webkit-transform: scale(1.0) }
+      }
+      
+      @keyframes sk-bouncedelay {
+        0%, 80%, 100% { 
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 40% { 
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+        }
+      }
+
+
+}
+
+
+// -----------------------------------
+.loading2 {
+
+    .spinner {
+       transform: translate(240px,10px);
+        // transform: translateY(-100px);
+        // margin: 100px auto 0;
+        width: 70px;
+        text-align: center;
+      }
+      
+      .spinner > div {
+        width: 18px;
+        height: 18px;
+        background-color: $color-primary;
+      
         border-radius: 100%;
         display: inline-block;
         -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;

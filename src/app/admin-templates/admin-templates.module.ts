@@ -27,7 +27,7 @@ import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
 
 
 @NgModule({
-  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyUserComponent, MenuComponent, UserComponent, QuanLyPhimComponent, PhimComponent],
+  declarations: [AdminTemplatesComponent, AdminComponent, AdminNavbarComponent, QuanLyUserComponent, MenuComponent, UserComponent, PhimComponent],
   imports: [
     CommonModule,
     AdminTemplatesRoutingModule,
@@ -42,6 +42,7 @@ import { QuanLyPhimComponent } from './quan-ly-phim/quan-ly-phim.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     MatRadioModule,
+    QuanLyPhimModule
 
 
   ]

@@ -22,6 +22,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxLoadingModule } from 'ngx-loading';
+import { RatingModule } from 'ng-starrating';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { NgxLoadingModule } from 'ngx-loading';
     AngularFontAwesomeModule,
     NgxPaginationModule,
     Ng2SearchPipeModule,
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    RatingModule
 
 
 

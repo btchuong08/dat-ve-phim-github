@@ -7,7 +7,7 @@ import { AdminComponent } from './admin.component';
 
 
 @NgModule({
-  declarations: [AdminComponent, QuanLyPhimComponent],
+  declarations: [],
   imports: [
     CommonModule,
     AdminRoutingModule

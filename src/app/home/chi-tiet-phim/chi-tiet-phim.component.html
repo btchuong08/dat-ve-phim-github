@@ -54,16 +54,18 @@
 
         <div class="title">
 
-            <!-- <button>Lịch Chiếu</button>
-            <button>Thông Tin</button>
-            <button>Đánh giá</button> -->
-            <a href="">Lịch Chiếu</a>
-            <a href="">Thông Tin</a>
-            <a href="">Đánh giá</a>
+            <button (click)='getLichChieu()'>Lịch Chiếu</button>
+
+            <button (click)='getThongTin()'>Thông Tin</button>
+
+            <button (click)='getDanhGia()'>Đánh giá</button>
+
 
 
 
         </div>
+
+
 
 
 
@@ -131,31 +133,61 @@
 
 
         </div>
-        <div class="review ">
-            <div class="item1"> <span>Hiếu Nguyễn</span>
+        <div *ngIf="showDanhGia" class="review ">
 
-                <button>Phim hay quá</button></div>
 
-            <div class="item2">
 
-                <button>Phim hay quá</button>
-                <span>Hiếu Nguyễn</span>
+            <div *ngFor="let item of review; let index=index" class="review-item">
+
+                <div class="review-content">
+
+                    <div class="content1">
+                        <div>
+                            <img src="assets\img\icons\facebook-logo.png" alt="">
+                        </div>
+                        <div class="content1-ten">
+                            <span>{{item.ten}}</span>
+                            <p>{{item.time}}</p>
+                        </div>
+                        <div class="rate">
+                            <star-rating value={{item.rate}} totalstars="5" checkedcolor="red" uncheckedcolor="black"
+                                size="13px" readonly="false" (rate)="onRate($event)" class="rate-content"></star-rating>
+                        </div>
+
+                    </div>
+
+
+
+                    <p>{{item.comment}}</p>
+                </div>
+
+                <div class="mt-2 like">
+                    <i class="fa fa-thumbs-o-up"></i> {{item.like}} Thích
+                </div>
+
+
+
+
+
             </div>
 
-            <div class="item1"> <span>Hiếu Nguyễn</span>
 
-                <button>Phim hay quá</button></div>
-
-            <div class="item2">
-
-                <button>Phim hay quá</button>
-                <span>Hiếu Nguyễn</span>
+            <div class="review-item comment">
+                <div *ngIf="loading2" class="loading2">
+                    <div class="spinner">
+                        <div class="bounce1"></div>
+                        <div class="bounce2"></div>
+                        <div class="bounce3"></div>
+                    </div>
+                </div>
+                <star-rating value="3" #rate totalstars="5" checkedcolor="red" uncheckedcolor="black" size="24px"
+                    class="text-center " readonly="false" (rate)="onRate($event)"></star-rating>
+                <input type="text" placeholder="Viết đánh giá của bạn" #comment>
+                <button class="send" (click)='send(comment.value,rate.value)'>Gửi</button>
             </div>
 
-            <div>
-                <input type="text" placeholder="Viết đánh giá của bạn">
-                <button>Gửi</button>
-            </div>
+
+
         </div>
 
 

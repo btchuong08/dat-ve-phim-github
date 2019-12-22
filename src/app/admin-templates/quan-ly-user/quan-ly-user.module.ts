@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgForm } from '@angular/forms';
+
 import { QuanLyUserRoutingModule } from './quan-ly-user-routing.module';
 import { QuanLyUserComponent } from './quan-ly-user.component';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import { MatInputModule } from '@angular/material';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
-  declarations: [QuanLyUserComponent,],
+  declarations: [],
   imports: [
     CommonModule,
     QuanLyUserRoutingModule,
@@ -24,7 +24,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     Ng2SearchPipeModule,
     MatFormFieldModule,
     MatInputModule,
-    NgForm,
+
     MatRadioModule,
     MatDialogModule
 

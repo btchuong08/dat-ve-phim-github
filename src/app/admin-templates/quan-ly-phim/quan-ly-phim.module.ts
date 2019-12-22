@@ -7,7 +7,7 @@ import { QuanLyPhimComponent } from './quan-ly-phim.component';
 
 
 
-import { NgForm } from '@angular/forms';
+
 
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -32,7 +32,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     Ng2SearchPipeModule,
     MatFormFieldModule,
     MatInputModule,
-    NgForm,
+
     MatRadioModule,
     MatDialogModule
 

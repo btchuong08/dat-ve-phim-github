@@ -8,6 +8,9 @@ import { SafePipeModule } from 'safe-pipe';
 
 import { NgxLoadingModule } from 'ngx-loading';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { StarRatingComponent } from 'ng-starrating';
+import { RatingModule } from 'ng-starrating';
 @NgModule({
   declarations: [ChiTietPhimComponent],
   imports: [
@@ -16,7 +19,9 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     MatButtonModule,
     SafePipeModule,
     NgxLoadingModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    AngularFontAwesomeModule,
+    RatingModule
   ]
 })
 export class ChiTietPhimModule { }

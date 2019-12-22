@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
     ComponentsRoutingModule,
     SlickCarouselModule,
     SafePipeModule, MatSliderModule, MatMenuModule, MatButtonModule, MatSelectModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    AngularFontAwesomeModule
 
   ],
   exports: [NavbarComponent, CarouselComponent, HomeToolComponent, FooterComponent]

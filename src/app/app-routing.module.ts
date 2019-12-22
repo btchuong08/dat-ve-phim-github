@@ -17,11 +17,23 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  { path: "", loadChildren: () => HomeTemplatesModule },
-  { path: "home", loadChildren: () => HomeTemplatesModule },
-  { path: "login", loadChildren: () => UserTemplatesModule },
-  { path: "signup", loadChildren: () => SignupModule },
-  { path: "admin", loadChildren: () => AdminTemplatesModule, canActivate: [AuthGuard] },
+  {
+    path: "", loadChildren: () => import('./home-templates/home-templates.module').then(m => m.HomeTemplatesModule)
+  },
+  {
+    path: "home", loadChildren: () => import('./home-templates/home-templates.module').then(m => m.HomeTemplatesModule)
+
+  },
+  {
+    path: "login", loadChildren: () => import('./user-templates/user-templates.module').then(m => m.UserTemplatesModule)
+  },
+  {
+    path: "signup", loadChildren: () => import('./user-templates/signup/signup.module').then(m => m.SignupModule)
+  },
+  {
+    path: "admin", loadChildren: () => import('./admin-templates/admin-templates.module').then(m => m.AdminTemplatesModule)
+    , canActivate: [AuthGuard]
+  },
 
   { path: '**', redirectTo: '' }
 ];

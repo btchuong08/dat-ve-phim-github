@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { StarRatingComponent } from 'ng-starrating';
 
 @Component({
   selector: 'app-chi-tiet-phim',
@@ -14,7 +15,7 @@ import { Router } from '@angular/router';
 })
 export class ChiTietPhimComponent implements OnInit {
   public loading = true;
-
+  public loading2 = false;
   public phim: any = {};
   public ngayChieuGioChieu: any = [];
   public ngayChieu: any = [];
@@ -27,12 +28,24 @@ export class ChiTietPhimComponent implements OnInit {
   public xuatChieu: any = [];
 
   public maPhim;
+
+
+  public review: any = [
+    {
+      ten: 'Hiếu Nguyễn', comment: 'Phim hay quá, muốn coi thêm lần nữa', rate: 4, time: '2 giờ trước', like: 14
+    },
+
+    { ten: 'Ngọc Trần', comment: 'Diễn viên chính đẹp trai mỗi tội hơi lùn', rate: 3, time: '1 tuần trước', like: 22 },
+
+
+  ]
+
   private subParam: Subscription;
   today = "";
   lichChieu: any = [];
   maLichChieu = "";
   isLogin: boolean = false;
-  showLichChieu: boolean = false;
+  showLichChieu: boolean = true;
   showThongTin: boolean = false;
   showDanhGia: boolean = false;
   deduplicate(arr) {
@@ -116,6 +129,45 @@ export class ChiTietPhimComponent implements OnInit {
     this.today = ngayChieu
     this.getListTenRap(tenHeThongRap);
 
+  }
+
+
+  onRate($event: { oldValue: number, newValue: number, starRating: StarRatingComponent }) {
+    console.log($event.newValue)
+  }
+
+
+  send = (comment, rate) => {
+
+    this.loading2 = true;
+
+    let ten = sessionStorage.getItem('username')
+    let data = {
+      ten, comment, rate, time: '1 phút trước', like: 0
+    };
+    setTimeout(() => {
+      this.review.push(data);
+      this.loading2 = false;
+    }, 2000);
+  }
+
+
+  getLichChieu = () => {
+    this.showLichChieu = true
+    this.showDanhGia = false
+    this.showThongTin = false
+  }
+
+
+  getThongTin = () => {
+    this.showLichChieu = false
+    this.showDanhGia = false
+    this.showThongTin = true
+  }
+  getDanhGia = () => {
+    this.showLichChieu = false
+    this.showDanhGia = true
+    this.showThongTin = false
   }
 
   ngOnInit() {

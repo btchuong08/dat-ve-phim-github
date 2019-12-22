@@ -6,7 +6,7 @@ import { UserComponent } from './user.component';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [UserComponent],
+  declarations: [],
   imports: [
     CommonModule,
     UserRoutingModule,
