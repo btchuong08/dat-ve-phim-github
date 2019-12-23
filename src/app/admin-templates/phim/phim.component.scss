@@ -4,7 +4,7 @@
     margin-left: 250px;
     background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
     background-position: center;
-    min-height: 800px;
+    min-height: 1000px;
     background-size: cover;
     .title {
         background-color: rgba(255, 255, 255, .6);
@@ -36,7 +36,6 @@
                     transform: translateX(-50%);
                 }
                 input {
-                  
                     height: 30px;
                     border: none;
                     border-radius: 10px;
@@ -74,43 +73,39 @@
     }
 }
 
-
 // --------------------------------------------------------------------
-
 .modal2 {
     // background-image: url(../../../assets/img/icons/bg-login2.jpg);
     .modal-dialog {
         position: fixed;
         top: 40%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        .modal-content { 
+        transform: translate(-50%, -50%);
+        .modal-content {
             // background-image: url(../../../assets/img/icons/bg-login2.jpg);
-
             position: relative;
             border: none;
             border-radius: 10px;
             background-color: rgba(white, $alpha: 0.7);
             min-width: 320px;
             min-height: 200px;
-
-            .modal-header{
+            .modal-header {
                 background-color: $color-primary;
                 color: white;
                 font-size: 24px;
             }
             .modal-body {
-                
                 border: none;
                 border-radius: 10px;
                 // background-color: rgba(255, 255, 255, .6);
                 margin: auto;
                 padding-bottom: 10px;
-                p {margin-top: 20px;
-                margin-left: 10px;}
+                p {
+                    margin-top: 20px;
+                    margin-left: 10px;
+                }
             }
             .footer {
-
                 border: none;
                 border-radius: 10px;
                 position: absolute;
@@ -135,7 +130,6 @@
                 // }
                 // button.no {
                 //     background-color: #ef6161;
-                   
                 // }
                 // button.no:hover {
                 //     background-color: #f53232;
@@ -143,52 +137,47 @@
                 // button.yes:hover {
                 //     background-color: #1f38c1;
                 // }
-                
-            }
-        }}}
-
-
-
-        .delete-user-modal {
-           
-            // padding-bottom: 40px;
-           
-            .delete-user-modal-close {
-                position: absolute;
-               
-                bottom: -20px;
-                left: 45%;
-                transform: translateX(-50%);
-                .btn {
-                    margin-bottom: 30px;
-                    margin-left: 30px;
-                    border: none;
-                    border-radius: 10px;
-                    // background-color: rgba($color: white, $alpha: .6);
-                }
-                .btn:hover {
-                    background-color: rgba($color: gray, $alpha: .6);
-                }
-            }
-        
-        }
-
-
-        .delete-user-modal {
-            font-size: 17px;
-           
-            .passed {
-                margin-top: 10px;
-                margin-left: 10px;
-                padding: 20px;
-               p { color: green;}
-               
-            }
-            .failed {
-                margin-top: 10px;
-                padding: 20px;
-                margin-left: 10px;
-                p {  color: red;}
-              
             }
         }
+    }
+}
+
+.delete-user-modal {
+    // padding-bottom: 40px;
+    .delete-user-modal-close {
+        position: absolute;
+        bottom: -20px;
+        left: 45%;
+        transform: translateX(-50%);
+        .btn {
+            margin-bottom: 30px;
+            margin-left: 30px;
+            border: none;
+            border-radius: 10px;
+            // background-color: rgba($color: white, $alpha: .6);
+        }
+        .btn:hover {
+            background-color: rgba($color: gray, $alpha: .6);
+        }
+    }
+}
+
+.delete-user-modal {
+    font-size: 17px;
+    .passed {
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 20px;
+        p {
+            color: green;
+        }
+    }
+    .failed {
+        margin-top: 10px;
+        padding: 20px;
+        margin-left: 10px;
+        p {
+            color: red;
+        }
+    }
+}

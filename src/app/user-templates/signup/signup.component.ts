@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class SignupComponent implements OnInit {
   error: any = '';
   creatUsersuccess: boolean = false;
-
+accept:boolean=false;
   signup = (user) => {
     user = {
       ...user,
@@ -33,6 +33,9 @@ export class SignupComponent implements OnInit {
       });
   }
 
+  acceptTerm =() =>{
+this.accept=!this.accept
+  }
   constructor(private AdminService: AdminService,
     private router: Router, ) { }
   ngOnInit() {

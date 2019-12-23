@@ -6,8 +6,7 @@
     <div class="signup  ">
         <div class="title">
             <span>Đăng ký tài khoản 123Phim</span>
-            <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo"
-                    src="assets\img\icons\web-logo.png" alt=""></a>
+            <a [routerLink]="['']" routerLinkActive="router-link-active"> <img class="logo" src="assets\img\icons\web-logo.png" alt=""></a>
             <p class="failed" *ngIf="error !==''">{{error}} Vui lòng thử lại</p>
 
             <div class="a-passed">
@@ -26,19 +25,17 @@
                 <div>
                     <div>
                         <mat-form-field>
-                            <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel'
-                                ngModel required maxlength=25 min="3">
+                            <input matInput type='text' placeholder="Username" name='taiKhoan' #taiKhoan='ngModel' ngModel required maxlength=25 min="3">
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field>
-                            <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel'
-                                ngModel required>
+                            <input matInput placeholder="Passowrd" type='password' name='matKhau' #matKhau='ngModel' ngModel required maxlength=25 min="3">
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field>
-                            <input matInput placeholder="Nhập lại Passowrd" type='password' required>
+                            <input matInput placeholder="Nhập lại Passowrd" type='password' required maxlength=25 min="3">
                         </mat-form-field>
                     </div>
 
@@ -47,20 +44,17 @@
                 <div>
                     <div>
                         <mat-form-field>
-                            <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel
-                                required>
+                            <input matInput placeholder="Họ Tên" type='text' name='hoTen' #hoTen='ngModel' ngModel required maxlength=25 min="3">
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field>
-                            <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel
-                                required>
+                            <input matInput placeholder="Email" type='email' name='email' #email='ngModel' ngModel required>
                         </mat-form-field>
                     </div>
                     <div>
                         <mat-form-field>
-                            <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel
-                                required>
+                            <input matInput placeholder="Phone Number" type='number' name='soDt' #soDt='ngModel' ngModel required max=15 min="3">
                         </mat-form-field>
                     </div>
 
@@ -70,7 +64,7 @@
             <div class="footer text-center">
 
                 <div class="terms">
-                    <input class="styled" type="checkbox">
+                    <input class="styled" type="checkbox" (click)=acceptTerm()>
                     <span> I accept the terms and conditions</span>
 
 

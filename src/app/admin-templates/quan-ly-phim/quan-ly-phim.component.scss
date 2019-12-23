@@ -4,7 +4,7 @@
     margin-left: 250px;
     background-image: url("../../../../src/assets/img/icons/bg-login2.jpg");
     background-position: center;
-    min-height: 1300px;
+    min-height: 2000px;
     background-size: cover;
     .title {
         background-color: rgba(255, 255, 255, .6);
@@ -64,7 +64,6 @@
                             width: 200px;
                             background-color: rgba(255, 255, 255, .8);
                             transform: translateX(80px);
-                           
                             // // margin-bottom: 30px;
                         }
                         button {
@@ -305,7 +304,9 @@
 // -------------------------------------------------- 
 .list-phim {
     .list-phim-content {
-        margin: 40px;
+        width: 950px;
+        margin: auto;
+        // margin: 40px;
         margin-top: 20px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -315,7 +316,8 @@
             img {
                 // width: 180px;
                 // height: 240px;
-                width: 100%;
+                // width: 100%;
+                width: 200px;
                 height: 300px;
                 border: none;
                 border-radius: 10px;
@@ -382,7 +384,3 @@
         }
     }
 }
-
-
-
-
