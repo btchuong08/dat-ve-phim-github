@@ -7,7 +7,8 @@
     // width: 1110px;
     width: 70%;
     height: 350px;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 20px;
     display: grid;
     margin: auto;

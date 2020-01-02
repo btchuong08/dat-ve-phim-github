@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import Scrollbar from 'smooth-scrollbar';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'datvephim';
+
+
+  ngOnInit() {
+
+    Scrollbar.initAll();
+ 
+
+  }
 }
